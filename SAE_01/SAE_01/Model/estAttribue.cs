@@ -12,8 +12,8 @@ namespace SAE_01.Model
     {
         public EstAttribue(int idpersonnel, int idmateriel, DateTime dateattribution, string commentaireattribution)
         {
-            this.Idpersonnel = idpersonnel;
-            this.Idmateriel = idmateriel;
+            this.fk_idPerso = idpersonnel;
+            this.fk_idMateriel = idmateriel;
             this.Dateattribution = dateattribution;
             this.Commentaireattribution = commentaireattribution;
         }
@@ -22,11 +22,38 @@ namespace SAE_01.Model
         {
             
         }
-
-        public int Idpersonnel { get; set; }
-        public int Idmateriel { get; set; }
+        private Personnel unPersonnel;
+        private Materiel unMateriel;
+        public int fk_idPerso { get; set; }
+        public int fk_idMateriel { get; set; }
         public DateTime Dateattribution { get; set; }
         public string Commentaireattribution { get; set; }
+
+        public Personnel UnPersonnel
+        {
+            get
+            {
+                return unPersonnel;
+            }
+
+            set
+            {
+                unPersonnel = value;
+            }
+        }
+
+        internal Materiel UnMateriel
+        {
+            get
+            {
+                return unMateriel;
+            }
+
+            set
+            {
+                unMateriel = value;
+            }
+        }
 
         public ObservableCollection<EstAttribue> FindAll()
         {

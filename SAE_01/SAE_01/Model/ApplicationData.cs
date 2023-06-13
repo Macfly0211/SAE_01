@@ -13,7 +13,7 @@ namespace SAE_01.Model
 
         public ObservableCollection<Personnel> LesPersonnel { get; set; }
         public ObservableCollection<Materiel> LesMateriel { get; set; }
-        public ObservableCollection<CategorieMateriel> LesCategorie { get; set; }
+        public ObservableCollection<CategorieMateriel> LesCategorieMateriel { get; set; }
         public ObservableCollection<EstAttribue> LesAttribution { get; set; }
 
         public ApplicationData()
@@ -24,11 +24,22 @@ namespace SAE_01.Model
             Materiel m = new Materiel();
             LesMateriel = m.FindAll();
 
-            CategorieMateriel c = new CategorieMateriel();
-            LesCategorie = c.FindAll();
+            CategorieMateriel cm = new CategorieMateriel();
+            LesCategorieMateriel = cm.FindAll();
 
             EstAttribue a = new EstAttribue();
             LesAttribution = a.FindAll();
+
+            //Attribution elle a un materiel
+            foreach (EstAttribue uneAttribution in LesAttribution.ToList())
+            {
+                uneAttribution.UnMateriel = LesMateriel.ToList().Find(m => m.Idmateriel == uneAttribution.fk_idMateriel);
+            }
+            //Attribution elle a un personnel
+            foreach (EstAttribue uneAttribution in LesAttribution.ToList())
+            {
+                uneAttribution.UnPersonnel = LesPersonnel.ToList().Find(p => p.Idpersonnel == uneAttribution.fk_idPerso);
+            }
         }
 
         
