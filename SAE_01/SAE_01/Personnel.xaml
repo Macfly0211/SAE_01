@@ -41,7 +41,8 @@
         <ListView d:ItemsSource="{Binding Path=LesPersonnel}" Margin="803,114,31,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nompersonnel}"/>
+                    <GridViewColumn Header="Prenom" DisplayMemberBinding="{Binding Path=Prenompersonnel}"/>
                 </GridView>
             </ListView.View>
         </ListView>
