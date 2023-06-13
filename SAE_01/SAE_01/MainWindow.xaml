@@ -11,6 +11,7 @@
     MinWidth="1000"
     MinHeight="750"
     mc:Ignorable="d">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="312" />
@@ -78,7 +79,7 @@
             Content="Nom personnel :"
             RenderTransformOrigin="1.095,-6.075" />
 
-        <TextBox
+        <TextBox x:Name="tbPersonnel"
             Width="120"
             Height="22"
             Margin="536,62,0,0"
@@ -94,7 +95,7 @@
             VerticalAlignment="Top"
             Content="Nom matériel :"
             RenderTransformOrigin="1.095,-6.075" />
-        <TextBox
+        <TextBox x:Name="tbMateriel"
             Width="120"
             Height="22"
             Margin="536,113,0,0"
@@ -126,7 +127,7 @@
             VerticalAlignment="Top"
             Content="Commentaire :"
             RenderTransformOrigin="1.095,-6.075" />
-        <TextBox
+        <TextBox x:Name="tbCommentaire"
             Width="238"
             Height="22"
             Margin="150,232,0,0"
@@ -134,7 +135,7 @@
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
-        <TextBox
+        <TextBox x:Name="tbDate"
             Width="120"
             Height="22"
             Margin="150,171,0,0"
@@ -143,28 +144,28 @@
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
 
-        <Button
+        <Button x:Name="btnAjouter"
             Width="92"
             Height="38"
             Margin="10,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" />
-        <Button
+        <Button x:Name="btnSupp"
             Width="92"
             Height="38"
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" />
-        <Button
+            Content="Supprimer" Click="btnSupp_Click" />
+        <Button x:Name="btnModifier"
             Width="92"
             Height="38"
             Margin="10,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Modifier" />
-        <Image Margin="10,40,0,0" Source="/index.png" Height="222" VerticalAlignment="Top" HorizontalAlignment="Left" Width="294"/>
+        <Image Margin="10,40,0,0" Source="/index.png" Height="87" VerticalAlignment="Top" HorizontalAlignment="Left" Width="294"/>
 
     </Grid>
 </Window>

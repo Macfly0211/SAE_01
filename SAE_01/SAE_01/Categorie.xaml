@@ -35,11 +35,11 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
-        <Button Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
-        <Button Content="Supprimer" Margin="58,246,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
 
         <Label Content="Nom :" Margin="215,66,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
-        <TextBox TextWrapping="Wrap" Margin="215,92,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <TextBox x:Name="tbNom" TextWrapping="Wrap" Margin="215,92,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
     </Grid>
 </Window>

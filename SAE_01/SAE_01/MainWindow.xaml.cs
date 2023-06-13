@@ -26,8 +26,7 @@ namespace SAE_01
         public MainWindow()
         {
             InitializeComponent();
-            DataAccess accesBD = new DataAccess();
-            
+           
         }
 
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
@@ -63,5 +62,7 @@ namespace SAE_01
         {
 
         }
+
+        
     }
 }
