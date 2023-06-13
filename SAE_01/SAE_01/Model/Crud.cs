@@ -4,6 +4,7 @@
 // Purpose: Definition of Interface Crud
 
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace SAE_01.Model
 {

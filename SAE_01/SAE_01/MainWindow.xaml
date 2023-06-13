@@ -11,6 +11,7 @@
     MinWidth="1000"
     MinHeight="750"
     mc:Ignorable="d">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="312" />
@@ -150,13 +151,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" />
-        <Button
+        <Button x:Name="btnSupp"
             Width="92"
             Height="38"
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" />
+            Content="Supprimer" Click="btnSupp_Click" />
         <Button
             Width="92"
             Height="38"
