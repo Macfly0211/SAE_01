@@ -4,11 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE_01"
+        xmlns:model="clr-namespace:SAE_01.Model"
         mc:Ignorable="d"
         Title="Materiel"  Width="1000"
         Height="750"
         MinWidth="1000"
         MinHeight="750">
+    <Window.DataContext>
+        <model:ApplicationData x:Name="applicationData"/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"/>
@@ -32,7 +36,7 @@
 
         </Menu>
         <Label Content="Nom catégorie :" Margin="702,118,0,0" HorizontalAlignment="Left" Width="96" Height="30" VerticalAlignment="Top"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="803,114,31,10">
+        <ListView x:Name="lvMatCategorie" ItemsSource="{Binding LesCategorie}" Margin="803,114,31,10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
