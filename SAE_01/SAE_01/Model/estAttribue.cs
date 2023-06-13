@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    public class estAttribue
+    public class EstAttribue
     {
-        public estAttribue(int idpersonnel, int idmateriel, DateTime date, string commentaireattribution)
+        public EstAttribue(int idpersonnel, int idmateriel, DateTime date, string commentaireattribution)
         {
             this.Idpersonnel = idpersonnel;
             this.Idmateriel = idmateriel;
@@ -18,7 +18,7 @@ namespace SAE_01.Model
             this.commentaireattribution = commentaireattribution;
         }
 
-        public estAttribue()
+        public EstAttribue()
         {
             
         }
@@ -28,9 +28,9 @@ namespace SAE_01.Model
         public DateTime date { get; set; }
         public string commentaireattribution { get; set; }
 
-        public ObservableCollection<estAttribue> FindAll()
+        public ObservableCollection<EstAttribue> FindAll()
         {
-            ObservableCollection<estAttribue> lesAttribution = new ObservableCollection<estAttribue>();
+            ObservableCollection<EstAttribue> lesAttribution = new ObservableCollection<EstAttribue>();
             DataAccess accesBD = new DataAccess();
             String requete = "select idcategorie, nomcategorie from personnel ;";
             DataTable datas = accesBD.GetData(requete);
@@ -38,7 +38,7 @@ namespace SAE_01.Model
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    estAttribue a = new estAttribue(int.Parse(row["idpersonnel"].ToString()), int.Parse(row["idmateriel"].ToString()), (DateTime)row["date"], (string)row["commentaireattribution"]);
+                    EstAttribue a = new EstAttribue(int.Parse(row["idpersonnel"].ToString()), int.Parse(row["idmateriel"].ToString()), (DateTime)row["date"], (string)row["commentaireattribution"]);
                     lesAttribution.Add(a);
                 }
             }

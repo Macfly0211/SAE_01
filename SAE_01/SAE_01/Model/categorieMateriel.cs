@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    public class categorieMateriel
+    public class CategorieMateriel
     {
-        public categorieMateriel(int idcategorie, string nomcategorie)
+        public CategorieMateriel(int idcategorie, string nomcategorie)
         {
             Idcategorie = idcategorie;
             Nomcategorie = nomcategorie;
         }
 
-        public categorieMateriel()
+        public CategorieMateriel()
         {
             
         }
@@ -24,9 +24,9 @@ namespace SAE_01.Model
         public int Idcategorie { get; set; }
         public string Nomcategorie { get; set; }
 
-        public ObservableCollection<categorieMateriel> FindAll()
+        public ObservableCollection<CategorieMateriel> FindAll()
         {
-            ObservableCollection<categorieMateriel> lesCategorieMateriel = new ObservableCollection<categorieMateriel>();
+            ObservableCollection<CategorieMateriel> lesCategorieMateriel = new ObservableCollection<CategorieMateriel>();
             DataAccess accesBD = new DataAccess();
             String requete = "select idcategorie, nomcategorie from personnel ;";
             DataTable datas = accesBD.GetData(requete);
@@ -34,7 +34,7 @@ namespace SAE_01.Model
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    categorieMateriel cm = new categorieMateriel(int.Parse(row["idcategorie"].ToString()), (String)row["nomcategorie"]);
+                    CategorieMateriel cm = new CategorieMateriel(int.Parse(row["idcategorie"].ToString()), (String)row["nomcategorie"]);
                     lesCategorieMateriel.Add(cm);
                 }
             }
