@@ -20,11 +20,7 @@ namespace SAE_01
     /// </summary>
     public partial class Materiel : Window
     {
-        public int Idmateriel { get; set; }
-        public int Idcategorie { get; set; }
-        public string Nommateriel { get; set; }
-        public string Referenceconstructeurmateriel { get; set; }
-        public string Codebarreinventaire { get; set; }
+        
 
 
         public Materiel()
@@ -32,19 +28,7 @@ namespace SAE_01
             InitializeComponent();
         }
 
-        public Materiel(int idmateriel, int idcategorie, string nommateriel, string referenceconstructeurmateriel, string codebarreinventaire)
-        {
-            Idmateriel = idmateriel;
-            Idcategorie = idcategorie;
-            Nommateriel = nommateriel;
-            Referenceconstructeurmateriel = referenceconstructeurmateriel;
-            Codebarreinventaire = codebarreinventaire;
-        }
-        public Materiel()
-        {
-         
-        }
-
+        
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
             MainWindow menu = new MainWindow();
