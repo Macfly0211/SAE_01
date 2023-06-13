@@ -54,7 +54,10 @@
             Content="Nom catégorie :"
             RenderTransformOrigin="1.095,-6.075" />
         <DataGrid
+            x:Name="dgMain"
             Grid.Row="1"
+            
+            
             Margin="10,10,10,10"
             d:ItemsSource="{d:SampleData ItemCount=5}"
             AutoGenerateColumns="False">
@@ -68,10 +71,10 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <ListView Margin="766,60,34,10" d:ItemsSource="{Binding Path=LesMateriel}">
+        <ListView x:Name="lvCategorie" Margin="766,60,34,10" d:ItemsSource="{Binding Path=LesCategorie}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nomcategorie}"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -85,6 +88,7 @@
             RenderTransformOrigin="1.095,-6.075" />
 
         <TextBox x:Name="tbPersonnel"
+            Text="{Binding LesPersonnel}"
             Width="120"
             Height="22"
             Margin="536,62,0,0"
@@ -162,6 +166,7 @@
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Content="Supprimer"
              />
         <Button x:Name="btnModifier"
             Width="92"
