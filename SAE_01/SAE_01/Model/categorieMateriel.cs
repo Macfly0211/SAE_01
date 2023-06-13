@@ -26,19 +26,19 @@ namespace SAE_01.Model
 
         public ObservableCollection<categorieMateriel> FindAll()
         {
-            ObservableCollection<categorieMateriel> lesEtudiants = new ObservableCollection<categorieMateriel>();
+            ObservableCollection<categorieMateriel> lesCategorieMateriel = new ObservableCollection<categorieMateriel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select id, nom, prenom from etudiants ;";
+            String requete = "select idcategorie, nomcategorie from personnel ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    categorieMateriel e = new categorieMateriel(int.Parse(row["idcategorie"].ToString()), (String)row["nomcategorie"]);
-                    lesEtudiants.Add(e);
+                    categorieMateriel cm = new categorieMateriel(int.Parse(row["idcategorie"].ToString()), (String)row["nomcategorie"]);
+                    lesCategorieMateriel.Add(cm);
                 }
             }
-            return lesEtudiants;
+            return lesCategorieMateriel;
         }
     }
 }
