@@ -11,20 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Media.Media3D;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SAE_01
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Materiel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Materiel : Window
     {
-        public MainWindow()
+        public Materiel()
         {
             InitializeComponent();
+        }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow menu = new MainWindow();
+            this.Close();
+            menu.Show();
         }
 
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
@@ -32,14 +37,6 @@ namespace SAE_01
             Categorie categorie = new Categorie();
             this.Close();
             categorie.Show();
-
-        }
-
-        private void MenuMateriel_Click(object sender, RoutedEventArgs e)
-        {
-            Materiel materiel = new Materiel();
-            this.Close();
-            materiel.Show();
         }
 
         private void MenuPersonnel_Click(object sender, RoutedEventArgs e)

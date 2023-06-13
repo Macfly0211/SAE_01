@@ -12,27 +12,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SAE_01
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logique d'interaction pour Categorie.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Categorie : Window
     {
-        public MainWindow()
+        public Categorie()
         {
             InitializeComponent();
-        }
-
-        private void MenuCategorie_Click(object sender, RoutedEventArgs e)
-        {
-            Categorie categorie = new Categorie();
-            this.Close();
-            categorie.Show();
-
         }
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
@@ -56,9 +47,11 @@ namespace SAE_01
             attribution.Show();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Menu_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow menu = new MainWindow();
+            this.Close();
+            menu.Show();
         }
     }
 }
