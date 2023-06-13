@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    class Personnel
+    public class Personnel
     {
         public Personnel()
         {

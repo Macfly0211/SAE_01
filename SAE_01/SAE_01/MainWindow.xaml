@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE_01"
+    xmlns:model="clr-namespace:SAE_01.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MatInfo"
     Width="1000"
@@ -11,6 +12,10 @@
     MinWidth="1000"
     MinHeight="750"
     mc:Ignorable="d">
+    <Window.DataContext>
+        <model:ApplicationData x:Name="applicationData"/>
+    </Window.DataContext>
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -157,7 +162,7 @@
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" Click="btnSupp_Click" />
+             />
         <Button x:Name="btnModifier"
             Width="92"
             Height="38"
