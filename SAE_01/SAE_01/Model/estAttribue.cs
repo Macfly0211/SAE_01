@@ -30,7 +30,7 @@ namespace SAE_01.Model
 
         public ObservableCollection<estAttribue> FindAll()
         {
-            ObservableCollection<estAttribue> lesAttributions = new ObservableCollection<estAttribue>();
+            ObservableCollection<estAttribue> lesAttribution = new ObservableCollection<estAttribue>();
             DataAccess accesBD = new DataAccess();
             String requete = "select idcategorie, nomcategorie from personnel ;";
             DataTable datas = accesBD.GetData(requete);
@@ -39,10 +39,10 @@ namespace SAE_01.Model
                 foreach (DataRow row in datas.Rows)
                 {
                     estAttribue a = new estAttribue(int.Parse(row["idpersonnel"].ToString()), int.Parse(row["idmateriel"].ToString()), (DateTime)row["date"], (string)row["commentaireattribution"]);
-                    lesAttributions.Add(a);
+                    lesAttribution.Add(a);
                 }
             }
-            return lesAttributions;
+            return lesAttribution;
         }
     }
 }

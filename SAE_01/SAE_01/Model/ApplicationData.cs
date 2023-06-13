@@ -17,6 +17,9 @@ namespace SAE_01.Model
         {
             Personnel p = new Personnel();
             LesPersonnel = p.FindAll();
+
+            
+
         }
     }
 }
