@@ -68,7 +68,7 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <ListView Margin="766,60,34,10" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView Margin="766,60,34,10" d:ItemsSource="{Binding Path=LesMateriel}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn />
