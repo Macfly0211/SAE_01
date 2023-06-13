@@ -26,7 +26,8 @@ namespace SAE_01
         public MainWindow()
         {
             InitializeComponent();
-           
+            
+
         }
 
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)

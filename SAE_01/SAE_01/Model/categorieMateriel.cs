@@ -28,7 +28,7 @@ namespace SAE_01.Model
         {
             ObservableCollection<CategorieMateriel> lesCategorieMateriel = new ObservableCollection<CategorieMateriel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select idcategorie, nomcategorie from personnel ;";
+            String requete = "select idcategorie, nomcategorie from categorie_materiel ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {

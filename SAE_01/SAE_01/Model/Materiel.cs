@@ -33,7 +33,7 @@ namespace SAE_01.Model
         {
             ObservableCollection<Materiel> lesMateriel = new ObservableCollection<Materiel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select idmateriel, idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire ;";
+            String requete = "select idmateriel, idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire from materiel ;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
