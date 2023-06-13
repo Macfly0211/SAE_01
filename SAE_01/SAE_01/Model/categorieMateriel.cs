@@ -16,12 +16,17 @@ namespace SAE_01.Model
             Nomcategorie = nomcategorie;
         }
 
+        public categorieMateriel()
+        {
+            
+        }
+
         public int Idcategorie { get; set; }
         public string Nomcategorie { get; set; }
 
-        public ObservableCollection<Etudiant> FindAll()
+        public ObservableCollection<categorieMateriel> FindAll()
         {
-            ObservableCollection<Etudiant> lesEtudiants = new ObservableCollection<Etudiant>();
+            ObservableCollection<categorieMateriel> lesEtudiants = new ObservableCollection<categorieMateriel>();
             DataAccess accesBD = new DataAccess();
             String requete = "select id, nom, prenom from etudiants ;";
             DataTable datas = accesBD.GetData(requete);
@@ -29,7 +34,7 @@ namespace SAE_01.Model
             {
                 foreach (DataRow row in datas.Rows)
                 {
-                    Etudiant e = new Etudiant(int.Parse(row["id"].ToString()), (String)row["nom"], (String)row["prenom"]);
+                    categorieMateriel e = new categorieMateriel(int.Parse(row["idcategorie"].ToString()), (String)row["nomcategorie"]);
                     lesEtudiants.Add(e);
                 }
             }
