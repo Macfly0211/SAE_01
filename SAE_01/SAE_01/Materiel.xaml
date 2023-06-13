@@ -50,17 +50,17 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
-        <Button Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
-        <Button Content="Supprimer" Margin="58,246,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
 
         <Label Content="Code barre :" Margin="215,66,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75"/>
-        <TextBox TextWrapping="Wrap" Margin="215,92,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <TextBox x:Name="tbCodeBarre" TextWrapping="Wrap" Margin="215,92,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
 
         <Label Content="Nom matériel :" Margin="215,117,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
-        <TextBox TextWrapping="Wrap" Margin="215,141,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <TextBox x:Name="tbNomMateriel" TextWrapping="Wrap" Margin="215,141,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
 
         <Label Content="Référence constructeur :" Margin="215,158,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="138"/>
-        <TextBox TextWrapping="Wrap" Margin="215,184,0,0" TextChanged="TextBox_TextChanged" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <TextBox x:Name="tbRefConstructeur" TextWrapping="Wrap" Margin="215,184,0,0" TextChanged="TextBox_TextChanged" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
     </Grid>
 </Window>
