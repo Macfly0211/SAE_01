@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE_01"
-    xmlns:model="clr-namespace:SAE_01.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:SAE_01.Model"
     Title="MatInfo"
     Width="1000"
     Height="750"
@@ -13,9 +13,9 @@
     MinHeight="750"
     mc:Ignorable="d">
     <Window.DataContext>
-        <model:ApplicationData x:Name="applicationData"/>
+        <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
-    
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -56,25 +56,41 @@
         <DataGrid
             x:Name="dgMain"
             Grid.Row="1"
-            
-            
             Margin="10,10,10,10"
-            d:ItemsSource="{d:SampleData ItemCount=5}"
+            d:ItemsSource="{Binding LesAttribution}"
             AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Nom catégorie" />
-                <DataGridTextColumn Width="*" Header="Nom matériel" />
-                <DataGridTextColumn Width="*" Header="Nom personnel" />
-                <DataGridTextColumn Width="*" Header="Prénom personnel" />
-                <DataGridTextColumn Width="*" Header="Date" />
-                <DataGridTextColumn Width="*" Header="Commentaire" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Idmateriel}"
+                    Header="Nom matériel" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UnPersonnel.Nompersonnel}"
+                    Header="Nom personnel" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UnPersonnel.Prenompersonnel}"
+                    Header="Prénom personnel" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Dateattribution}"
+                    Header="Date" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Commentaireattribution}"
+                    Header="Commentaire" />
 
             </DataGrid.Columns>
         </DataGrid>
-        <ListView x:Name="lvCategorie" Margin="766,60,34,10" d:ItemsSource="{Binding Path=LesCategorie}">
+        <ListView
+            x:Name="lvCategorie"
+            Margin="766,60,34,10"
+            d:ItemsSource="{Binding Path=LesCategorie}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nomcategorie}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nomcategorie}" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -87,13 +103,14 @@
             Content="Nom personnel :"
             RenderTransformOrigin="1.095,-6.075" />
 
-        <TextBox x:Name="tbPersonnel"
-            Text="{Binding LesPersonnel}"
+        <TextBox
+            x:Name="tbPersonnel"
             Width="120"
             Height="22"
             Margin="536,62,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Text="{Binding LesPersonnel}"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
         <Label
@@ -104,7 +121,8 @@
             VerticalAlignment="Top"
             Content="Nom matériel :"
             RenderTransformOrigin="1.095,-6.075" />
-        <TextBox x:Name="tbMateriel"
+        <TextBox
+            x:Name="tbMateriel"
             Width="120"
             Height="22"
             Margin="536,113,0,0"
@@ -136,7 +154,8 @@
             VerticalAlignment="Top"
             Content="Commentaire :"
             RenderTransformOrigin="1.095,-6.075" />
-        <TextBox x:Name="tbCommentaire"
+        <TextBox
+            x:Name="tbCommentaire"
             Width="238"
             Height="22"
             Margin="150,232,0,0"
@@ -144,7 +163,8 @@
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
-        <TextBox x:Name="tbDate"
+        <TextBox
+            x:Name="tbDate"
             Width="120"
             Height="22"
             Margin="150,171,0,0"
@@ -153,29 +173,37 @@
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
 
-        <Button x:Name="btnAjouter"
+        <Button
+            x:Name="btnAjouter"
             Width="92"
             Height="38"
             Margin="10,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" />
-        <Button x:Name="btnSupp"
+        <Button
+            x:Name="btnSupp"
             Width="92"
             Height="38"
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer"
-             />
-        <Button x:Name="btnModifier"
+            Content="Supprimer" />
+        <Button
+            x:Name="btnModifier"
             Width="92"
             Height="38"
             Margin="10,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Modifier" />
-        <Image Margin="10,40,0,0" Source="/index.png" Height="87" VerticalAlignment="Top" HorizontalAlignment="Left" Width="294"/>
+        <Image
+            Width="294"
+            Height="87"
+            Margin="10,40,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/index.png" />
 
     </Grid>
 </Window>
