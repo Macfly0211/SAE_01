@@ -57,13 +57,13 @@
             x:Name="dgMain"
             Grid.Row="1"
             Margin="10,10,10,10"
-            d:ItemsSource="{Binding LesAttribution}"
-            AutoGenerateColumns="False">
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding LesAttribution}">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Nom catégorie" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Idmateriel}"
+                    Binding="{Binding UnMateriel.Nommateriel}"
                     Header="Nom matériel" />
                 <DataGridTextColumn
                     Width="*"
@@ -87,7 +87,7 @@
         <ListView
             x:Name="lvCategorie"
             Margin="766,60,34,10"
-            d:ItemsSource="{Binding Path=LesCategorie}">
+            ItemsSource="{Binding Path=LesCategorie}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Nomcategorie}" />
