@@ -35,8 +35,8 @@ namespace SAE_01.Model /// A MODIFIER SI VOTRE PROJET A UN AUTRE NOM
           {
                 NpgSQLConnect = new NpgsqlConnection
                 {
-                    ConnectionString = "Server=srv-peda-new;port=5433;Database=ngrus;Search Path=exemplewpf;uid=ngrus;password=password;" // A MODIFIER POUR VOTR BD
-              };
+                    ConnectionString = "Server=srv-peda-new;port=5433;Database=saecev;Search Path=matinfo;uid=thomacol;password=VFAqAr;" // A MODIFIER POUR VOTR BD
+                };
               NpgSQLConnect.Open();
                 
                 return NpgSQLConnect.State.Equals(System.Data.ConnectionState.Open);

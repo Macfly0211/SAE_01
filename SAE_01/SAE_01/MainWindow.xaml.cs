@@ -1,4 +1,5 @@
 ﻿using SAE_01;
+using SAE_01.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace SAE_01
         public MainWindow()
         {
             InitializeComponent();
+            DataAccess accesBD = new DataAccess();
+            bool res = accesBD.OpenConnection();
+            MessageBox.Show("Résultat de la connexion : " + res);
         }
 
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
