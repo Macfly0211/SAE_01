@@ -69,21 +69,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Image
-            Width="100"
-            Height="100"
-            Margin="122,57,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Source="/index.png" />
-        <Image
-            Width="281"
-            Height="90"
-            Margin="10,32,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Source="/index.png"
-            Stretch="Fill" />
         <Label
             Width="101"
             Height="26"
@@ -179,6 +164,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Modifier" />
+        <Image Margin="10,40,0,0" Source="/index.png" Height="222" VerticalAlignment="Top" HorizontalAlignment="Left" Width="294"/>
 
     </Grid>
 </Window>
