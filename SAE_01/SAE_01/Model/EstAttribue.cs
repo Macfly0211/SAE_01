@@ -36,24 +36,10 @@ namespace SAE_01.Model
                 return unPersonnel;
             }
 
-            set
-            {
-                unPersonnel = value;
-            }
-        }
-
-        internal Materiel UnMateriel
-        {
-            get
-            {
-                return unMateriel;
-            }
-
-            set
-            {
-                unMateriel = value;
-            }
-        }
+        public int Idpersonnel { get; set; }
+        public int Idmateriel { get; set; }
+        public DateTime Date { get; set; }
+        public string Commentaireattribution { get; set; }
 
         public ObservableCollection<EstAttribue> FindAll()
         {
