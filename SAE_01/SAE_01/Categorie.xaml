@@ -37,7 +37,7 @@
         <DataGrid
             Grid.Row="1"
             Margin="10,11,10,10"
-            d:ItemsSource="{Binding LesCategorieMateriel}"
+            ItemsSource="{Binding LesCategorieMateriel}"
             AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn
