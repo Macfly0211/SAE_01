@@ -35,6 +35,10 @@ namespace SAE_01.Model
             {
                 return unPersonnel;
             }
+            set
+            {
+                unPersonnel = value;
+            }
         }
         public int Idpersonnel { get; set; }
         public int Idmateriel { get; set; }
