@@ -14,7 +14,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfSAE01
+namespace SAE_01
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
