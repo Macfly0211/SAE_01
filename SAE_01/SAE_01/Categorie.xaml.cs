@@ -1,6 +1,8 @@
 ﻿using SAE_01;
+using SAE_01.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,7 @@ namespace SAE_01
         public Categorie()
         {
             InitializeComponent();
+            
         }
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
@@ -52,6 +55,41 @@ namespace SAE_01
             MainWindow menu = new MainWindow();
             this.Close();
             menu.Show();
+        }
+
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            string nom = tbNom.Text;
+            DataAccess accesBD = new DataAccess();
+            String requete = "insert into categorie_materiel (nomcategorie) values ("+ nom +");";
+            accesBD.SetData(requete);
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+            if (DG_categorie.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner une categorie.");
+            }
+            else
+            {
+                //MessageBox.Show("Voulez vous supprimer " + DG_categorie.SelectedItem.ToString() + " ?");
+                MessageBoxResult res = MessageBox.Show("Attention la catégorie va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                switch (res)
+                {
+                    case MessageBoxResult.Cancel:
+                        break;
+                    case MessageBoxResult.OK:
+                        foreach (CategorieMateriel categorieMateriel in DG_categorie.SelectedItems)
+                        {
+                            categorieMateriel.Delete();
+                        }
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+
+                }
+            }
         }
     }
 }

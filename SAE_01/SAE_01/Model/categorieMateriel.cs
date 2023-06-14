@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    public class CategorieMateriel
+    public class CategorieMateriel : Crud<CategorieMateriel>
     {
         public CategorieMateriel(int idcategorie, string nomcategorie)
         {
@@ -39,6 +39,33 @@ namespace SAE_01.Model
                 }
             }
             return lesCategorieMateriel;
+        }
+
+        public void Create()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            DataAccess accesBD = new DataAccess();
+            String requete = "delete from categorie_materiel where nomcategorie = '' ;";
+            accesBD.SetData(requete);
+        }
+
+        public ObservableCollection<CategorieMateriel> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
         }
     }
 }

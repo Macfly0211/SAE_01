@@ -34,7 +34,7 @@
 
 
         </Menu>
-        <DataGrid
+        <DataGrid x:Name="DG_categorie"
             Grid.Row="1"
             Margin="10,11,10,10"
             ItemsSource="{Binding LesCategorieMateriel}"
@@ -58,7 +58,7 @@
             Margin="58,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ajouter" />
+            Content="Ajouter" Click="btnAjouter_Click" />
         <Button
             x:Name="btnModifier"
             Width="116"
@@ -74,7 +74,7 @@
             Margin="58,246,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" />
+            Content="Supprimer" Click="btnSupprimer_Click" />
 
         <Label
             Width="75"
