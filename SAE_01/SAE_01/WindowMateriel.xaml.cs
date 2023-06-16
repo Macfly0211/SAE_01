@@ -65,7 +65,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-           new Materiel(0,)
+           
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
