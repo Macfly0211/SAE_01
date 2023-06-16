@@ -24,7 +24,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TextAlignment="Center" />
 
 
         <Label
@@ -40,7 +40,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" Margin="0,143,0,0" />
+            TextWrapping="Wrap" Margin="0,143,0,0" TextAlignment="Center" />
         <Label
             Width="112"
             Height="33"
@@ -55,8 +55,8 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" />
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="104,291,0,10" Width="128"/>
+            TextWrapping="Wrap" TextAlignment="Center" />
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="104,0,0,10" Width="128" Height="41" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>
