@@ -85,9 +85,9 @@ namespace SAE_01
                     case MessageBoxResult.Cancel:
                         break;
                     case MessageBoxResult.OK:
-                        foreach (CategorieMateriel Materiel in DG_materiel.SelectedItems)
+                        foreach (Model.Materiel lemateriel in DG_materiel.SelectedItems)
                         {
-                            Materiel.Delete();
+                           lemateriel.Delete();
                         }
                         this.ReloadData();
                         break;
