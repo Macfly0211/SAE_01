@@ -50,21 +50,17 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        <ComboBox
-            x:Name="cbCategorie"
-            Width="168"
-            Height="20"
-            Margin="215,239,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+        
 
         <Label
             Width="96"
             Height="30"
-            Margin="215,209,0,0"
+            Margin="634,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom catégorie :" />
+            Content="Nom catégorie :"
+            />
+        
         <DataGrid
             x:Name="DG_materiel"
             Grid.Row="1"
@@ -171,5 +167,12 @@
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
+        <ListView ItemsSource="{Binding LesCategorieMateriel}" Margin="730,98,123,2" x:Name="lvCategorie">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

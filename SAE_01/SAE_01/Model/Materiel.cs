@@ -26,7 +26,14 @@ namespace SAE_01.Model
             this.Codebarreinventaire = codebarreinventaire;
         }
 
-        //champs
+        public Materiel(int idmateriel, CategorieMateriel idcategorie, string nommateriel, string referenceconstructeurmateriel, string codebarreinventaire)
+        {
+            this.Idmateriel = idmateriel;
+            this.UneCategorie = idcategorie;
+            this.Nommateriel = nommateriel;
+            this.Referenceconstructeurmateriel = referenceconstructeurmateriel;
+            this.Codebarreinventaire = codebarreinventaire;
+        }
 
         private CategorieMateriel uneCategorie;
 
@@ -89,7 +96,7 @@ namespace SAE_01.Model
         //Create = méthode de création de nouveau personnels
         public void Create()
         {
-            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ('{this.fk_idcategorie}', '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
+            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ('{this.UneCategorie.Idcategorie}', '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
         }
 
         public void Read()
