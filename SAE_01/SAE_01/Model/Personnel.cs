@@ -10,6 +10,7 @@ namespace SAE_01.Model
 {
     public class Personnel : Crud<Personnel>
     {
+        //constructeur
         public Personnel()
         {
         }
@@ -22,16 +23,21 @@ namespace SAE_01.Model
             this.Prenompersonnel = prenompersonnel;
         }
 
+
+        //champs
         public int Idpersonnel { get; set; }
         public string Emailpersonnel { get; set; }
         public string Nompersonnel { get; set; }
         public string Prenompersonnel { get; set; }
 
+
+        //Create = méthode de création de nouveau personnels
         public void Create()
         {
             new DataAccess().SetData($"insert into personnel (emailpersonnel, nompersonnel, prenompersonnel) values ('{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}');");
         }
 
+        //Delete = méthode de suppression de personnels
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -47,6 +53,8 @@ namespace SAE_01.Model
             }
         }
 
+
+        //FindAll = remonte les données
         public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lesPersonnel = new ObservableCollection<Personnel>();
@@ -74,6 +82,8 @@ namespace SAE_01.Model
             throw new NotImplementedException();
         }
 
+
+        //UPDATE = met a jour les données
         public void Update()
         {
             new DataAccess().SetData($"Update personnel '{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}';");

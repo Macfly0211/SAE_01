@@ -33,6 +33,8 @@ namespace SAE_01
             viewCategorie.Filter = CategorieFilter;
         }
 
+        //MENU
+
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
         {
             WindowMateriel materiel = new WindowMateriel();
@@ -61,6 +63,8 @@ namespace SAE_01
             menu.Show();
         }
 
+        //BOUTON
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             if (tbNom.Text == "" || tbNom.Text == " ")
@@ -81,6 +85,7 @@ namespace SAE_01
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
+            //vérification sélection dans la datagrid
             if (DG_categorie.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner une categorie.");
@@ -88,7 +93,9 @@ namespace SAE_01
             else
             {
                 MessageBoxResult res = MessageBox.Show("Attention la catégorie sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
-                
+                //message de confirmation de la suppression
+
+                //Différent cas de réponse
                 switch (res)
                 {
                     case MessageBoxResult.Cancel:
@@ -97,6 +104,7 @@ namespace SAE_01
                         foreach (CategorieMateriel categorieMateriel in DG_categorie.SelectedItems)
                         {
                             categorieMateriel.Delete();
+                            //appelle à la fonction Delete
                         }
                         this.ReloadData();
                         break;
@@ -109,6 +117,7 @@ namespace SAE_01
             
         }
 
+        //focntion reload qui appelle ApplicationData
         public void ReloadData ()
         {
             applicationData.reloadAppData();

@@ -21,6 +21,7 @@ namespace SAE_01.Model
             reloadAppData();
         }
 
+        //ReloadData = permet de mettre à jour les données
         public void reloadAppData()
         {
             Personnel p = new Personnel();
@@ -35,12 +36,12 @@ namespace SAE_01.Model
             EstAttribue a = new EstAttribue();
             LesAttribution = a.FindAll();
 
-            //Attribution elle a un materiel
+            //Attribution a un materiel
             foreach (EstAttribue uneAttribution in LesAttribution.ToList())
             {
                 uneAttribution.UnMateriel = LesMateriel.ToList().Find(m => m.Idmateriel == uneAttribution.fk_idMateriel);
             }
-            //Attribution elle a un personnel
+            //Attribution a un personnel
             foreach (EstAttribue uneAttribution in LesAttribution.ToList())
             {
                 uneAttribution.UnPersonnel = LesPersonnel.ToList().Find(p => p.Idpersonnel == uneAttribution.fk_idPerso);

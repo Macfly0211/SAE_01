@@ -11,6 +11,7 @@ namespace SAE_01.Model
 {
     public class Materiel : Crud<Materiel>
     {
+        //constructeur
 
         public Materiel()
         {
@@ -24,6 +25,8 @@ namespace SAE_01.Model
             this.Referenceconstructeurmateriel = referenceconstructeurmateriel;
             this.Codebarreinventaire = codebarreinventaire;
         }
+
+        //champs
 
         private CategorieMateriel uneCategorie;
 
@@ -47,6 +50,7 @@ namespace SAE_01.Model
             }
         }
 
+        //FindAll = remonte les données
         public ObservableCollection<Materiel> FindAll()
         {
             ObservableCollection<Materiel> lesMateriel = new ObservableCollection<Materiel>();
@@ -64,6 +68,7 @@ namespace SAE_01.Model
             return lesMateriel;
         }
 
+        //Delete = méthode de suppression de personnels
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -81,6 +86,7 @@ namespace SAE_01.Model
             
         }
 
+        //Create = méthode de création de nouveau personnels
         public void Create()
         {
             new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ('{this.fk_idcategorie}', '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");

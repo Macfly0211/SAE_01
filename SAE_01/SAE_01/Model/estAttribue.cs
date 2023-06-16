@@ -10,6 +10,7 @@ namespace SAE_01.Model
 {
     public class EstAttribue : Crud<EstAttribue>
     {
+        //constructeur
         public EstAttribue(int idpersonnel, int idmateriel, DateTime dateattribution, string commentaireattribution)
         {
             this.fk_idPerso = idpersonnel;
@@ -22,6 +23,8 @@ namespace SAE_01.Model
         {
             
         }
+
+        //champs
         private Personnel unPersonnel;
         private Materiel unMateriel;
         public int fk_idPerso { get; set; }
@@ -56,6 +59,7 @@ namespace SAE_01.Model
 
         //public string Commentaireattribution { get; set; }
 
+        //FindAll = remonte les données
         public ObservableCollection<EstAttribue> FindAll()
         {
             ObservableCollection<EstAttribue> lesAttribution = new ObservableCollection<EstAttribue>();
@@ -73,6 +77,7 @@ namespace SAE_01.Model
             return lesAttribution;
         }
 
+        //Create = méthode de création de nouveau personnels
         public void Create()
         {
             new DataAccess().SetData($"insert into est_attribue (idpersonnel, idmateriel, dateattribution, commentaireattribution) values('{this.fk_idPerso}','{this.fk_idMateriel}','{this.Dateattribution}','{this.Commentaireattribution}');");
@@ -88,6 +93,7 @@ namespace SAE_01.Model
             throw new NotImplementedException();
         }
 
+        //Delete = méthode de suppression de personnels
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
