@@ -73,9 +73,22 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text).Create();
-            this.ReloadData();
-            DG_materiel.DataContext = applicationData.LesMateriel;
+            if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || cbCategorie.Text=="")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
+            else
+            {
+                new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text).Create();
+                this.ReloadData();
+                DG_materiel.DataContext = applicationData.LesMateriel;
+                tbNomMateriel.Text = "";
+                tbCodeBarre.Text = "";
+                tbRefConstructeur.Text = "";
+                cbCategorie.Text = "";
+
+            }
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)

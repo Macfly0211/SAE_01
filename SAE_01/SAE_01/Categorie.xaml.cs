@@ -60,8 +60,18 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            new CategorieMateriel(0, tbNom.Text).Create();
-            this.ReloadData();
+            if (tbNom.Text == "" || tbNom.Text == " ")
+            {
+                MessageBox.Show("Champs nom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                tbNom.Text = "";
+            }
+            else
+            {
+                new CategorieMateriel(0, tbNom.Text).Create();
+                this.ReloadData();
+                tbNom.Text= "";
+
+            }
         
         }
 
@@ -73,7 +83,7 @@ namespace SAE_01
             }
             else
             {
-                MessageBoxResult res = MessageBox.Show("Attention la catégorie va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                MessageBoxResult res = MessageBox.Show("Attention la catégorie sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
                 
                 switch (res)
                 {

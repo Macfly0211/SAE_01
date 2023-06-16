@@ -20,7 +20,7 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <Menu>
+        <Menu Margin="0,0,0,419" Grid.RowSpan="2">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -39,7 +39,21 @@
 
         </Menu>
 
-        <ComboBox x:Name="cbCategorie" Margin="215,239,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="168"/>
+        <Image
+            Width="294"
+            Height="87"
+            Margin="696,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/index.png" />
+        
+        <ComboBox
+            x:Name="cbCategorie"
+            Width="168"
+            Height="20"
+            Margin="215,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
 
         <Label
             Width="96"
@@ -109,7 +123,7 @@
         <Label
             Width="75"
             Height="26"
-            Margin="215,66,0,0"
+            Margin="215,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Code barre :" />
@@ -117,7 +131,7 @@
             x:Name="tbCodeBarre"
             Width="236"
             Height="20"
-            Margin="215,92,0,0"
+            Margin="215,188,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -125,7 +139,7 @@
         <Label
             Width="94"
             Height="24"
-            Margin="215,117,0,0"
+            Margin="215,63,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom matériel :" />
@@ -133,7 +147,7 @@
             x:Name="tbNomMateriel"
             Width="236"
             Height="22"
-            Margin="215,141,0,0"
+            Margin="215,87,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -141,7 +155,7 @@
         <Label
             Width="138"
             Height="26"
-            Margin="215,158,0,0"
+            Margin="215,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Référence constructeur :" />
@@ -149,7 +163,7 @@
             x:Name="tbRefConstructeur"
             Width="236"
             Height="20"
-            Margin="215,184,0,0"
+            Margin="215,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
