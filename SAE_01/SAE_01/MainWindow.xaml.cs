@@ -27,35 +27,30 @@ namespace SAE_01
         {
             InitializeComponent();
 
-            //foreach (CategorieMateriel categorie in applicationData.LesCategorieMateriel)
+            //foreach (Materiel materiel in applicationData.LesMateriel)
             //{
-            //    lvCategorie.Items.Add(new ListViewItem()
+            //    lvMateriel.Items.Add(new ListViewItem()
             //    {
-            //        Content = categorie.Nomcategorie,
-            //        Name = $"categorie{categorie.Idcategorie}"
+            //        Content = materiel.Nommateriel,
+            //        Name = $"materiel{materiel.Idmateriel}"
+
             //    });
             //}
             //foreach (Personnel personnel in applicationData.LesPersonnel)
             //{
-            //    lvCategorie.Items.Add(new ListViewItem()
+            //    lvPersonnel.Items.Add(new ListViewItem()
             //    {
             //        Content = personnel.Nompersonnel,
-            //        Name = $"categorie{personnel.Idpersonnel}"
+            //        Name = $"personnel{personnel.Idpersonnel}"
 
-                    
+
+
             //    });
             //}
-            //foreach (CategorieMateriel categorie in applicationData.LesCategorieMateriel)
-            //{
-            //    lvCategorie.Items.Add(new ListViewItem()
-            //    {
-            //        Content = categorie.Nomcategorie,
-            //        Name = $"categorie{categorie.Idcategorie}"
-            //    });
-            //}
+            
         }
 
-            private void MenuCategorie_Click(object sender, RoutedEventArgs e)
+        private void MenuCategorie_Click(object sender, RoutedEventArgs e)
         {
             Categorie categorie = new Categorie();
             this.Close();
@@ -91,9 +86,12 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            new EstAttribue(lvPersonnel.SelectedIndex,lvMateriel.SelectedIndex, DateTime.Parse(tbDate.Text), tbCommentaire.Text).Create();
-            this.ReloadData();
-            DG_Main.DataContext = applicationData.LesAttribution;
+            EstAttribue attribution =  new EstAttribue((Personnel)lvPersonnel.SelectedItem, (Materiel)lvMateriel.SelectedItem, (DateTime)dpDate.SelectedDate, tbCommentaire.Text);
+            attribution.Create();
+            this.applicationData.LesAttribution.Add(attribution);
+            //this.ReloadData();
+            //DG_Main.DataContext = applicationData.LesAttribution;
+            this.DG_Main.Items.Refresh();
         }
 
 

@@ -27,14 +27,7 @@ namespace SAE_01
         public WindowMateriel()
         {
             InitializeComponent();
-            foreach(CategorieMateriel categorie in applicationData.LesCategorieMateriel)
-            {
-                cbCategorie.Items.Add(new ComboBoxItem()
-                {
-                    Content = categorie.Nomcategorie,
-                    Name = $"categorie{categorie.Idcategorie}"
-                });
-            }
+            
         }
 
         
@@ -73,20 +66,22 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || cbCategorie.Text=="")
+            if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || lvCategorie.SelectedItem=="")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 
             }
             else
             {
-                new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text).Create();
-                this.ReloadData();
-                DG_materiel.DataContext = applicationData.LesMateriel;
+                Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text);
+                materiel.Create();
+                this.applicationData.LesMateriel.Add(materiel);
+                this.DG_materiel.Items.Refresh();
+               
                 tbNomMateriel.Text = "";
                 tbCodeBarre.Text = "";
                 tbRefConstructeur.Text = "";
-                cbCategorie.Text = "";
+
 
             }
         }

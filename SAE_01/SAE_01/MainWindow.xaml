@@ -33,6 +33,7 @@
             <MenuItem Click="MenuPersonnel_Click" Header="_Personnel" />
 
 
+
             <!--<MenuItem Click="MenuAttribution_Click" Header="_Attribution" />-->
 
 
@@ -56,8 +57,8 @@
 
         <ListView
             x:Name="lvCategorie"
-            Margin="862,60,19,10"
-            ItemsSource="{Binding LesCategorieMateriel}">
+            Margin="862,60,0,0"
+            ItemsSource="{Binding LesCategorieMateriel}" HorizontalAlignment="Left" Width="119" Height="242" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
@@ -96,6 +97,7 @@
             VerticalAlignment="Top"
             Content="Date  :"
             RenderTransformOrigin="1.095,-6.075" />
+        <DatePicker Margin="150,168,0,0" x:Name="dpDate" HorizontalAlignment="Left" Width="154" Height="26" VerticalAlignment="Top"/>
         <Label
             Width="102"
             Height="26"
@@ -109,15 +111,6 @@
             Width="238"
             Height="22"
             Margin="150,224,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextChanged="TextBox_TextChanged"
-            TextWrapping="Wrap" />
-        <TextBox
-            x:Name="tbDate"
-            Width="120"
-            Height="22"
-            Margin="150,171,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
@@ -193,8 +186,8 @@
         </Grid>
         <ListView
             x:Name="lvMateriel"
-            Margin="714,60,169,10"
-            ItemsSource="{Binding LesMateriel}">
+            Margin="714,60,0,0"
+            ItemsSource="{Binding LesMateriel}" HorizontalAlignment="Left" Width="117" Height="242" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nommateriel}" Width="150"/>
@@ -203,12 +196,12 @@
         </ListView>
         <ListView
             x:Name="lvPersonnel"
-            Margin="508,60,330,10"
-            ItemsSource="{Binding LesPersonnel}" >
+            Margin="508,60,0,0"
+            ItemsSource="{Binding Path=LesPersonnel}" HorizontalAlignment="Left" Width="162" Height="242" VerticalAlignment="Top" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" Width="80"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prenompersonnel}" Header="Prenom" Width="80"/>
+                    <GridViewColumn  DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prenompersonnel}" Header="Prenom" />
                 </GridView>
             </ListView.View>
         </ListView>

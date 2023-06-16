@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SAE_01.Model
 {
@@ -14,6 +15,13 @@ namespace SAE_01.Model
         {
             this.fk_idPerso = idpersonnel;
             this.fk_idMateriel = idmateriel;
+            this.Dateattribution = dateattribution;
+            this.Commentaireattribution = commentaireattribution;
+        }
+        public EstAttribue(Personnel p, Materiel m, DateTime dateattribution, string commentaireattribution)
+        {
+            this.UnPersonnel = p;
+            this.UnMateriel = m;
             this.Dateattribution = dateattribution;
             this.Commentaireattribution = commentaireattribution;
         }
@@ -75,7 +83,10 @@ namespace SAE_01.Model
 
         public void Create()
         {
-            new DataAccess().SetData($"insert into est_attribue (idpersonnel, idmateriel, dateattribution, commentaireattribution) values('{this.fk_idPerso}','{this.fk_idMateriel}','{this.Dateattribution}','{this.Commentaireattribution}');");
+
+            String sql = $"insert into est_attribue (idpersonnel, idmateriel, dateattribution, commentaireattribution) values ({this.UnPersonnel.Idpersonnel},{this.UnMateriel.Idmateriel},'{this.Dateattribution.Year}-{this.Dateattribution.Month}-{this.Dateattribution.Day}','{this.Commentaireattribution}');";
+            MessageBox.Show(sql);
+            new DataAccess().SetData(sql);
         }
 
         public void Read()
