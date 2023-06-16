@@ -10,8 +10,7 @@
     Width="1000"
     Height="750"
     MinWidth="1000"
-    MinHeight="750"
-    mc:Ignorable="d">
+    MinHeight="750">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
