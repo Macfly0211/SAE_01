@@ -28,6 +28,7 @@
             <MenuItem Header="_Matériel" />
 
             <MenuItem Click="MenuPersonnel_Click" Header="_Personnel" />
+            
 
 
             <!--<MenuItem Header="_Attribution" Click="MenuAttribution_Click" />-->
@@ -38,6 +39,8 @@
 
 
         </Menu>
+
+        <Button Content="Rechercher" Height="31" Width="101" Margin="426,234,472,50" Click="Button_Click"/>
 
         <Image
             Width="294"
@@ -63,7 +66,7 @@
             Grid.Row="1"
             Margin="10,11,10,10"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding Path=LesMateriel}">
+            ItemsSource="{Binding Path=LesMateriel}" SelectionChanged="DG_materiel_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="50*"

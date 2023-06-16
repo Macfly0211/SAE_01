@@ -100,5 +100,34 @@ namespace SAE_01
             applicationData.reloadAppData();
             this.DG_Main.ItemsSource = applicationData.LesAttribution;
         }
+
+        private void btnSupp_Click(object sender, RoutedEventArgs e)
+        {
+            if (DG_Main.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner une attribution.");
+            }
+            else
+            {
+                MessageBoxResult res = MessageBox.Show("Attention l'attribution sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+
+                switch (res)
+                {
+                    case MessageBoxResult.Cancel:
+                        break;
+                    case MessageBoxResult.OK:
+                        foreach (EstAttribue latribution in DG_Main.SelectedItems)
+                        {
+                            latribution.Delete();
+                        }
+                        this.ReloadData();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+
+                }
+                this.ReloadData();
+            }
+        }
     }
 }

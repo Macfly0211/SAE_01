@@ -29,13 +29,18 @@ namespace SAE_01
             if (mode == Mode.Update)
             {
                 btCreer.Content = "Modifier";
-                this.Title = "Modification concessionnaire";
+                this.Title = "Modification Personnel";
             }
             else if (mode == Mode.Insert)
             {
                 btCreer.Content = "Ajouter";
-                this.Title = "Ajout concessionnaire";
+                this.Title = "Ajout Personnel";
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false; // ferme automatiquement la fenêtre
         }
     }
 }

@@ -30,6 +30,7 @@ namespace SAE_01
             
         }
 
+        //MENU
         
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
@@ -64,6 +65,8 @@ namespace SAE_01
 
         }
 
+        //BOUTONS
+
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || lvCategorie.SelectedItem=="")
@@ -83,20 +86,23 @@ namespace SAE_01
                 tbRefConstructeur.Text = "";
 
 
+
             }
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-
+            //vérification de la sélection dans la dataGrid
             if (DG_materiel.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner un matériel.");
             }
             else
             {
-                MessageBoxResult res = MessageBox.Show("Attention le matériel va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                MessageBoxResult res = MessageBox.Show("Attention le matériel sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                //message d'alerte de la suppression
 
+                //résulatats des boutons de la message box
                 switch (res)
                 {
                     case MessageBoxResult.Cancel:
@@ -105,6 +111,7 @@ namespace SAE_01
                         foreach (Model.Materiel lemateriel in DG_materiel.SelectedItems)
                         {
                            lemateriel.Delete();
+                            //appelle de la donction Delete
                         }
                         this.ReloadData();
                         break;
@@ -117,10 +124,21 @@ namespace SAE_01
 
         }
 
+        //ReloadData qui appelle ApplicationData
         public void ReloadData()
         {
             applicationData.reloadAppData();
             this.DG_materiel.ItemsSource = applicationData.LesMateriel;
+        }
+
+        private void DG_materiel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

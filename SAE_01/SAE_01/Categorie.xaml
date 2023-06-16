@@ -24,16 +24,13 @@
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Click="Menu_Click" Header="_Menu" />
-
             <MenuItem Header="_Catégorie de matériel" />
-
             <MenuItem Click="MenuMateriel_Click" Header="_Matériel" />
-
             <MenuItem Click="MenuPersonnel_Click" Header="_Personnel" />
 
-
-
         </Menu>
+        <Button Content="Rechercher" Height="35" Width="87" Margin="215,132,0,0" Click="Button_Click" RenderTransformOrigin="0.494,0.544" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
         <DataGrid
             x:Name="DG_categorie"
             Grid.Row="1"
@@ -56,7 +53,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="/index.png" />
-        
+
         <Button
             x:Name="btnAjouter"
             Width="116"
@@ -99,5 +96,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
+
+
+
+
     </Grid>
 </Window>

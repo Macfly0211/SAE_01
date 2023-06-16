@@ -124,6 +124,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" Click="btnAjouter_Click" />
+        
         <Button
             x:Name="btnSupp"
             Width="92"
@@ -131,7 +132,7 @@
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" />
+            Content="Supprimer" Click="btnSupp_Click" />
         <Button
             x:Name="btnModifier"
             Width="92"
