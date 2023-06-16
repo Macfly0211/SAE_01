@@ -27,6 +27,14 @@ namespace SAE_01
         public WindowMateriel()
         {
             InitializeComponent();
+            foreach(CategorieMateriel categorie in applicationData.LesCategorieMateriel)
+            {
+                cbCategorie.Items.Add(new ComboBoxItem()
+                {
+                    Content = categorie.Nomcategorie,
+                    Name = $"categorie{categorie.Idcategorie}"
+                });
+            }
         }
 
         
@@ -65,7 +73,9 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-           
+            new Materiel(0, int.Parse(((ComboBoxItem)cbCategorie.SelectedItem).Name.Substring(9)), tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text).Create();
+            this.ReloadData();
+            DG_materiel.DataContext = applicationData.LesMateriel;
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
@@ -102,7 +112,7 @@ namespace SAE_01
         public void ReloadData()
         {
             applicationData.reloadAppData();
-            this.DG_materiel.ItemsSource = applicationData.LesCategorieMateriel;
+            this.DG_materiel.ItemsSource = applicationData.LesMateriel;
         }
     }
 }
