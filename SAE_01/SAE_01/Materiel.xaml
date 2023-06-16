@@ -55,7 +55,7 @@
             </ListView.View>
         </ListView>
         <DataGrid
-            x:Name="DG_meteriel"
+            x:Name="DG_materiel"
             Grid.Row="1"
             Margin="10,11,10,10"
             AutoGenerateColumns="False"

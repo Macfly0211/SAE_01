@@ -72,7 +72,6 @@ namespace SAE_01
             }
             else
             {
-                //MessageBox.Show("Voulez vous supprimer " + DG_categorie.SelectedItem.ToString() + " ?");
                 MessageBoxResult res = MessageBox.Show("Attention la catégorie va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
                 
                 switch (res)

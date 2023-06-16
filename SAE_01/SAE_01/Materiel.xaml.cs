@@ -72,7 +72,7 @@ namespace SAE_01
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
 
-            if (DG_meteriel.SelectedItem == null)
+            if (DG_materiel.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner un matériel.");
             }
@@ -85,9 +85,9 @@ namespace SAE_01
                     case MessageBoxResult.Cancel:
                         break;
                     case MessageBoxResult.OK:
-                        foreach (CategorieMateriel categorieMateriel in DG_meteriel.SelectedItems)
+                        foreach (CategorieMateriel Materiel in DG_materiel.SelectedItems)
                         {
-                            categorieMateriel.Delete();
+                            Materiel.Delete();
                         }
                         this.ReloadData();
                         break;
@@ -103,7 +103,7 @@ namespace SAE_01
         public void ReloadData()
         {
             applicationData.reloadAppData();
-            this.DG_meteriel.ItemsSource = applicationData.LesCategorieMateriel;
+            this.DG_materiel.ItemsSource = applicationData.LesCategorieMateriel;
         }
     }
 }
