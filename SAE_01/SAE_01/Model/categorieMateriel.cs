@@ -63,9 +63,10 @@ namespace SAE_01.Model
             {
                 if (accesBD.OpenConnection())
                 {
-                    String requete = $"DELETE from categorie_materiel where" + $"idcategorie={this.Idcategorie}" + $"nomcategorie={this.Nomcategorie};";
+                    String requete = $"DELETE from categorie_materiel where" + $"idcategorie={this.Idcategorie}" + $" and nomcategorie = '{this.Nomcategorie}';";
                     accesBD.SetData(requete);
-                    
+                    accesBD.CloseConnection();
+
                 }
             }
             //si exception

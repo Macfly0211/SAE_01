@@ -51,7 +51,7 @@ namespace SAE_01.Model /// A MODIFIER SI VOTRE PROJET A UN AUTRE NOM
       /// <summary>
       /// Déconnexion de la base de données
       /// </summary>
-      private void CloseConnection()
+      public void CloseConnection()
       {
           if (NpgSQLConnect!=null)
               if (NpgSQLConnect.State.Equals(System.Data.ConnectionState.Open))
