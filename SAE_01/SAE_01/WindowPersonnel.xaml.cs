@@ -67,5 +67,48 @@ namespace SAE_01
             applicationData.reloadAppData();
             this.DG_personnel.ItemsSource = applicationData.LesPersonnel;
         }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (DG_personnel.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner un personnel.");
+            }
+            else
+            {
+                MessageBoxResult res = MessageBox.Show("Attention le personnel va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+
+                switch (res)
+                {
+                    case MessageBoxResult.Cancel:
+                        break;
+                    case MessageBoxResult.OK:
+                        foreach (Personnel lespersonne in DG_personnel.SelectedItems)
+                        {
+                            lespersonne.Delete();
+                        }
+                        this.ReloadData();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+
+                }
+                this.ReloadData();
+            }
+        }
+
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+
+            WindowAjoutMateriel winAjoutMateriel = new WindowAjoutMateriel((Materiel)DG_personnel.SelectedItem, Mode.Update);
+            winAjoutMateriel.Owner = this;
+
+            bool reponse = (bool)winAjoutMateriel.ShowDialog();
+            if (reponse == true)
+            {
+                DG_personnel.Items.Refresh();
+            }
+        }
     }
 }

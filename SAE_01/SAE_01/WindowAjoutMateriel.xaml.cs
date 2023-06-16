@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAE_01.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,24 @@ namespace SAE_01
     /// <summary>
     /// Logique d'interaction pour WindowAjoutMateriel.xaml
     /// </summary>
+    public enum Mode { Insert, Update };
     public partial class WindowAjoutMateriel : Window
     {
-        public WindowAjoutMateriel()
+        public WindowAjoutMateriel(Materiel cons, Mode mode)
         {
+
+            this.DataContext = cons;
             InitializeComponent();
+            if (mode == Mode.Update)
+            {
+                btCreer.Content = "Modifier";
+                this.Title = "Modification concessionnaire";
+            }
+            else if (mode == Mode.Insert)
+            {
+                btCreer.Content = "Ajouter";
+                this.Title = "Ajout concessionnaire";
+            }
         }
     }
 }

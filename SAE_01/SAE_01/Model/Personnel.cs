@@ -34,7 +34,17 @@ namespace SAE_01.Model
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+
+
+            if (accesBD.OpenConnection())
+            {
+
+                String requete = $"DELETE from personnel where idpersonnel = {this.Idpersonnel};";
+                accesBD.SetData(requete);
+                accesBD.CloseConnection();
+
+            }
         }
 
         public ObservableCollection<Personnel> FindAll()
@@ -66,7 +76,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"Update personnel '{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}';");
         }
     }
 }
