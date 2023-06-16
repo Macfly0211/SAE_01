@@ -40,9 +40,6 @@ namespace SAE_01.Model
                 unPersonnel = value;
             }
         }
-        public int Idpersonnel { get; set; }
-        public int Idmateriel { get; set; }
-        public DateTime Date { get; set; }
 
         internal Materiel UnMateriel
         {
