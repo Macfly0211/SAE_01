@@ -60,8 +60,7 @@ namespace SAE_01.Model
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
-            try
-            {
+            
                 if (accesBD.OpenConnection())
                 {
                     String requete = $"DELETE from categorie_materiel where" + $" idcategorie={this.Idcategorie}" + $" and nomcategorie = '{this.Nomcategorie}';";
@@ -69,20 +68,14 @@ namespace SAE_01.Model
                     accesBD.CloseConnection();
 
                 }
-            }
-            //si exception
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show(ex.Message, "Emprunte exception delete");
-            }
+           
         }
+
         public ObservableCollection<CategorieMateriel> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
         }
-    }
-
-        
+    }    
     
 }
 

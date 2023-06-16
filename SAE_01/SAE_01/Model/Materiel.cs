@@ -5,10 +5,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SAE_01.Model
 {
-    public class Materiel
+    public class Materiel : Crud<Materiel>
     {
         public int fk_idCategorie { get => fk_idCategorie; set => fk_idCategorie = value; }
 
@@ -62,6 +63,45 @@ namespace SAE_01.Model
                 }
             }
             return lesMateriel;
+        }
+
+        public void Delete()
+        {
+            DataAccess accesBD = new DataAccess();
+            
+            
+                if (accesBD.OpenConnection())
+                {
+                      //MessageBoxResult res = MessageBox.Show($"DELETE from materiel where" + $" idmateriel={this.Idmateriel}" + $" idcategorie={this.Idcategorie}" + $" and nommateriel = '{this.Nommateriel}'" + $" referenceconstructeurmateriel='{this.Referenceconstructeurmateriel}'" + $" codebarreinventaire = '{this.Codebarreinventaire};", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+
+                     String requete = $"DELETE from materiel where" + $" idmateriel={this.Idmateriel}" + $" idcategorie={this.Idcategorie}" + $" and nommateriel = '{this.Nommateriel}'" + $" referenceconstructeurmateriel='{this.Referenceconstructeurmateriel}'" + $" codebarreinventaire = '{this.Codebarreinventaire};";
+                     accesBD.SetData(requete);
+                     accesBD.CloseConnection();
+
+                }
+            
+            //si il y a une exception
+            
+        }
+
+        public void Create()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ObservableCollection<Materiel> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
         }
     } 
 }

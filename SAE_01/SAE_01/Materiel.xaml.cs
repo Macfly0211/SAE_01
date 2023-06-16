@@ -1,4 +1,5 @@
 ﻿using SAE_01;
+using SAE_01.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,43 @@ namespace SAE_01
         {
             var w = new WindowAjoutMateriel();
             w.Show();
+        }
+
+        private void btnSupprimer_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (DG_meteriel.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner un matériel.");
+            }
+            else
+            {
+                MessageBoxResult res = MessageBox.Show("Attention le matériel va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+
+                switch (res)
+                {
+                    case MessageBoxResult.Cancel:
+                        break;
+                    case MessageBoxResult.OK:
+                        foreach (CategorieMateriel categorieMateriel in DG_meteriel.SelectedItems)
+                        {
+                            categorieMateriel.Delete();
+                        }
+                        this.ReloadData();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+
+                }
+                this.ReloadData();
+            }
+
+        }
+
+        public void ReloadData()
+        {
+            applicationData.reloadAppData();
+            this.DG_meteriel.ItemsSource = applicationData.LesCategorieMateriel;
         }
     }
 }
