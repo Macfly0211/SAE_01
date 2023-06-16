@@ -84,6 +84,7 @@ namespace SAE_01
                 tbNomMateriel.Text = "";
                 tbCodeBarre.Text = "";
                 tbRefConstructeur.Text = "";
+                MessageBox.Show("Nouveau matériel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
 
 
