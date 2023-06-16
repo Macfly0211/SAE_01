@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SAE_01.Model
 {
@@ -63,7 +64,7 @@ namespace SAE_01.Model
             {
                 if (accesBD.OpenConnection())
                 {
-                    String requete = $"DELETE from categorie_materiel where" + $"idcategorie={this.Idcategorie}" + $" and nomcategorie = '{this.Nomcategorie}';";
+                    String requete = $"DELETE from categorie_materiel where" + $" idcategorie={this.Idcategorie}" + $" and nomcategorie = '{this.Nomcategorie}';";
                     accesBD.SetData(requete);
                     accesBD.CloseConnection();
 
