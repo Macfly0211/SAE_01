@@ -80,7 +80,6 @@
             Margin="536,62,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            LostFocus="LostFocus_Personnel"
             Text="{Binding LesPersonnel, ValidatesOnExceptions=True}"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" 
