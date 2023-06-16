@@ -81,7 +81,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             LostFocus="LostFocus_Personnel"
-            Text="{Binding LesPersonnel, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}"
+            Text="{Binding LesPersonnel, ValidatesOnExceptions=True}"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" 
              />
@@ -177,8 +177,8 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        <Grid Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=lvCategorie}"
-        <DataGrid
+        <Grid Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=lvCategorie}">
+            <DataGrid
             x:Name="dgMain"
             Grid.Row="1"
             Margin="10,10,10,10"
@@ -211,7 +211,8 @@
                     Header="Commentaire" />
 
             </DataGrid.Columns>
-        </DataGrid>
+            </DataGrid>
+        </Grid>
 
     </Grid>
 </Window>
