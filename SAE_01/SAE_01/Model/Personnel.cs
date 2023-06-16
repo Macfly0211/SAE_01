@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    public class Personnel
+    public class Personnel : Crud<Personnel>
     {
         public Personnel()
         {
         }
-
+        
         public Personnel(int idpersonnel, string emailpersonnel, string nompersonnel, string prenompersonnel)
         {
             this.Idpersonnel = idpersonnel;
@@ -26,6 +26,16 @@ namespace SAE_01.Model
         public string Emailpersonnel { get; set; }
         public string Nompersonnel { get; set; }
         public string Prenompersonnel { get; set; }
+
+        public void Create()
+        {
+            new DataAccess().SetData($"insert into personnel (emailpersonnel, nompersonnel, prenompersonnel) values ('{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}');");
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
 
         public ObservableCollection<Personnel> FindAll()
         {
@@ -44,7 +54,19 @@ namespace SAE_01.Model
             return lesPersonnel;
         }
 
+        public ObservableCollection<Personnel> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Read()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

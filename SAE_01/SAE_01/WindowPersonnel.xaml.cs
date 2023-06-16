@@ -1,4 +1,5 @@
 ﻿using SAE_01;
+using SAE_01.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,9 @@ namespace SAE_01
     /// <summary>
     /// Logique d'interaction pour Personnel.xaml
     /// </summary>
-    public partial class Personnel : Window
+    public partial class WindowPersonnel : Window
     {
-        public Personnel()
+        public WindowPersonnel()
         {
             InitializeComponent();
         }
@@ -41,7 +42,7 @@ namespace SAE_01
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
         {
-            Materiel materiel = new Materiel();
+            WindowMateriel materiel = new WindowMateriel();
             this.Close();
             materiel.Show();
         }
@@ -51,6 +52,20 @@ namespace SAE_01
             Attribution attribution = new Attribution();
             this.Close();
             attribution.Show();
+        }
+
+        
+
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text).Create();
+            this.ReloadData();
+        }
+
+        public void ReloadData()
+        {
+            applicationData.reloadAppData();
+            this.DG_personnel.ItemsSource = applicationData.LesPersonnel;
         }
     }
 }

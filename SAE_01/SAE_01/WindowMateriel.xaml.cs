@@ -19,12 +19,12 @@ namespace SAE_01
     /// <summary>
     /// Logique d'interaction pour Materiel.xaml
     /// </summary>
-    public partial class Materiel : Window
+    public partial class WindowMateriel : Window
     {
         
 
 
-        public Materiel()
+        public WindowMateriel()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace SAE_01
 
         private void MenuPersonnel_Click(object sender, RoutedEventArgs e)
         {
-            Personnel personnel = new Personnel();
+            WindowPersonnel personnel = new WindowPersonnel();
             this.Close();
             personnel.Show();
         }
@@ -65,8 +65,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            var w = new WindowAjoutMateriel();
-            w.Show();
+           new Materiel(0,)
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)

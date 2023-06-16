@@ -35,7 +35,7 @@ namespace SAE_01
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
         {
-            Materiel materiel = new Materiel();
+            WindowMateriel materiel = new WindowMateriel();
             this.Close();
             materiel.Show();
         }
@@ -49,7 +49,7 @@ namespace SAE_01
 
         private void MenuPersonnel_Click(object sender, RoutedEventArgs e)
         {
-            Personnel personnel = new Personnel();
+            WindowPersonnel personnel = new WindowPersonnel();
             this.Close();
             personnel.Show();
         }

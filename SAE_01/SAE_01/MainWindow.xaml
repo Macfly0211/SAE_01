@@ -22,7 +22,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        
+
         <Menu Grid.RowSpan="2">
             <MenuItem Header="_Menu" />
 
@@ -53,7 +53,7 @@
             VerticalAlignment="Top"
             Content="Nom catégorie :"
             RenderTransformOrigin="1.095,-6.075" />
-        
+
         <ListView
             x:Name="lvCategorie"
             Margin="766,60,34,10"
@@ -80,10 +80,7 @@
             Margin="536,62,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Text="{Binding LesPersonnel, ValidatesOnExceptions=True}"
-            TextChanged="TextBox_TextChanged"
-            TextWrapping="Wrap" 
-             />
+            TextWrapping="Wrap" />
         <Label
             Width="101"
             Height="26"
@@ -176,42 +173,42 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        
+        <Grid Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=lvCategorie}">
             <DataGrid
-            x:Name="dgMain"
-            Grid.Row="1"
-            Margin="10,10,10,10"
-            AutoGenerateColumns="False"
-            ItemsSource="{Binding LesAttribution}">
-            <DataGrid.Columns>
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UnMateriel.UneCategorie.Nomcategorie}"
-                    Header="Nom catégorie" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UnMateriel.Nommateriel}"
-                    Header="Nom matériel" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UnPersonnel.Nompersonnel}"
-                    Header="Nom personnel" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding UnPersonnel.Prenompersonnel}"
-                    Header="Prénom personnel" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding Dateattribution}"
-                    Header="Date" />
-                <DataGridTextColumn
-                    Width="*"
-                    Binding="{Binding Commentaireattribution}"
-                    Header="Commentaire" />
+                x:Name="dgMain"
+                Grid.Row="1"
+                Margin="10,10,10,10"
+                AutoGenerateColumns="False"
+                ItemsSource="{Binding LesAttribution}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding UnMateriel.UneCategorie.Nomcategorie}"
+                        Header="Nom catégorie" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding UnMateriel.Nommateriel}"
+                        Header="Nom matériel" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding UnPersonnel.Nompersonnel}"
+                        Header="Nom personnel" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding UnPersonnel.Prenompersonnel}"
+                        Header="Prénom personnel" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Dateattribution}"
+                        Header="Date" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Commentaireattribution}"
+                        Header="Commentaire" />
 
-            </DataGrid.Columns>
+                </DataGrid.Columns>
             </DataGrid>
         </Grid>
 
-    
+    </Grid>
 </Window>
