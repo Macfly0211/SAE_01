@@ -61,6 +61,7 @@ namespace SAE_01
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             new CategorieMateriel(0, tbNom.Text).Create();
+            this.ReloadData();
         
         }
 
