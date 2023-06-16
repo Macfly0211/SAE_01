@@ -60,7 +60,10 @@
             AutoGenerateColumns="False"
             ItemsSource="{Binding LesAttribution}">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Header="Nom catégorie" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding UnMateriel.UneCategorie.Nomcategorie}"
+                    Header="Nom catégorie" />
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding UnMateriel.Nommateriel}"
@@ -87,10 +90,10 @@
         <ListView
             x:Name="lvCategorie"
             Margin="766,60,34,10"
-            ItemsSource="{Binding Path=LesCategorie}">
+            ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nomcategorie}" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
                 </GridView>
             </ListView.View>
         </ListView>
