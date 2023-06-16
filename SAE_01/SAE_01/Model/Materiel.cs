@@ -80,8 +80,6 @@ namespace SAE_01.Model
 
                 }
             
-            //si il y a une exception
-            
         }
 
         public void Create()
