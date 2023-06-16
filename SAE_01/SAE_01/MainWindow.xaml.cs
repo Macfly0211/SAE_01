@@ -86,7 +86,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            if (lvPersonnel.)
+           
             EstAttribue attribution =  new EstAttribue((Personnel)lvPersonnel.SelectedItem, (Materiel)lvMateriel.SelectedItem, (DateTime)dpDate.SelectedDate, tbCommentaire.Text);
             attribution.Create();
             this.applicationData.LesAttribution.Add(attribution);
