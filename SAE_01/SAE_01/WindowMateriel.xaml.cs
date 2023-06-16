@@ -27,7 +27,10 @@ namespace SAE_01
         public WindowMateriel()
         {
             InitializeComponent();
-            
+            DG_materiel.ItemsSource = applicationData.LesMateriel;
+            CollectionView viewMateriel = (CollectionView)CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource);
+            viewMateriel.Filter = MaterielFilter;
+
         }
 
         //MENU
@@ -137,9 +140,28 @@ namespace SAE_01
             
         }
 
+        private bool MaterielFilter(object item)
+        {
+            if (String.IsNullOrEmpty(tbNomMateriel.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return ((item as Materiel).Nommateriel.IndexOf(tbNomMateriel.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+
+          
+        }
+
+       
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+            CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource).Refresh();
+            DG_materiel.SelectedIndex = 0;
         }
     }
 }
