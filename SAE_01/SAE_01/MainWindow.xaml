@@ -177,7 +177,7 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        <Grid Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=lvCategorie}">
+        
             <DataGrid
             x:Name="dgMain"
             Grid.Row="1"
@@ -214,5 +214,5 @@
             </DataGrid>
         </Grid>
 
-    </Grid>
+    
 </Window>
