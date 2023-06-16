@@ -67,7 +67,7 @@
             Grid.Row="1"
             Margin="10,11,10,10"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding Path=LesMateriel}">
+            ItemsSource="{Binding Path=LesMateriel}" SelectionChanged="DG_materiel_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="50*"

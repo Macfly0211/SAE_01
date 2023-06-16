@@ -127,5 +127,10 @@ namespace SAE_01
             applicationData.reloadAppData();
             this.DG_materiel.ItemsSource = applicationData.LesMateriel;
         }
+
+        private void DG_materiel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

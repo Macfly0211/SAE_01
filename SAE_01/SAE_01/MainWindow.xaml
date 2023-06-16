@@ -56,7 +56,7 @@
 
         <ListView
             x:Name="lvCategorie"
-            Margin="862,60,19,10"
+            Margin="862,60,10,10"
             ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
@@ -138,7 +138,7 @@
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" />
+            Content="Supprimer" Click="btnSupp_Click" />
         <Button
             x:Name="btnModifier"
             Width="92"

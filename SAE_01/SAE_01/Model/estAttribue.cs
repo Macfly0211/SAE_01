@@ -90,7 +90,18 @@ namespace SAE_01.Model
 
         public void Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+
+
+            if (accesBD.OpenConnection())
+            {
+                //MessageBoxResult res = MessageBox.Show($"DELETE from materiel where" + $" idmateriel={this.Idmateriel}" + $" idcategorie={this.Idcategorie}" + $" and nommateriel = '{this.Nommateriel}'" + $" referenceconstructeurmateriel='{this.Referenceconstructeurmateriel}'" + $" codebarreinventaire = '{this.Codebarreinventaire};", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+
+                String requete = $"DELETE from est_attribue WHERE idmateriel={this.fk_idMateriel} " + $" and idmateriel={this.fk_idMateriel}" + $" and dateattribution='{this.Dateattribution.ToShortDateString()}';";
+                accesBD.SetData(requete);
+                accesBD.CloseConnection();
+
+            }
         }
 
         public ObservableCollection<EstAttribue> FindBySelection(string criteres)
