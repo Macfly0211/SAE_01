@@ -27,6 +27,14 @@ namespace SAE_01.Model
             this.Commentaireattribution = commentaireattribution;
         }
 
+        public EstAttribue(Personnel p, Materiel m, DateTime dateattribution)
+        {
+            this.UnPersonnel = p;
+            this.UnMateriel = m;
+            this.Dateattribution = dateattribution;
+
+        }
+
         public EstAttribue()
         {
             
