@@ -86,11 +86,18 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-           
-            EstAttribue attribution =  new EstAttribue((Personnel)lvPersonnel.SelectedItem, (Materiel)lvMateriel.SelectedItem, (DateTime)dpDate.SelectedDate, tbCommentaire.Text);
-            attribution.Create();
-            this.applicationData.LesAttribution.Add(attribution);
-            this.DG_Main.Items.Refresh();
+            if (dpDate.Text == "" || lvPersonnel.ItemsSource == "")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                EstAttribue attribution =  new EstAttribue((Personnel)lvPersonnel.SelectedItem, (Materiel)lvMateriel.SelectedItem, (DateTime)dpDate.SelectedDate, tbCommentaire.Text);
+                attribution.Create();
+                this.applicationData.LesAttribution.Add(attribution);
+                this.DG_Main.Items.Refresh();
+
+            }
         }
 
 
