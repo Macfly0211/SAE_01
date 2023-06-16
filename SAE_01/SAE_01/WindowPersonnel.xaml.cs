@@ -60,8 +60,19 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text).Create();
-            this.ReloadData();
+            if (tbNom.Text == "" || tbNom.Text == " " || tbPrenom.Text == "" || tbPrenom.Text == " " || tbEmail.Text == "" || tbEmail.Text == " ")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                
+            }
+            else
+            {
+                new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text).Create();
+                this.ReloadData();
+                tbPrenom.Text = "";
+                tbNom.Text= "";
+                tbEmail.Text = "";
+            }
         }
 
         public void ReloadData()
