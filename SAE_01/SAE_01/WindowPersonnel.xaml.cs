@@ -142,6 +142,7 @@ namespace SAE_01
         private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tbEmail.Text = DG_personnel.SelectedIndex.ToString();
+            tbNom.Text = DG_personnel.SelectedIndex.ToString();
         }
 
         private bool PersonnelFilter(object item)
@@ -162,5 +163,7 @@ namespace SAE_01
             CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource).Refresh();
             DG_personnel.SelectedIndex = 0;
         }
+
+       
     }
 }

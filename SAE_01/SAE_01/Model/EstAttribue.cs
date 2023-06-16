@@ -98,7 +98,6 @@ namespace SAE_01.Model
         {
 
             String sql = $"insert into est_attribue (idpersonnel, idmateriel, dateattribution, commentaireattribution) values ({this.UnPersonnel.Idpersonnel},{this.UnMateriel.Idmateriel},'{this.Dateattribution.Year}-{this.Dateattribution.Month}-{this.Dateattribution.Day}','{this.Commentaireattribution}');";
-            MessageBox.Show(sql);
             new DataAccess().SetData(sql);
         }
 
