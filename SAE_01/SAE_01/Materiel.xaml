@@ -54,7 +54,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top" Click="btnAjouter_Click"/>
         <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
 

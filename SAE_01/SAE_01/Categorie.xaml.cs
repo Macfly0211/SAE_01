@@ -92,6 +92,7 @@ namespace SAE_01
                         break;
 
                 }
+                this.ReloadData();
             }
             
         }

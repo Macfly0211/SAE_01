@@ -61,5 +61,11 @@ namespace SAE_01
         {
 
         }
+
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new WindowAjoutMateriel();
+            w.Show();
+        }
     }
 }
