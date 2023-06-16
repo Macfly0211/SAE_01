@@ -11,7 +11,6 @@ namespace SAE_01.Model
 {
     public class Materiel : Crud<Materiel>
     {
-        public int fk_idCategorie { get => fk_idCategorie; set => fk_idCategorie = value; }
 
         public Materiel()
         {
@@ -86,7 +85,7 @@ namespace SAE_01.Model
 
         public void Create()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ({this.fk_idcategorie}, '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
         }
 
         public void Read()

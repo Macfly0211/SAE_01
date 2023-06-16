@@ -29,6 +29,7 @@
 
             <MenuItem Click="MenuPersonnel_Click" Header="_Personnel" />
 
+
             <!--<MenuItem Header="_Attribution" Click="MenuAttribution_Click" />-->
 
 
@@ -37,23 +38,16 @@
 
 
         </Menu>
+
+        <ComboBox x:Name="cbCategorie" Margin="215,239,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="168"/>
+
         <Label
             Width="96"
             Height="30"
-            Margin="702,118,0,0"
+            Margin="215,209,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom catégorie :" />
-        <ListView
-            x:Name="lvMatCategorie"
-            Margin="803,114,31,10"
-            ItemsSource="{Binding LesCategorieMateriel}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
         <DataGrid
             x:Name="DG_materiel"
             Grid.Row="1"
