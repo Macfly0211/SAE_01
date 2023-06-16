@@ -27,7 +27,10 @@ namespace SAE_01
         public Categorie()
         {
             InitializeComponent();
-            
+
+            DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
+            CollectionView viewCategorie = (CollectionView)CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource);
+            viewCategorie.Filter = CategorieFilter;
         }
 
         //MENU
@@ -121,6 +124,22 @@ namespace SAE_01
             this.DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
         }
 
-        
+        private bool CategorieFilter(object item)
+        {
+            if (String.IsNullOrEmpty(tbNom.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return ((item as CategorieMateriel).Nomcategorie.IndexOf(tbNom.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource).Refresh();
+            DG_categorie.SelectedIndex = 0;
+        }
     }
 }

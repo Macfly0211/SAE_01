@@ -29,14 +29,9 @@
 
             <MenuItem Click="MenuMateriel_Click" Header="_Matériel" />
 
-            <MenuItem Header="_Personnel" />
-
-
-
-
-
         </Menu>
 
+        
         <Image
             Width="294"
             Height="87"
@@ -68,28 +63,20 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <DataGrid
+        <ListView
             x:Name="DG_personnel"
             Grid.Row="1"
             Margin="10,11,10,10"
-            AutoGenerateColumns="False"
             ItemsSource="{Binding LesPersonnel}" SelectionChanged="DG_personnel_SelectionChanged">
-            <DataGrid.Columns>
-
-                <DataGridTextColumn
-                    Width="50*"
-                    Binding="{Binding Nompersonnel}"
-                    Header="Nom" />
-                <DataGridTextColumn
-                    Width="50*"
-                    Binding="{Binding Prenompersonnel}"
-                    Header="Prénom" />
-                <DataGridTextColumn
-                    Width="100*"
-                    Binding="{Binding Emailpersonnel}"
-                    Header="Email" />
-            </DataGrid.Columns>
-        </DataGrid>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nompersonnel}" Width="300"/>
+                    <GridViewColumn Header="Prénom" DisplayMemberBinding="{Binding Prenompersonnel}" Width="300"/>
+                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Emailpersonnel}" Width="400"/>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
 
         <Button
             x:Name="btnAjouter"
@@ -181,5 +168,6 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
+        <Button x:Name="btRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="33" Margin="539,239,0,0" VerticalAlignment="Top" Width="92" Click="btRechercher_Click_1"/>
     </Grid>
 </Window>
