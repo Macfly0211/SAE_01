@@ -25,6 +25,10 @@ namespace SAE_01
         public WindowPersonnel()
         {
             InitializeComponent();
+
+            DG_personnel.ItemsSource = applicationData.LesPersonnel;
+            CollectionView viewPersonnel = (CollectionView)CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource);
+            viewPersonnel.Filter = PersonnelFilter;
             
         }
 
@@ -126,14 +130,26 @@ namespace SAE_01
 
         private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            tbEmail.Text = DG_personnel.SelectedIndex.ToString();
+        }
+
+        private bool PersonnelFilter(object item)
+        {
+            if (String.IsNullOrEmpty(tbRechercheEmail.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return ((item as Personnel).Nompersonnel.IndexOf(tbRechercheEmail.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+        }
 
 
-            
-           // tbEmail.Text = this.DG_personnel.SelectedItem.ToString();
-
-           
-
-
+        private void btRechercher_Click_1(object sender, RoutedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource).Refresh();
+            DG_personnel.SelectedIndex = 0;
         }
     }
 }

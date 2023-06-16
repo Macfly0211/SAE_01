@@ -27,7 +27,10 @@ namespace SAE_01
         public Categorie()
         {
             InitializeComponent();
-            
+
+            DG_categorie.ItemsSource = applicationData.LesPersonnel;
+            CollectionView viewPersonnel = (CollectionView)CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource);
+            viewPersonnel.Filter = CategorieFilter;
         }
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
@@ -111,6 +114,18 @@ namespace SAE_01
             this.DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
         }
 
-        
+        private bool CategorieFilter(object item)
+        {
+            if (String.IsNullOrEmpty(tbNom.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return ((item as Personnel).Nompersonnel.IndexOf(tbNom.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+        }
+
+
     }
 }
