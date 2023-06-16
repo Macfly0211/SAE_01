@@ -37,8 +37,8 @@
 
         </Menu>
         <Rectangle Stroke="Black" Margin="215,213,0,0" Fill="#FF9E9D9D" HorizontalAlignment="Left" Width="423" Height="93" VerticalAlignment="Top"/>
-        <Label Content="ID personnel :" Margin="715,118,0,0" HorizontalAlignment="Left" Width="83" Height="30" VerticalAlignment="Top"/>
-        <ListView d:ItemsSource="{Binding Path=LesPersonnel}" Margin="803,114,31,10">
+        <Label Content="Personnel :" Margin="715,118,0,0" HorizontalAlignment="Left" Width="83" Height="30" VerticalAlignment="Top"/>
+        <ListView ItemsSource="{Binding Path=LesPersonnel}" Margin="803,114,31,10">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nompersonnel}"/>
@@ -46,20 +46,20 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,11,10,10" Grid.Row="1"
+        <DataGrid ItemsSource="{Binding LesPersonnel}" Margin="10,11,10,10" Grid.Row="1"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID personnel"  Width="80"/>
-                <DataGridTextColumn Header="Email"  Width="100*"/>
-                <DataGridTextColumn Header="Nom"  Width="50*"/>
-                <DataGridTextColumn Header="Prénom"  Width="50*"/>
+                <DataGridTextColumn Header="ID personnel"  Width="80" Binding="{Binding Idpersonnel}"/>
+                <DataGridTextColumn Header="Email"  Width="100*"  Binding="{Binding Emailpersonnel}"/>
+                <DataGridTextColumn Header="Nom"  Width="50*"  Binding="{Binding Nompersonnel}"/>
+                <DataGridTextColumn Header="Prénom"  Width="50*"  Binding="{Binding Prenompersonnel}"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
         <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
-        <Label Content="Email :" HorizontalAlignment="Left" Margin="224,243,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="224,243,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbRechercheEmail" HorizontalAlignment="Left" Margin="307,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
 
 

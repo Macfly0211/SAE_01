@@ -10,6 +10,8 @@ namespace SAE_01.Model
 {
     class Materiel
     {
+        public int fk_idCategorie { get => fk_idCategorie; set => fk_idCategorie = value; }
+
         public Materiel()
         {
         }
@@ -17,17 +19,33 @@ namespace SAE_01.Model
         public Materiel(int idmateriel, int idcategorie, string nommateriel, string referenceconstructeurmateriel, string codebarreinventaire)
         {
             Idmateriel = idmateriel;
-            Idcategorie = idcategorie;
+            this.fk_idcategorie = idcategorie;
             Nommateriel = nommateriel;
             Referenceconstructeurmateriel = referenceconstructeurmateriel;
             Codebarreinventaire = codebarreinventaire;
         }
 
+        private CategorieMateriel uneCategorie;
+
         public int Idmateriel { get; set; }
+        public int fk_idcategorie { get; set; }
         public int Idcategorie { get; set; }
         public string Nommateriel { get; set; }
         public string Referenceconstructeurmateriel { get; set; }
         public string Codebarreinventaire { get; set; }
+
+        public CategorieMateriel UneCategorie
+        {
+            get
+            {
+                return uneCategorie;
+            }
+
+            set
+            {
+                uneCategorie = value;
+            }
+        }
 
         public ObservableCollection<Materiel> FindAll()
         {

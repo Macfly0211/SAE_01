@@ -45,6 +45,10 @@ namespace SAE_01.Model
             {
                 uneAttribution.UnPersonnel = LesPersonnel.ToList().Find(p => p.Idpersonnel == uneAttribution.fk_idPerso);
             }
+            foreach (Materiel unMateriel in LesMateriel.ToList())
+            {
+                unMateriel.UneCategorie = LesCategorieMateriel.ToList().Find(cm => cm.Idcategorie == unMateriel.fk_idcategorie);
+            }
         }
 
         
