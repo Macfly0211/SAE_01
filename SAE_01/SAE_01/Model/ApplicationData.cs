@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    internal class ApplicationData
+    public class ApplicationData
     {
 
 

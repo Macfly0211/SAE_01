@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    class Materiel
+    public class Materiel
     {
         public int fk_idCategorie { get => fk_idCategorie; set => fk_idCategorie = value; }
 
@@ -18,11 +18,11 @@ namespace SAE_01.Model
 
         public Materiel(int idmateriel, int idcategorie, string nommateriel, string referenceconstructeurmateriel, string codebarreinventaire)
         {
-            Idmateriel = idmateriel;
+            this.Idmateriel = idmateriel;
             this.fk_idcategorie = idcategorie;
-            Nommateriel = nommateriel;
-            Referenceconstructeurmateriel = referenceconstructeurmateriel;
-            Codebarreinventaire = codebarreinventaire;
+            this.Nommateriel = nommateriel;
+            this.Referenceconstructeurmateriel = referenceconstructeurmateriel;
+            this.Codebarreinventaire = codebarreinventaire;
         }
 
         private CategorieMateriel uneCategorie;
