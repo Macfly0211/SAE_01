@@ -27,7 +27,17 @@ namespace SAE_01
         public WindowMateriel()
         {
             InitializeComponent();
-            foreach(CategorieMateriel categorie in applicationData.LesCategorieMateriel)
+
+            DG_materiel.ItemsSource = applicationData.LesMateriel;
+            CollectionView viewMateriel = (CollectionView)CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource);
+            viewMateriel.Filter = MaterielFilter;
+
+            //DG_materiel.ItemsSource = applicationData.LesMateriel;
+            //CollectionView viewMaterielConstructeur = (CollectionView)CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource);
+            //viewMaterielConstructeur.Filter = MaterielConstructeurFilter;
+
+
+            foreach (CategorieMateriel categorie in applicationData.LesCategorieMateriel)
             {
                 cbCategorie.Items.Add(new ComboBoxItem()
                 {
@@ -142,9 +152,38 @@ namespace SAE_01
             
         }
 
+        private bool MaterielFilter(object item)
+        {
+            if (String.IsNullOrEmpty(tbNomMateriel.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return ((item as Materiel).Nommateriel.IndexOf(tbNomMateriel.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+            }
+
+          
+        }
+
+        //private bool MaterielConstructeurFilter(object item)
+        //{
+        //    if (String.IsNullOrEmpty(tbRefConstructeur.Text))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return ((item as Materiel).Referenceconstructeurmateriel.IndexOf(tbRefConstructeur.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+        //    }
+        //}
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+            CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource).Refresh();
+            DG_materiel.SelectedIndex = 0;
         }
     }
 }

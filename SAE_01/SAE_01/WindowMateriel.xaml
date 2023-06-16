@@ -28,7 +28,7 @@
             <MenuItem Header="_Matériel" />
 
             <MenuItem Click="MenuPersonnel_Click" Header="_Personnel" />
-            
+
 
 
             <!--<MenuItem Header="_Attribution" Click="MenuAttribution_Click" />-->
@@ -40,7 +40,7 @@
 
         </Menu>
 
-        <Button Content="Rechercher" Height="31" Width="101" Margin="426,234,472,50" Click="Button_Click"/>
+        <Button Content="Rechercher" Height="31" Width="101" Margin="426,234,0,0" Click="Button_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         <Image
             Width="294"
@@ -49,7 +49,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="/index.png" />
-        
+
         <ComboBox
             x:Name="cbCategorie"
             Width="168"
