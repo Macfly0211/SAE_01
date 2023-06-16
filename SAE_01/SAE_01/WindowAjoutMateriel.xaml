@@ -23,6 +23,7 @@
             VerticalAlignment="Top"
             Content="Nom Matériel :" />
         <TextBox
+            x:Name="tbNom"
             Width="278"
             Height="28"
             Margin="0,66,0,0"
@@ -41,6 +42,7 @@
             VerticalAlignment="Top"
             Content="Référence constructeur :" />
         <TextBox
+            x:Name="tbConstructeur"
             Width="278"
             Height="28"
             HorizontalAlignment="Center"
@@ -55,6 +57,7 @@
             VerticalAlignment="Top"
             Content="Code Bar : " />
         <TextBox
+            x:Name="tbBarre"
             Width="278"
             Height="28"
             Margin="0,225,0,0"
@@ -62,7 +65,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button x:Name="btCreer" Content="Ajouter" Margin="32,279,182,22"/>
+        <Button x:Name="btCreer" Content="Ajouter" Margin="32,279,182,22" Click="btCreer_Click"/>
         <Button Content="Annuler" Margin="189,279,32,22" Click="Button_Click"/>
 
 

@@ -74,8 +74,10 @@ namespace SAE_01
             }
             else
             {
-                new CategorieMateriel(0, tbNom.Text).Create();
-                this.ReloadData();
+                CategorieMateriel categorie = new CategorieMateriel(0, tbNom.Text);
+                categorie.Create();
+                this.applicationData.LesCategorieMateriel.Add(categorie);
+                this.DG_categorie.Items.Refresh();                
                 tbNom.Text= "";
                 MessageBox.Show("Nouvelle catégorie crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 

@@ -73,8 +73,10 @@ namespace SAE_01
             }
             else
             {
-                new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text).Create();
-                this.ReloadData();
+                Personnel personnel = new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text);
+                personnel.Create();
+                this.applicationData.LesPersonnel.Add(personnel);
+                this.DG_personnel.Items.Refresh();
                 tbPrenom.Text = "";
                 tbNom.Text= "";
                 tbEmail.Text = "";
@@ -125,16 +127,16 @@ namespace SAE_01
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
 
-            WindowAjoutMateriel winAjoutMateriel = new WindowAjoutMateriel((Materiel)DG_personnel.SelectedItem, Mode.Update);
-            winAjoutMateriel.Owner = this;
+            //WindowAjoutMateriel winAjoutMateriel = new WindowAjoutMateriel((Materiel)DG_personnel.SelectedItem, Mode.Update);
+            //winAjoutMateriel.Owner = this;
 
-            bool reponse = (bool)winAjoutMateriel.ShowDialog();
-            if (reponse == true)
-            {
-                DG_personnel.Items.Refresh();
-                //appelle de la donction refresh
+            //bool reponse = (bool)winAjoutMateriel.ShowDialog();
+            //if (reponse == true)
+            //{
+            //    DG_personnel.Items.Refresh();
+            //    //appelle de la donction refresh
 
-            }
+            //}
         }
 
         private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -106,7 +106,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            throw new NotImplementedException();
+            
         }
 
         public ObservableCollection<Materiel> FindBySelection(string criteres)
