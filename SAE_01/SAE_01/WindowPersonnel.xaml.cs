@@ -116,7 +116,9 @@ namespace SAE_01
         private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            tbEmail.Text = this.DG_personnel.SelectedItem.ToString();
+
+            
+           // tbEmail.Text = this.DG_personnel.SelectedItem.ToString();
 
            
 
