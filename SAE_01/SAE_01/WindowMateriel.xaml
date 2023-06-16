@@ -62,25 +62,26 @@
             ItemsSource="{Binding Path=LesMateriel}">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="30*"
-                    Binding="{Binding fk_idcategorie}"
-                    Header="ID catégorie" />
+                    Width="50*"
+                    Binding="{Binding Nommateriel}"
+                    Header="Nom matériel" />
+
                 <DataGridTextColumn
                     Width="60*"
                     Binding="{Binding UneCategorie.Nomcategorie}"
                     Header="Nom catégorie" />
-                <DataGridTextColumn
-                    Width="100*"
-                    Binding="{Binding Codebarreinventaire}"
-                    Header="Code barre" />
-                <DataGridTextColumn
-                    Width="50*"
-                    Binding="{Binding Nommateriel}"
-                    Header="Nom matériel" />
+
                 <DataGridTextColumn
                     Width="100*"
                     Binding="{Binding Referenceconstructeurmateriel}"
                     Header="Référence constructeur" />
+
+                <DataGridTextColumn
+                    Width="100*"
+                    Binding="{Binding Codebarreinventaire}"
+                    Header="Code barre" />
+
+
             </DataGrid.Columns>
         </DataGrid>
 
