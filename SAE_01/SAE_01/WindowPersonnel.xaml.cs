@@ -22,6 +22,7 @@ namespace SAE_01
     /// </summary>
     public partial class WindowPersonnel : Window
     {
+        //MENU
         public WindowPersonnel()
         {
             InitializeComponent();
@@ -56,10 +57,11 @@ namespace SAE_01
             attribution.Show();
         }
 
-        
+        //BOUTON
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+
             if (tbNom.Text == "" || tbNom.Text == " " || tbPrenom.Text == "" || tbPrenom.Text == " " || tbEmail.Text == "" || tbEmail.Text == " ")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -85,7 +87,7 @@ namespace SAE_01
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
-
+            //vérification de la sélection dans la dataGrid
             if (DG_personnel.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner un personnel.");
@@ -93,7 +95,9 @@ namespace SAE_01
             else
             {
                 MessageBoxResult res = MessageBox.Show("Attention le personnel sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                //message d'alerte de la suppression
 
+                //résulatats des boutons de la message box
                 switch (res)
                 {
                     case MessageBoxResult.Cancel:
@@ -102,6 +106,7 @@ namespace SAE_01
                         foreach (Personnel lespersonne in DG_personnel.SelectedItems)
                         {
                             lespersonne.Delete();
+                            //appelle de la donction Delete
                         }
                         this.ReloadData();
                         break;
@@ -123,18 +128,15 @@ namespace SAE_01
             if (reponse == true)
             {
                 DG_personnel.Items.Refresh();
+                //appelle de la donction refresh
+
             }
         }
 
         private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
-            
+     
            // tbEmail.Text = this.DG_personnel.SelectedItem.ToString();
-
-           
-
 
         }
     }

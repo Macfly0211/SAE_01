@@ -11,6 +11,7 @@ namespace SAE_01.Model
 {
     public class CategorieMateriel : Crud<CategorieMateriel>
     {
+        //constructeur
         public CategorieMateriel(int idcategorie, string nomcategorie)
         {
             Idcategorie = idcategorie;
@@ -22,9 +23,11 @@ namespace SAE_01.Model
             
         }
 
+        //champs
         public int Idcategorie { get; set; }
         public string Nomcategorie { get; set; }
 
+        //FindAll = remonte les données
         public ObservableCollection<CategorieMateriel> FindAll()
         {
             ObservableCollection<CategorieMateriel> lesCategorieMateriel = new ObservableCollection<CategorieMateriel>();
@@ -42,6 +45,7 @@ namespace SAE_01.Model
             return lesCategorieMateriel;
         }
 
+        //Create = méthode de création de nouveau personnels
         public void Create()
         {
             new DataAccess().SetData($"insert into categorie_materiel (nomcategorie) values ('{this.Nomcategorie}');");
@@ -57,8 +61,9 @@ namespace SAE_01.Model
             throw new NotImplementedException();
         }
 
-       
 
+
+        //Delete = méthode de suppression de personnels
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();

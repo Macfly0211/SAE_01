@@ -25,6 +25,8 @@ namespace SAE_01
             InitializeComponent();
         }
 
+        //MENU
+
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
         {
             Categorie categorie = new Categorie();
