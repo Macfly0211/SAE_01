@@ -57,7 +57,7 @@
         </DataGrid>
 
         <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top" Click="btnAjouter_Click"/>
-        <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top"/>
+        <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" HorizontalAlignment="Left" Width="116" Height="51" VerticalAlignment="Top" Click="btnModifier_Click"/>
         <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116" Click="btnSupprimer_Click"/>
         <Label Content="Nom :" HorizontalAlignment="Left" Margin="224,243,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbRechercheEmail" HorizontalAlignment="Left" Margin="307,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>

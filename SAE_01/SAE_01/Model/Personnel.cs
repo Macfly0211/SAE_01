@@ -76,7 +76,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"Update personnel '{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}';");
         }
     }
 }
