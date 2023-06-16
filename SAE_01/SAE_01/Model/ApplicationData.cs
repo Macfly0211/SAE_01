@@ -49,6 +49,7 @@ namespace SAE_01.Model
             {
                 unMateriel.UneCategorie = LesCategorieMateriel.ToList().Find(cm => cm.Idcategorie == unMateriel.fk_idcategorie);
             }
+            
         }
 
         
