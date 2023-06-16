@@ -36,6 +36,15 @@
 
 
         </Menu>
+
+        <Image
+            Width="294"
+            Height="87"
+            Margin="696,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/index.png" />
+
         <Rectangle
             Width="423"
             Height="93"
@@ -142,7 +151,7 @@
         <Label
             Width="94"
             Height="24"
-            Margin="215,62,0,0"
+            Margin="215,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom :" />
@@ -150,7 +159,7 @@
             x:Name="tbNom"
             Width="236"
             Height="22"
-            Margin="215,86,0,0"
+            Margin="215,82,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />

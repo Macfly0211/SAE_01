@@ -49,6 +49,14 @@
             </DataGrid.Columns>
         </DataGrid>
 
+        <Image
+            Width="294"
+            Height="87"
+            Margin="696,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Source="/index.png" />
+        
         <Button
             x:Name="btnAjouter"
             Width="116"
