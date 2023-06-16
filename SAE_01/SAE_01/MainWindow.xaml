@@ -59,7 +59,7 @@
             Margin="10,10,10,10"
             AutoGenerateColumns="False"
             ItemsSource="{Binding LesAttribution}">
-            <DataGrid.Columns>
+        <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding UnMateriel.UneCategorie.Nomcategorie}"

@@ -73,11 +73,12 @@ namespace SAE_01.Model
                 System.Windows.MessageBox.Show(ex.Message, "Emprunte exception delete");
             }
         }
-    }
-
         public ObservableCollection<CategorieMateriel> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
         }
     }
+
+        
+    
 }
