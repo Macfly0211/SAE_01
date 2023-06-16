@@ -41,7 +41,7 @@ namespace SAE_01.Model
             }
         }
 
-        internal Materiel UnMateriel
+        public Materiel UnMateriel
         {
             get
             {
