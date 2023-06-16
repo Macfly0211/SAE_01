@@ -14,7 +14,7 @@
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData"/>
     </Window.DataContext>
-    <Grid>
+    <Grid x:Name="btAnnuler">
         <Label
             Width="112"
             Height="33"
@@ -61,7 +61,8 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button x:Name="btCreer" Content="Ajouter" HorizontalAlignment="Left" Margin="104,0,0,10" Width="128" Height="41" VerticalAlignment="Bottom"/>
+        <Button x:Name="btCreer" Content="Ajouter" HorizontalAlignment="Left" Margin="32,0,0,22" Width="128" Height="41" VerticalAlignment="Bottom"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="189,0,0,22" Width="121" Click="Button_Click" Height="41" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>
