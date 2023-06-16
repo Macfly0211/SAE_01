@@ -60,10 +60,8 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            string nom = tbNom.Text;
-            DataAccess accesBD = new DataAccess();
-            String requete = "insert into categorie_materiel (nomcategorie) values ("+ nom +");";
-            accesBD.SetData(requete);
+            new CategorieMateriel(0, tbNom.Text).Create();
+        
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)

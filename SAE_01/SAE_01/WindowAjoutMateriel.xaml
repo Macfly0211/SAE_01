@@ -56,7 +56,7 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="104,291,0,10" Width="128"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="104,0,0,10" Width="128" Height="41" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

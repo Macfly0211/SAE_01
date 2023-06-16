@@ -44,7 +44,7 @@ namespace SAE_01.Model
 
         public void Create()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"insert into categorie_materiel (nomcategorie) values ('{this.Nomcategorie}');");
         }
 
         public void Read()
@@ -56,6 +56,8 @@ namespace SAE_01.Model
         {
             throw new NotImplementedException();
         }
+
+       
 
         public void Delete()
         {
