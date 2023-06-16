@@ -29,9 +29,41 @@
 
             <MenuItem Click="MenuMateriel_Click" Header="_Matériel" />
 
+
         </Menu>
 
-        
+        <StackPanel Margin="212,48,539,113">
+            <Label
+            Width="234"
+            Height="24"
+            Content="Nom :" />
+            <TextBox
+            x:Name="tbNom"
+            Width="236"
+            Height="22"
+            TextWrapping="Wrap" />
+            <Label
+            Width="236"
+            Height="26"
+            Content="Prénom :" />
+            <TextBox
+            x:Name="tbPrenom"
+            Width="236"
+            Height="20"
+            TextWrapping="Wrap" />
+            <Label
+            Width="233"
+            Height="26"
+            Content="Email :" />
+            <TextBox
+            x:Name="tbEmail"
+            Width="236"
+            Height="20"
+            TextWrapping="Wrap" 
+            
+            />
+
+        </StackPanel>
         <Image
             Width="294"
             Height="87"
@@ -75,7 +107,7 @@
                     <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Emailpersonnel}" Width="400"/>
                 </GridView>
             </ListView.View>
-            
+
         </ListView>
 
         <Button
@@ -119,55 +151,9 @@
             TextWrapping="Wrap" />
 
 
-        <Label
-            Width="75"
-            Height="26"
-            Margin="215,148,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Email :" />
-        <TextBox
-            x:Name="tbEmail"
-            Width="236"
-            Height="20"
-            Margin="215,174,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap" 
-            
-            />
 
-        <Label
-            Width="94"
-            Height="24"
-            Margin="215,58,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Nom :" />
-        <TextBox
-            x:Name="tbNom"
-            Width="236"
-            Height="22"
-            Margin="215,82,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap" />
 
-        <Label
-            Width="138"
-            Height="26"
-            Margin="215,103,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Prénom :" />
-        <TextBox
-            x:Name="tbPrenom"
-            Width="236"
-            Height="20"
-            Margin="215,129,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+
         <Button x:Name="btRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="33" Margin="539,239,0,0" VerticalAlignment="Top" Width="92" Click="btRechercher_Click_1"/>
     </Grid>
 </Window>

@@ -160,5 +160,7 @@ namespace SAE_01
             CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource).Refresh();
             DG_personnel.SelectedIndex = 0;
         }
+
+       
     }
 }
