@@ -27,7 +27,10 @@ namespace SAE_01
         public WindowMateriel()
         {
             InitializeComponent();
-            
+            DG_materiel.ItemsSource = applicationData.LesMateriel;
+            CollectionView viewMateriel = (CollectionView)CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource);
+            viewMateriel.Filter = MaterielFilter;
+
         }
 
         //MENU
