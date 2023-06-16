@@ -87,6 +87,8 @@ namespace SAE_01
                 tbCodeBarre.Text = "";
                 tbRefConstructeur.Text = "";
                 cbCategorie.Text = "";
+                MessageBox.Show("Nouveau matériel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
 
             }
         }
@@ -100,7 +102,7 @@ namespace SAE_01
             }
             else
             {
-                MessageBoxResult res = MessageBox.Show("Attention le matériel va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                MessageBoxResult res = MessageBox.Show("Attention le matériel sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
 
                 switch (res)
                 {

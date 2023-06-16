@@ -72,6 +72,8 @@ namespace SAE_01
                 tbPrenom.Text = "";
                 tbNom.Text= "";
                 tbEmail.Text = "";
+                MessageBox.Show("Nouveau personnel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+
             }
         }
 
@@ -90,7 +92,7 @@ namespace SAE_01
             }
             else
             {
-                MessageBoxResult res = MessageBox.Show("Attention le personnel va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                MessageBoxResult res = MessageBox.Show("Attention le personnel sélectionné va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
 
                 switch (res)
                 {

@@ -131,6 +131,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" Click="btnAjouter_Click" />
+        
         <Button
             x:Name="btnSupp"
             Width="92"

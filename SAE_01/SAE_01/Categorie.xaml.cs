@@ -70,9 +70,10 @@ namespace SAE_01
                 new CategorieMateriel(0, tbNom.Text).Create();
                 this.ReloadData();
                 tbNom.Text= "";
+                MessageBox.Show("Nouvelle catégorie crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
             }
-        
+
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
