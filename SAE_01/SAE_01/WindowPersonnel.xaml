@@ -64,7 +64,7 @@
             Grid.Row="1"
             Margin="10,11,10,10"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding LesPersonnel}">
+            ItemsSource="{Binding LesPersonnel}" SelectionChanged="DG_personnel_SelectionChanged">
             <DataGrid.Columns>
 
                 <DataGridTextColumn
@@ -137,7 +137,9 @@
             Margin="215,92,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" 
+            
+            />
 
         <Label
             Width="94"

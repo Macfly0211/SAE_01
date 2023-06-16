@@ -2,6 +2,7 @@
 using SAE_01.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace SAE_01
         public WindowPersonnel()
         {
             InitializeComponent();
+            
         }
 
         private void Menu_Click(object sender, RoutedEventArgs e)
@@ -109,6 +111,16 @@ namespace SAE_01
             {
                 DG_personnel.Items.Refresh();
             }
+        }
+
+        private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            tbEmail.Text = this.DG_personnel.SelectedItem.ToString();
+
+           
+
+
         }
     }
 }

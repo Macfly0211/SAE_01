@@ -29,7 +29,8 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             TextWrapping="Wrap"
-            Text="{Binding Path=LesMateriel,ValidatesOnExceptions=True}"/>
+            
+            />
 
 
         <Label
@@ -61,8 +62,9 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button x:Name="btCreer" Content="Ajouter" HorizontalAlignment="Left" Margin="32,0,0,22" Width="128" Height="41" VerticalAlignment="Bottom"/>
-        <Button Content="Annuler" HorizontalAlignment="Left" Margin="189,0,0,22" Width="121" Click="Button_Click" Height="41" VerticalAlignment="Bottom"/>
+        <Button x:Name="btCreer" Content="Ajouter" Margin="32,279,182,22"/>
+        <Button Content="Annuler" Margin="189,279,32,22" Click="Button_Click"/>
+
 
     </Grid>
 </Window>
