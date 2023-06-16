@@ -26,11 +26,36 @@ namespace SAE_01
         public MainWindow()
         {
             InitializeComponent();
-            
 
+            //foreach (CategorieMateriel categorie in applicationData.LesCategorieMateriel)
+            //{
+            //    lvCategorie.Items.Add(new ListViewItem()
+            //    {
+            //        Content = categorie.Nomcategorie,
+            //        Name = $"categorie{categorie.Idcategorie}"
+            //    });
+            //}
+            //foreach (Personnel personnel in applicationData.LesPersonnel)
+            //{
+            //    lvCategorie.Items.Add(new ListViewItem()
+            //    {
+            //        Content = personnel.Nompersonnel,
+            //        Name = $"categorie{personnel.Idpersonnel}"
+
+                    
+            //    });
+            //}
+            //foreach (CategorieMateriel categorie in applicationData.LesCategorieMateriel)
+            //{
+            //    lvCategorie.Items.Add(new ListViewItem()
+            //    {
+            //        Content = categorie.Nomcategorie,
+            //        Name = $"categorie{categorie.Idcategorie}"
+            //    });
+            //}
         }
 
-        private void MenuCategorie_Click(object sender, RoutedEventArgs e)
+            private void MenuCategorie_Click(object sender, RoutedEventArgs e)
         {
             Categorie categorie = new Categorie();
             this.Close();
@@ -64,6 +89,18 @@ namespace SAE_01
 
         }
 
-        
+        private void btnAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            new EstAttribue(lvPersonnel.SelectedIndex,lvMateriel.SelectedIndex, DateTime.Parse(tbDate.Text), tbCommentaire.Text).Create();
+            this.ReloadData();
+            DG_Main.DataContext = applicationData.LesAttribution;
+        }
+
+
+        public void ReloadData()
+        {
+            applicationData.reloadAppData();
+            this.DG_Main.ItemsSource = applicationData.LesAttribution;
+        }
     }
 }

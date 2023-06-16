@@ -83,7 +83,7 @@ namespace SAE_01.Model
 
         public void Create()
         {
-            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ({this.fk_idcategorie}, '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
+            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ('{this.fk_idcategorie}', '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
         }
 
         public void Read()

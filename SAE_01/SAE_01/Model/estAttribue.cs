@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
-    public class EstAttribue
+    public class EstAttribue : Crud<EstAttribue>
     {
         public EstAttribue(int idpersonnel, int idmateriel, DateTime dateattribution, string commentaireattribution)
         {
@@ -71,6 +71,31 @@ namespace SAE_01.Model
                 }
             }
             return lesAttribution;
+        }
+
+        public void Create()
+        {
+            new DataAccess().SetData($"insert into est_attribue (idpersonnel, idmateriel, dateattribution, commentaireattribution) values('{this.fk_idPerso}','{this.fk_idMateriel}','{this.Dateattribution}','{this.Commentaireattribution}');");
+        }
+
+        public void Read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ObservableCollection<EstAttribue> FindBySelection(string criteres)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -48,7 +48,7 @@
         <Label
             Width="100"
             Height="26"
-            Margin="661,60,0,0"
+            Margin="872,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom catégorie :"
@@ -56,7 +56,7 @@
 
         <ListView
             x:Name="lvCategorie"
-            Margin="766,60,34,10"
+            Margin="862,60,19,10"
             ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
@@ -67,37 +67,19 @@
         <Label
             Width="101"
             Height="26"
-            Margin="430,60,0,0"
+            Margin="538,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom personnel :"
             RenderTransformOrigin="1.095,-6.075" />
-
-        <TextBox
-            x:Name="tbPersonnel"
-            Width="120"
-            Height="22"
-            Margin="536,62,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextWrapping="Wrap" />
         <Label
             Width="101"
             Height="26"
-            Margin="430,109,0,0"
+            Margin="722,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom matériel :"
             RenderTransformOrigin="1.095,-6.075" />
-        <TextBox
-            x:Name="tbMateriel"
-            Width="120"
-            Height="22"
-            Margin="536,113,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            TextChanged="TextBox_TextChanged"
-            TextWrapping="Wrap" />
 
         <Label
             Width="82"
@@ -117,7 +99,7 @@
         <Label
             Width="102"
             Height="26"
-            Margin="150,206,0,0"
+            Margin="150,198,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Commentaire :"
@@ -126,7 +108,7 @@
             x:Name="tbCommentaire"
             Width="238"
             Height="22"
-            Margin="150,232,0,0"
+            Margin="150,224,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
@@ -148,7 +130,7 @@
             Margin="10,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ajouter" />
+            Content="Ajouter" Click="btnAjouter_Click" />
         <Button
             x:Name="btnSupp"
             Width="92"
@@ -173,9 +155,9 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        <Grid Grid.Row="1" DataContext="{Binding SelectedItem, ElementName=lvCategorie}">
+        <Grid Grid.Row="1">
             <DataGrid
-                x:Name="dgMain"
+                x:Name="DG_Main"
                 Grid.Row="1"
                 Margin="10,10,10,10"
                 AutoGenerateColumns="False"
@@ -209,6 +191,27 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
+        <ListView
+            x:Name="lvMateriel"
+            Margin="714,60,169,10"
+            ItemsSource="{Binding LesMateriel}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nommateriel}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView
+            x:Name="lvPersonnel"
+            Margin="508,60,330,10"
+            ItemsSource="{Binding LesPersonnel}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Prenompersonnel}" Header="Prenom" Width="80"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
