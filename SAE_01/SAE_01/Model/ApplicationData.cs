@@ -18,6 +18,11 @@ namespace SAE_01.Model
 
         public ApplicationData()
         {
+            reloadAppData();
+        }
+
+        public void reloadAppData()
+        {
             Personnel p = new Personnel();
             LesPersonnel = p.FindAll();
 
@@ -41,8 +46,6 @@ namespace SAE_01.Model
                 uneAttribution.UnPersonnel = LesPersonnel.ToList().Find(p => p.Idpersonnel == uneAttribution.fk_idPerso);
             }
         }
-
-        
 
         
     }

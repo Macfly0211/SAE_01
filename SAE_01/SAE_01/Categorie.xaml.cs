@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -75,6 +76,7 @@ namespace SAE_01
             {
                 //MessageBox.Show("Voulez vous supprimer " + DG_categorie.SelectedItem.ToString() + " ?");
                 MessageBoxResult res = MessageBox.Show("Attention la catégorie va être supprimé", "Suppression", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation, MessageBoxResult.Yes);
+                
                 switch (res)
                 {
                     case MessageBoxResult.Cancel:
@@ -84,12 +86,22 @@ namespace SAE_01
                         {
                             categorieMateriel.Delete();
                         }
+                        this.ReloadData();
                         break;
                     case MessageBoxResult.No:
                         break;
 
                 }
             }
+            
         }
+
+        public void ReloadData ()
+        {
+            applicationData.reloadAppData();
+            this.DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
+        }
+
+        
     }
 }
