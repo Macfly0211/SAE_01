@@ -28,9 +28,9 @@ namespace SAE_01
         {
             InitializeComponent();
 
-            DG_categorie.ItemsSource = applicationData.LesPersonnel;
-            CollectionView viewPersonnel = (CollectionView)CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource);
-            viewPersonnel.Filter = CategorieFilter;
+            DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
+            CollectionView viewCategorie = (CollectionView)CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource);
+            viewCategorie.Filter = CategorieFilter;
         }
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
@@ -123,10 +123,14 @@ namespace SAE_01
             }
             else
             {
-                return ((item as Personnel).Nompersonnel.IndexOf(tbNom.Text, StringComparison.OrdinalIgnoreCase) >= 0);
+                return ((item as CategorieMateriel).Nomcategorie.IndexOf(tbNom.Text, StringComparison.OrdinalIgnoreCase) >= 0);
             }
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource).Refresh();
+            DG_categorie.SelectedIndex = 0;
+        }
     }
 }
