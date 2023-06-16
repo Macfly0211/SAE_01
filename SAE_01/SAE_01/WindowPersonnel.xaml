@@ -126,7 +126,7 @@
         <Label
             Width="75"
             Height="26"
-            Margin="215,66,0,0"
+            Margin="215,148,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Email :" />
@@ -134,7 +134,7 @@
             x:Name="tbEmail"
             Width="236"
             Height="20"
-            Margin="215,92,0,0"
+            Margin="215,174,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -142,7 +142,7 @@
         <Label
             Width="94"
             Height="24"
-            Margin="215,117,0,0"
+            Margin="215,62,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom :" />
@@ -150,7 +150,7 @@
             x:Name="tbNom"
             Width="236"
             Height="22"
-            Margin="215,141,0,0"
+            Margin="215,86,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -158,7 +158,7 @@
         <Label
             Width="138"
             Height="26"
-            Margin="215,158,0,0"
+            Margin="215,103,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prénom :" />
@@ -166,7 +166,7 @@
             x:Name="tbPrenom"
             Width="236"
             Height="20"
-            Margin="215,184,0,0"
+            Margin="215,129,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />

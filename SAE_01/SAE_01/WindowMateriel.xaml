@@ -20,7 +20,7 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <Menu Margin="0,-47,0,47">
+        <Menu Margin="0,0,0,419" Grid.RowSpan="2">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -39,7 +39,13 @@
 
         </Menu>
 
-        <ComboBox x:Name="cbCategorie" Margin="215,239,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="168"/>
+        <ComboBox
+            x:Name="cbCategorie"
+            Width="168"
+            Height="20"
+            Margin="215,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
 
         <Label
             Width="96"
@@ -125,7 +131,7 @@
         <Label
             Width="94"
             Height="24"
-            Margin="217,64,0,0"
+            Margin="215,63,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom matériel :" />
@@ -133,7 +139,7 @@
             x:Name="tbNomMateriel"
             Width="236"
             Height="22"
-            Margin="217,88,0,0"
+            Margin="215,87,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
