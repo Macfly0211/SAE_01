@@ -86,7 +86,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            if (dpDate.Text == "" || lvPersonnel.ItemsSource == "")
+            if (dpDate.Text == "" || )
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
