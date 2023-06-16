@@ -41,7 +41,8 @@
             x:Name="tbNom"
             Width="236"
             Height="22"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap"
+                DataContext="{Binding SelectedItem, ElementName=DG_personnel}"/>
             <Label
             Width="236"
             Height="26"
