@@ -35,6 +35,11 @@ namespace SAE_01
                 //message d'erreur
 
             }
+            else if (tbMail.Text.Length > 30)
+            {
+                MessageBox.Show("30 caractères maximum pour l'email", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
             else
             {
 

@@ -80,14 +80,9 @@
             Source="/index.png" />
 
         <Rectangle
-            Grid.Row="1"
-            Width="423"
-            Height="93"
-            Margin="215,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            Margin="215,222,362,0"
             Fill="#FF9E9D9D"
-            Stroke="Black" />
+            Stroke="Black" Grid.RowSpan="2" />
         <Label
             Width="83"
             Height="30"
@@ -163,18 +158,18 @@
             Grid.Row="1"
             Width="42"
             Height="26"
-            Margin="224,26,0,0"
+            Margin="225,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
             Content="Nom :" />
         <TextBox
             x:Name="tbRechercheEmail"
             Grid.Row="1"
             Width="227"
             Height="18"
-            Margin="307,30,0,0"
+            Margin="285,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
             TextWrapping="Wrap" />
 
 
@@ -184,11 +179,7 @@
         <Button
             x:Name="btRechercher"
             Grid.Row="1"
-            Width="92"
-            Height="33"
-            Margin="539,22,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="517,30,391,30"
             Click="btRechercher_Click_1"
             Content="Rechercher" />
     </Grid>
