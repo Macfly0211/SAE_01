@@ -33,6 +33,6 @@
             
             />
         <Button x:Name="btAjouter" Content="Ajouter" Margin="32,279,182,22" Click="btAjouter_Click"/>
-        <Button Content="Annuler" Margin="189,279,32,22" Click="BtAnnuler_Click"/>
+        <Button Content="Annuler" Margin="189,279,32,22" />
     </Grid>
 </Window>

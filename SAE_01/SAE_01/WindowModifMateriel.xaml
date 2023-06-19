@@ -15,7 +15,7 @@
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData"/>
     </Window.DataContext>
-     
+
     <Grid x:Name="btAnnuler">
         <Label
             Width="112"
@@ -54,7 +54,7 @@
         <Label
             Width="112"
             Height="33"
-            Margin="32,192,0,0"
+            Margin="32,187,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Code Bar : " />
@@ -62,7 +62,7 @@
             x:Name="tbBarre"
             Width="278"
             Height="28"
-            Margin="0,225,0,0"
+            Margin="0,220,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""

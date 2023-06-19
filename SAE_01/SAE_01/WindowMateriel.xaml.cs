@@ -80,7 +80,7 @@ namespace SAE_01
             bool estNum = int.TryParse(tbCodeBarre.Text, out i);
 
             //condition pour les champs non remplis
-            if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || lvCategorie.SelectedItem=="")
+            if (tbNomMateriel.Text == null || tbRefConstructeur.Text == null || tbCodeBarre.Text == null || lvCategorie.SelectedItem== null)
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 //message d'erreur
@@ -100,9 +100,9 @@ namespace SAE_01
                 this.DG_materiel.Items.Refresh();
 
                 //remet à zéro les champs à remplir
-                tbNomMateriel.Text = "";
-                tbCodeBarre.Text = "";
-                tbRefConstructeur.Text = "";
+                tbNomMateriel.Text = null;
+                tbCodeBarre.Text = null;
+                tbRefConstructeur.Text = null;
                 //message de confirmation de la création d'un personnel
                 MessageBox.Show("Nouveau matériel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
@@ -180,12 +180,21 @@ namespace SAE_01
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-            WindowModifMateriel modif = new WindowModifMateriel(((Materiel)DG_materiel.SelectedItem).Idmateriel);
-            modif.ShowDialog();
+            if (DG_materiel.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                //message d'erreur
+            }
+            else
+            {
+
+                WindowModifMateriel modif = new WindowModifMateriel(((Materiel)DG_materiel.SelectedItem).Idmateriel);
+                modif.ShowDialog();
 
 
 
-            this.ReloadData();
+                this.ReloadData();
+            }
         }
 
        

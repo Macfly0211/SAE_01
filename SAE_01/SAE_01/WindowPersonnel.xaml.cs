@@ -69,7 +69,7 @@ namespace SAE_01
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             //condition pour les champs non remplis
-            if (tbNom.Text == "" || tbNom.Text == " " || tbPrenom.Text == "" || tbPrenom.Text == " " || tbEmail.Text == "" || tbEmail.Text == " ")
+            if (tbNom.Text == "" || tbPrenom.Text == "" || tbEmail.Text == "")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 //message d'erreur
@@ -84,9 +84,9 @@ namespace SAE_01
                 this.applicationData.LesPersonnel.Add(personnel);
                 this.DG_personnel.Items.Refresh();
                 //remet à zéro les champs à remplir
-                tbPrenom.Text = "";
-                tbNom.Text= "";
-                tbEmail.Text = "";
+                tbPrenom.Text = null;
+                tbNom.Text= null;
+                tbEmail.Text = null;
                 //message de confirmation de la création d'un personnel
                 MessageBox.Show("Nouveau personnel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 

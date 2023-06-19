@@ -68,10 +68,10 @@ namespace SAE_01
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             //condition  vérification de la texte box 
-            if (tbNom.Text == "" || tbNom.Text == " ")
+            if (tbNom.Text == "")
             {
                 MessageBox.Show("Champs nom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                tbNom.Text = "";
+                tbNom.Text = null;
             }
             else
             {
@@ -79,7 +79,7 @@ namespace SAE_01
                 categorie.Create();
                 this.applicationData.LesCategorieMateriel.Add(categorie);
                 this.DG_categorie.Items.Refresh();                
-                tbNom.Text= "";
+                tbNom.Text= null;
                 MessageBox.Show("Nouvelle catégorie crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
             }
