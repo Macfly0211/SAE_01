@@ -40,16 +40,34 @@ namespace SAE_01
 
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Nommateriel = tbNom.Text;
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
 
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Referenceconstructeurmateriel = tbConstructeur.Text;
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
+            int i = 0;
+            bool estNum = int.TryParse(tbBarre.Text, out i);
 
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Codebarreinventaire = tbBarre.Text;
-            ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
+            if (tbNom.Text == "" || tbBarre.Text == "" || tbConstructeur.Text == "")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                //message d'erreur
 
-            this.Close();
+            }
+            else if (tbBarre.Text.Length != 10 || estNum == false)
+            {
+                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Nommateriel = tbNom.Text;
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
+
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Referenceconstructeurmateriel = tbConstructeur.Text;
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
+
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Codebarreinventaire = tbBarre.Text;
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
+
+                this.Close();
+            }
             
 
 
