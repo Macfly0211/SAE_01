@@ -22,7 +22,10 @@ namespace SAE_01
     /// </summary>
     public partial class WindowPersonnel : Window
     {
-        //MENU
+        //============MENU============
+        //Crée une nouvelle fenêtre et assigne la bonne fenêtre
+        //Ferme la fenêtre actuellement ouverte 
+        //Ouvre la nouvelle fenetre
         public WindowPersonnel()
         {
             InitializeComponent();
