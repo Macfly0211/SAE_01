@@ -32,6 +32,8 @@
 
             <MenuItem Click="MenuMateriel_Click" Header="_Matériel" />
 
+            <MenuItem Header="_Personnel" />
+
 
         </Menu>
 
