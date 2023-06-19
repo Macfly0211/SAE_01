@@ -19,10 +19,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="4*" />
+            <RowDefinition Height="222*" />
+            <RowDefinition Height="93*" />
+            <RowDefinition Height="419*" />
         </Grid.RowDefinitions>
-        <Menu Grid.RowSpan="2">
+        <Menu Grid.RowSpan="3">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -32,63 +33,69 @@
 
         </Menu>
 
-        <StackPanel Margin="212,48,512,113">
+        <StackPanel
+            Width="276"
+            Margin="212,48,0,15"
+            HorizontalAlignment="Left">
             <Label
-            Width="234"
-            Height="24"
-            Content="Nom :" />
+                Width="234"
+                Height="24"
+                Content="Nom :" />
             <TextBox
-            x:Name="tbNom"
-            Width="236"
-            Height="22"
-            TextWrapping="Wrap"
-                DataContext="{Binding SelectedItem, ElementName=DG_personnel}"/>
+                x:Name="tbNom"
+                Width="236"
+                Height="22"
+                DataContext="{Binding SelectedItem, ElementName=DG_personnel}"
+                TextWrapping="Wrap" />
             <Label
-            Width="236"
-            Height="26"
-            Content="Prénom :" />
+                Width="236"
+                Height="26"
+                Content="Prénom :" />
             <TextBox
-            x:Name="tbPrenom"
-            Width="236"
-            Height="20"
-            TextWrapping="Wrap" />
+                x:Name="tbPrenom"
+                Width="236"
+                Height="20"
+                TextWrapping="Wrap" />
             <Label
-            Width="233"
-            Height="26"
-            Content="Email :" />
+                Width="233"
+                Height="26"
+                Content="Email :" />
             <TextBox
-            x:Name="tbEmail"
-            Width="236"
-            Height="20"
-            TextWrapping="Wrap" 
-            
-            />
+                x:Name="tbEmail"
+                Width="236"
+                Height="20"
+                TextWrapping="Wrap" />
 
         </StackPanel>
         <Image
             Width="294"
             Height="87"
-            Margin="696,10,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,10,10,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Source="/index.png" />
 
         <Rectangle
+            Grid.Row="1"
             Width="423"
             Height="93"
-            Margin="215,213,0,0"
+            Margin="215,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
             Fill="#FF9E9D9D"
             Stroke="Black" />
         <Label
             Width="83"
             Height="30"
-            Margin="715,118,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,118,202,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Content="Personnel :" />
-        <ListView Margin="803,114,31,10" ItemsSource="{Binding Path=LesPersonnel}">
+        <ListView
+            Width="166"
+            Margin="0,114,31,10"
+            HorizontalAlignment="Right"
+            ItemsSource="{Binding Path=LesPersonnel}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" />
@@ -98,14 +105,23 @@
         </ListView>
         <ListView
             x:Name="DG_personnel"
-            Grid.Row="1"
+            Grid.Row="2"
             Margin="10,11,10,10"
             ItemsSource="{Binding LesPersonnel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nompersonnel}" Width="300"/>
-                    <GridViewColumn Header="Prénom" DisplayMemberBinding="{Binding Prenompersonnel}" Width="300"/>
-                    <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Emailpersonnel}" Width="400"/>
+                    <GridViewColumn
+                        Width="300"
+                        DisplayMemberBinding="{Binding Nompersonnel}"
+                        Header="Nom" />
+                    <GridViewColumn
+                        Width="300"
+                        DisplayMemberBinding="{Binding Prenompersonnel}"
+                        Header="Prénom" />
+                    <GridViewColumn
+                        Width="400"
+                        DisplayMemberBinding="{Binding Emailpersonnel}"
+                        Header="Email" />
                 </GridView>
             </ListView.View>
 
@@ -131,22 +147,28 @@
             Content="Modifier" />
         <Button
             x:Name="btnSupprimer"
+            Grid.Row="1"
             Width="116"
             Height="51"
-            Margin="57,204,0,0"
+            Margin="57,4,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnSupprimer_Click"
             Content="Supprimer" />
         <Label
-            Margin="224,243,0,0"
+            Grid.Row="1"
+            Width="42"
+            Height="26"
+            Margin="224,26,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom :" />
         <TextBox
             x:Name="tbRechercheEmail"
+            Grid.Row="1"
             Width="227"
-            Margin="307,247,0,0"
+            Height="18"
+            Margin="307,30,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -155,6 +177,15 @@
 
 
 
-        <Button x:Name="btRechercher" Content="Rechercher" HorizontalAlignment="Left" Height="33" Margin="539,239,0,0" VerticalAlignment="Top" Width="92" Click="btRechercher_Click_1"/>
+        <Button
+            x:Name="btRechercher"
+            Grid.Row="1"
+            Width="92"
+            Height="33"
+            Margin="539,22,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btRechercher_Click_1"
+            Content="Rechercher" />
     </Grid>
 </Window>
