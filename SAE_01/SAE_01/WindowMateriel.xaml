@@ -11,6 +11,7 @@
     Height="750"
     MinWidth="1000"
     MinHeight="750"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
@@ -54,11 +55,13 @@
             Content="Rechercher" />
 
         <Image
+            Width="294"
             Height="87"
             Margin="0,20,28,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.5,0.5"
-            Source="/index.png" HorizontalAlignment="Right" Width="294">
+            Source="/index.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
@@ -72,10 +75,12 @@
 
 
         <Label
+            Width="96"
             Height="30"
             Margin="0,111,248,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            Content="Nom catégorie :" HorizontalAlignment="Right" Width="96" />
+            Content="Nom catégorie :" />
 
         <ListView
             x:Name="DG_materiel"
