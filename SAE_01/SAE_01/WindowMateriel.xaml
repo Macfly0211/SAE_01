@@ -20,7 +20,7 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <Menu Margin="0,0,0,419" Grid.RowSpan="2">
+        <Menu Grid.RowSpan="2" Margin="0,0,0,419">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -40,7 +40,14 @@
 
         </Menu>
 
-        <Button Content="Rechercher" Height="31" Width="101" Margin="426,234,0,0" Click="Button_Click" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button
+            Width="101"
+            Height="31"
+            Margin="426,234,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click"
+            Content="Rechercher" />
 
         <Image
             Width="294"
@@ -50,7 +57,7 @@
             VerticalAlignment="Top"
             Source="/index.png" />
 
-        
+
 
         <Label
             Width="96"
@@ -58,15 +65,14 @@
             Margin="634,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom catégorie :"
-            />
-        
+            Content="Nom catégorie :" />
+
         <DataGrid
             x:Name="DG_materiel"
             Grid.Row="1"
             Margin="10,11,10,10"
             AutoGenerateColumns="False"
-            ItemsSource="{Binding Path=LesMateriel}" SelectionChanged="DG_materiel_SelectionChanged">
+            ItemsSource="{Binding Path=LesMateriel}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="50*"
@@ -167,10 +173,13 @@
             VerticalAlignment="Top"
             TextChanged="TextBox_TextChanged"
             TextWrapping="Wrap" />
-        <ListView ItemsSource="{Binding LesCategorieMateriel}" Margin="730,98,123,2" x:Name="lvCategorie">
+        <ListView
+            x:Name="lvCategorie"
+            Margin="730,98,123,2"
+            ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
                 </GridView>
             </ListView.View>
         </ListView>
