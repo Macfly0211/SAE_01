@@ -139,13 +139,7 @@ namespace SAE_01
             //}
         }
 
-        private void DG_personnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            tbEmail.Text =((Personnel)DG_personnel.SelectedItem).Emailpersonnel;
-            tbNom.Text =((Personnel) DG_personnel.SelectedItem).Nompersonnel;
-            tbPrenom.Text =((Personnel) DG_personnel.SelectedItem).Prenompersonnel;
-            
-        }
+        
 
         private bool PersonnelFilter(object item)
         {

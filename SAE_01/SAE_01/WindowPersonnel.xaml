@@ -100,7 +100,7 @@
             x:Name="DG_personnel"
             Grid.Row="1"
             Margin="10,11,10,10"
-            ItemsSource="{Binding LesPersonnel}" SelectionChanged="DG_personnel_SelectionChanged">
+            ItemsSource="{Binding LesPersonnel}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nompersonnel}" Width="300"/>
