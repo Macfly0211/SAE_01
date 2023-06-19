@@ -53,6 +53,15 @@ namespace SAE_01.Model
             }
         }
 
+        public override bool Equals(object? obj)
+        {
+            return obj is Personnel personnel &&
+                   Idpersonnel == personnel.Idpersonnel &&
+                   Emailpersonnel == personnel.Emailpersonnel &&
+                   Nompersonnel == personnel.Nompersonnel &&
+                   Prenompersonnel == personnel.Prenompersonnel;
+        }
+
 
         //FindAll = remonte les données
         public ObservableCollection<Personnel> FindAll()
@@ -75,6 +84,11 @@ namespace SAE_01.Model
         public ObservableCollection<Personnel> FindBySelection(string criteres)
         {
             throw new NotImplementedException();
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Idpersonnel, Emailpersonnel, Nompersonnel, Prenompersonnel);
         }
 
         public void Read()
