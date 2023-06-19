@@ -10,9 +10,9 @@
     Title="Modification matériel"
     Width="342"
     Height="358"
+    mc:Ignorable="d" 
     ResizeMode="NoResize"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    Icon="Logo.PNG">
 
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />

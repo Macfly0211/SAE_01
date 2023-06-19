@@ -1,17 +1,16 @@
-﻿<Window
-    x:Class="SAE_01.WindowModifCategorie"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:SAE_01"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:model="clr-namespace:SAE_01.Model"
-    Title="Modification Catégorie"
-    Width="342"
-    Height="358"
-    ResizeMode="NoResize"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+﻿<Window x:Class="SAE_01.WindowModifCategorie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAE_01"
+        
+        mc:Ignorable="d"
+        xmlns:model="clr-namespace:SAE_01.Model"
+        Width="342"
+        Height="358"
+        Title="Modification Catégorie" ResizeMode="NoResize" 
+        Icon="Logo.PNG">
 
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />

@@ -10,8 +10,8 @@
     Height="750"
     MinWidth="1000"
     MinHeight="750"
-    WindowStartupLocation="CenterScreen"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Icon="Logo.PNG">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
