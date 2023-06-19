@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -73,11 +74,15 @@ namespace SAE_01
         }
 
         //BOUTONS
-
+        /// <summary>
+        /// Bouton qui ajoute un matériel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un matériel </return>
+        /// <exception cref="ArgumentException"> Si le nom, la ref constructeur, le code barre, la categorie est null ou si le code barre ou la ref constructeurs ne suit pas le regex</exception>
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-            int i = 0;
-            bool estNum = int.TryParse(tbCodeBarre.Text, out i);
+            
 
             //condition pour les champs non remplis
             if (tbNomMateriel.Text == null || tbRefConstructeur.Text == null || tbCodeBarre.Text == null || lvCategorie.SelectedItem== null)
@@ -86,14 +91,18 @@ namespace SAE_01
                 //message d'erreur
 
             }
-            else if(tbCodeBarre.Text.Length != 10 || estNum == false)
+            else if(FormeCodeBarre(tbCodeBarre.Text) == false)
             {
-                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Forme du code barre : 5 lettres 7 chiffres 3 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (FormeRefConstructeur(tbRefConstructeur.Text) == false)
+            {
+                MessageBox.Show("Forme de la référence constructeur : 1 lettres 1 tiret 3 chiffres 6 lettres ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
                 //crée un nouveau personnel 
-                Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text);
+                Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text.ToUpper(), tbCodeBarre.Text.ToUpper());
                 materiel.Create();
                 //ajoute lee nouveau personnel a la liste
                 this.applicationData.LesMateriel.Add(materiel);
@@ -111,12 +120,18 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Bouton qui supprime un matériel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>supprime un matériel </return>
+        /// <exception cref="ArgumentException"> Si aucun matériel n'est sélectionné</exception>
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             //vérification de la sélection dans la dataGrid
             if (DG_materiel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un matériel.");
+                MessageBox.Show("Erreur ! Selectionner un matériel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -145,7 +160,10 @@ namespace SAE_01
 
         }
 
-        //ReloadData qui appelle ApplicationData
+        /// <summary>
+        /// Reload les données en appellant application data
+        /// </summary>
+        /// <return>reload les données </return>
         public void ReloadData()
         {
             applicationData.reloadAppData();
@@ -153,7 +171,10 @@ namespace SAE_01
         }
 
 
-        //filtre des personnels 
+        /// <summary>
+        /// filtre des données
+        /// </summary>
+        /// <return>flitre les données </return>
         private bool MaterielFilter(object item)
         {
             if (String.IsNullOrEmpty(tbNomMateriel.Text))
@@ -170,7 +191,10 @@ namespace SAE_01
 
 
 
-        //bouton de recherche
+        /// <summary>
+        /// bouton de recherche
+        /// </summary>
+        /// <return>une recherche de matériel </return>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -178,11 +202,17 @@ namespace SAE_01
             DG_materiel.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Bouton qui modifie un matériel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un matériel </return>
+        /// <exception cref="ArgumentException"> Si aucune matériel n'est sélectionné</exception>
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
             if (DG_materiel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un matériel.");
+                MessageBox.Show("Erreur ! Selectionner un matériel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
@@ -197,6 +227,24 @@ namespace SAE_01
             }
         }
 
-       
+        /// <summary>
+        /// Vérifie que le code barre respecte le regex
+        /// </summary>
+        /// <return>True si le code barre est correcte au regex </return>
+        static bool FormeCodeBarre(string codebarre)
+        {
+            string reg = @"^[A-Za-z]{5}\d{7}[A-Za-z]{3}$";
+            return Regex.IsMatch(codebarre, reg);
+        }
+
+        /// <summary>
+        /// Vérifie que la ref constructeur respecte le regex
+        /// </summary>
+        /// <return>True si la ref constructeur est correcte au regex </return>
+        static bool FormeRefConstructeur(string refconstructeur)
+        {
+            string reg2 = @"^[A-Za-z]-\d{3}[A-Za-z]{6}$";
+            return Regex.IsMatch(refconstructeur, reg2);
+        }
     }
 }

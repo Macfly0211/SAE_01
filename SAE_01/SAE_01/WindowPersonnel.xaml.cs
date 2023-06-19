@@ -65,7 +65,12 @@ namespace SAE_01
         }
 
         //BOUTON
-
+        /// <summary>
+        /// Bouton qui ajoute un personnel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>ajoute une personnel </return>
+        /// <exception cref="ArgumentException"> Si le nom, prenom, mail n'est pas renseigné</exception>
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             //condition pour les champs non remplis
@@ -98,18 +103,28 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Reload appelle Application data pour reload les données
+        /// </summary>
+        /// <return>reload les données</return>
         public void ReloadData()
         {
             applicationData.reloadAppData();
             this.DG_personnel.ItemsSource = applicationData.LesPersonnel;
         }
 
+        /// <summary>
+        /// Bouton qui supprime un personnel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>supprime un personnel </return>
+        /// <exception cref="ArgumentException"> Si aucun personnel n'est sélectionné</exception>
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             //vérification de la sélection dans la dataGrid
             if (DG_personnel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                MessageBox.Show("Erreur ! Selectionner un personnel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
@@ -138,11 +153,17 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Bouton modifie un personnel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un personnel </return>
+        /// <exception cref="ArgumentException"> Si aucun personnel n'est sélectionné</exception>
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
             if (DG_personnel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                MessageBox.Show("Erreur ! Selectionner un personnel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
@@ -154,7 +175,10 @@ namespace SAE_01
             }
         }
 
-        //filtre des personnels 
+        /// <summary>
+        /// filtre des données
+        /// </summary>
+        /// <return>flitre les données </return>
         private bool PersonnelFilter(object item)
         {
             if (String.IsNullOrEmpty(tbRechercheEmail.Text))
@@ -167,7 +191,10 @@ namespace SAE_01
             }
         }
 
-        //bouton de recherche
+        /// <summary>
+        /// Bouton de recherche
+        /// </summary>
+        /// <return>recherche les données </return>
         private void btRechercher_Click_1(object sender, RoutedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource).Refresh();

@@ -27,7 +27,12 @@ namespace SAE_01
             this.idCategorie = idCategorie;
         }
 
-
+        /// <summary>
+        /// Bouton qui modifie une catégorie
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie une catégorie </return>
+        /// <exception cref="ArgumentException"> Si le nom n'est référencié</exception>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
             if (tbCategorie.Text == "")
@@ -46,8 +51,11 @@ namespace SAE_01
             }
         }
 
-    
 
+        /// <summary>
+        /// Bouton qui annule et sort de la page
+        /// </summary>
+        /// <return>Sort de la page </return>
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -29,6 +29,12 @@ namespace SAE_01
             this.idPersonnel = idPersonnel;
         }
 
+        /// <summary>
+        /// Bouton qui modifie une attribution
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie une attribution </return>
+        /// <exception cref="ArgumentException"> Si la date est vide</exception>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
 
@@ -58,6 +64,10 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Bouton qui annule et sort de la page
+        /// </summary>
+        /// <return>sort de la page </return>
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

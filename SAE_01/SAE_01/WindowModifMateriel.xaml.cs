@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,11 +39,15 @@ namespace SAE_01
             DialogResult = false; // ferme automatiquement la fenêtre
         }
 
+        /// <summary>
+        /// Bouton qui modifie un matériel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un matériel </return>
+        /// <exception cref="ArgumentException"> Si nom, codebarre, refConstructeur vide ou si code barre ou ref constructeur pas au bon format</exception>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
 
-            int i = 0;
-            bool estNum = int.TryParse(tbBarre.Text, out i);
 
             if (tbNom.Text == "" || tbBarre.Text == "" || tbConstructeur.Text == "")
             {
@@ -50,9 +55,13 @@ namespace SAE_01
                 //message d'erreur
 
             }
-            else if (tbBarre.Text.Length != 10 || estNum == false)
+            else if (FormeCodeBarre(tbBarre.Text) == false)
             {
-                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Forme du code barre : 5 lettres 7 chiffres 3 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else if (FormeRefConstructeur(tbConstructeur.Text) == false)
+            {
+                MessageBox.Show("Forme de la référence constructeur : 1 lettres 1 tiret 3 chiffres 6 lettres ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -60,17 +69,34 @@ namespace SAE_01
                 ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Nommateriel = tbNom.Text;
                 ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
 
-                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Referenceconstructeurmateriel = tbConstructeur.Text;
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Referenceconstructeurmateriel = tbConstructeur.Text.ToUpper();
                 ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
 
-                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Codebarreinventaire = tbBarre.Text;
+                ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Codebarreinventaire = tbBarre.Text.ToUpper();
                 ((Materiel)applicationData.LesMateriel.Single(x => x.Idmateriel == this.idMateriel)).Update();
 
                 this.Close();
             }
-            
 
+            /// <summary>
+            /// Vérifie que le code barre respecte le regex
+            /// </summary>
+            /// <return>True si le code barre est correcte au regex </return>
+            static bool FormeCodeBarre(string codebarre)
+            {
+                string reg = @"^[A-Za-z]{5}\d{7}[A-Za-z]{3}$";
+                return Regex.IsMatch(codebarre, reg);
+            }
 
+            /// <summary>
+            /// Vérifie que la ref constructeur respecte le regex
+            /// </summary>
+            /// <return>True si la ref constructeur est correcte au regex </return>
+            static bool FormeRefConstructeur(string refconstructeur)
+            {
+                string reg2 = @"^[A-Za-z]-\d{3}[A-Za-z]{6}$";
+                return Regex.IsMatch(refconstructeur, reg2);
+            }
         }
     }
 }

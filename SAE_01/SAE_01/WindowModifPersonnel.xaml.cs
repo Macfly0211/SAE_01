@@ -27,6 +27,12 @@ namespace SAE_01
             this.idPersonnel = idPersonnel;
         }
 
+        /// <summary>
+        /// Bouton qui modifie un personnel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un personnel </return>
+        /// <exception cref="ArgumentException"> Si nom, prenom, mail vide </exception>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
             if (tbNom.Text == "" || tbPrenom.Text == "" || tbMail.Text == "")
@@ -56,6 +62,10 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// annule et ferme la fenetre
+        /// </summary>
+        /// <return>ferme la fenetre</return>
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
