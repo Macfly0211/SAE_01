@@ -118,7 +118,7 @@ namespace SAE_01
         }
 
         /// <summary>
-        /// Reload les données
+        /// Reload les données en appellant application data
         /// </summary>
         /// <return>reload les données </return>
         public void ReloadData()

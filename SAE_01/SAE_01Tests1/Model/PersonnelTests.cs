@@ -7,22 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows;
 
 namespace SAE_01.Model.Tests
 {
     [TestClass()]
     public class PersonnelTests
     {
-        Personnel Test = new Personnel(0,"TestEmail", "TestNom", "TestPrenom");
+        Personnel TestCreate = new Personnel(0,"TestcEmail", "TestcNom", "TestcPrenom");
+        Personnel TestDelete = new Personnel(0,"TestdEmail", "TestdNom", "TestdPrenom");
+        Personnel TestUpdate = new Personnel(0,"TestuEmail", "TestuNom", "TestuPrenom");
         
         
         [TestMethod()]
         public void CreateTest()
         {
-            Test.Create();
+            TestCreate.Create();
             bool trouver = false;
             int id = 0;
-            foreach(Personnel unPersonnel in Test.FindAll())
+            foreach(Personnel unPersonnel in TestCreate.FindAll())
             {
                 if (unPersonnel.Emailpersonnel == "TestEmail" && unPersonnel.Prenompersonnel == "TestPrenom" && unPersonnel.Nompersonnel == "TestNom") ;
                 {
@@ -34,14 +37,14 @@ namespace SAE_01.Model.Tests
 
             Assert.IsTrue(trouver);
             new Personnel(id, "", "", "").Delete();
-            Test.Delete();
+            TestCreate.Delete();
         }
         [TestMethod()]
         public void DeleteTest()
         {
-            Test.Create();
+            TestDelete.Create();
             int id = 0;
-            foreach(Personnel unPersonnel in Test.FindAll())
+            foreach(Personnel unPersonnel in TestDelete.FindAll())
             {
                 if(unPersonnel.Nompersonnel == "TestNom" && unPersonnel.Prenompersonnel == "TestPrenom" && unPersonnel.Emailpersonnel == "TestEmail")
                 {
@@ -52,14 +55,14 @@ namespace SAE_01.Model.Tests
 
             new Personnel(id,"", "", "").Delete();
 
-            foreach(Personnel unPersonnel in Test.FindAll())
+            foreach(Personnel unPersonnel in TestDelete.FindAll())
             {
                 if(unPersonnel.Nompersonnel == "TestNom" && unPersonnel.Prenompersonnel == "TestPrenom" && unPersonnel.Emailpersonnel == "TestEmail")
                 {
                     Assert.Fail();
                 }
             }
-            Test.Delete();
+            TestDelete.Delete();
         }
 
         [TestMethod()]
@@ -67,22 +70,25 @@ namespace SAE_01.Model.Tests
         {
             DataAccess data = new DataAccess();
             data.OpenConnection();
-            Test.Create();
-            Test.Nompersonnel = "Nom";
-            Test.Prenompersonnel = "Prenom";
-            Test.Emailpersonnel = "Email";
-            Test.Update();
+            TestUpdate.Create();
+            TestUpdate.Nompersonnel = "Nom";
+            TestUpdate.Prenompersonnel = "Prenom";
+            TestUpdate.Emailpersonnel = "Email";
+            MessageBox.Show($"personnel [ID:{TestUpdate.Idpersonnel}, Nom:{TestUpdate.Nompersonnel}, Prenom:{TestUpdate.Prenompersonnel}, Email:{TestUpdate.Emailpersonnel}]", "Personnel");
+            int id = (int)data.GetData($"select idpersonnel from personnel").Rows[0]["idpersonnel"];
+            TestUpdate.Idpersonnel = id;
+            TestUpdate.Update();
             Personnel verif = new Personnel();
             DataTable lesDatas = data.GetData($"select idpersonnel, emailpersonnel, nompersonnel, prenompersonnel from personnel");
             foreach(DataRow row in lesDatas.Rows)
             {
-                if((int)row["idpersonnel"] == Test.Idpersonnel)
+                if((int)row["idpersonnel"] == id)
                 {
                     verif = new Personnel((int)row["idpersonnel"], row["emailpersonnel"].ToString(), row["nompersonnel"].ToString(), row["prenompersonnel"].ToString());
                 }
             }
-            Assert.AreEqual(verif, Test, "Erreur pendant l'Update");
-            Test.Delete();
+            Assert.AreEqual(verif, TestUpdate, "Erreur pendant l'Update");
+            TestUpdate.Delete();
 
         }
     }
