@@ -163,5 +163,12 @@ namespace SAE_01
             CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource).Refresh();
             DG_materiel.SelectedIndex = 0;
         }
+
+        //private void DG_materiel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    tbCodeBarre.Text = ((Materiel)DG_materiel.SelectedItem).Codebarreinventaire;
+        //    tbRefConstructeur.Text = ((Materiel)DG_materiel.SelectedItem).Referenceconstructeurmateriel;
+        //    tbNomMateriel.Text = ((Materiel)DG_materiel.SelectedItem).Nommateriel;
+        //}
     }
 }
