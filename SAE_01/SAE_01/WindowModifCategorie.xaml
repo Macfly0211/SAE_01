@@ -4,16 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SAE_01"
-        xmlns:model="clr-namespace:SAE_01.Model"
+        
         mc:Ignorable="d"
+        xmlns:model="clr-namespace:SAE_01.Model"
         Width="342"
         Height="358"
         Title="Modification Catégorie" >
 
     <Window.DataContext>
-        <model:ApplicationData x:Name="applicationData"/>
+        <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
-    
+
     <Grid>
         <Label
             Width="112"

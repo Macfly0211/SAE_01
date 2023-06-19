@@ -13,9 +13,7 @@
     MinHeight="750"
     mc:Ignorable="d">
 
-    <Window.DataContext>
-        <model:ApplicationData x:Name="applicationData" />
-    </Window.DataContext>
+   
 
     <Grid>
         <Grid.RowDefinitions>
