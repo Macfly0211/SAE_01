@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Width="342"
         Height="358"
-        Title="Modification attribution" >
+        Title="Modification attribution" ResizeMode="NoResize" >
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>

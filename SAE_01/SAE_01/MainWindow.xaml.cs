@@ -150,12 +150,23 @@ namespace SAE_01
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-            WindowModifAttribution modif = new WindowModifAttribution(((EstAttribue)DG_Main.SelectedItem).fk_idMateriel,((EstAttribue)DG_Main.SelectedItem).fk_idPerso);
-            modif.ShowDialog();
+
+
+            if (DG_Main.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner une catégorie.");
+                //message d'erreur
+            }
+            else
+            {
+
+                WindowModifAttribution modif = new WindowModifAttribution(((EstAttribue)DG_Main.SelectedItem).fk_idMateriel,((EstAttribue)DG_Main.SelectedItem).fk_idPerso);
+                modif.ShowDialog();
 
 
 
-            this.ReloadData();
+                this.ReloadData();
+            }
         }
     }
 }
