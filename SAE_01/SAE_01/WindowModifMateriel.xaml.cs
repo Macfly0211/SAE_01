@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,8 +42,6 @@ namespace SAE_01
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
 
-            int i = 0;
-            bool estNum = int.TryParse(tbBarre.Text, out i);
 
             if (tbNom.Text == "" || tbBarre.Text == "" || tbConstructeur.Text == "")
             {
@@ -50,9 +49,9 @@ namespace SAE_01
                 //message d'erreur
 
             }
-            else if (tbBarre.Text.Length != 10 || estNum == false)
+            else if (FormeCodeBarre(tbBarre.Text) == false)
             {
-                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Forme du code barre : 5 lettres 7 chiffres 3 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
@@ -68,8 +67,12 @@ namespace SAE_01
 
                 this.Close();
             }
-            
 
+            static bool FormeCodeBarre(string codebarre)
+            {
+                string reg = @"^[A-Za-z]{5}\d{7}[A-Za-z]{3}$";
+                return Regex.IsMatch(codebarre, reg);
+            }
 
         }
     }
