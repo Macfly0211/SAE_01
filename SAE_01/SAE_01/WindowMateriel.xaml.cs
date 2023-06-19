@@ -75,12 +75,19 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            int i = 0;
+            bool estNum = int.TryParse(tbCodeBarre.Text, out i);
+
             //condition pour les champs non remplis
             if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || lvCategorie.SelectedItem=="")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
                 //message d'erreur
 
+            }
+            else if(tbCodeBarre.Text.Length != 10 || estNum == false)
+            {
+                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
