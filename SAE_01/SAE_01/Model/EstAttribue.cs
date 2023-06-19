@@ -108,7 +108,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"Update est_attribue set dateattribution = '{this.Dateattribution}', commentaireattribution = '{this.Commentaireattribution}' where idpersonnel = {this.UnPersonnel.Idpersonnel} and idmateriel = {this.UnMateriel.Idmateriel}");
         }
 
         //Delete = méthode de suppression de personnels
