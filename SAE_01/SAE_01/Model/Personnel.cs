@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace SAE_01.Model
 {
+    /// <summary>
+    /// stocke 4 informations :
+    /// 3 chaines : le nom, le prenom, l'email
+    /// 1 entier : l'idpersonnel
+    /// </summary>
     public class Personnel : Crud<Personnel>
     {
         //constructeur
@@ -25,19 +30,37 @@ namespace SAE_01.Model
 
 
         //champs
+        /// <summary>
+        /// Obtient l'id du personnel
+        /// </summary>
         public int Idpersonnel { get; set; }
+        /// <summary>
+        /// Obtient l'email du personnel
+        /// </summary>
         public string Emailpersonnel { get; set; }
+        /// <summary>
+        /// Obtient le nom du personnel
+        /// </summary>
         public string Nompersonnel { get; set; }
+        /// <summary>
+        /// Obtient le prénom du personnel
+        /// </summary>
         public string Prenompersonnel { get; set; }
 
 
-        //Create = méthode de création de nouveau personnels
+        /// <summary>
+        /// Création de nouveau personnels grace aux email, nompersonnel, prenompersonnel
+        /// </summary>
+        /// <return> Un nouveau personnel</return>
         public void Create()
         {
             new DataAccess().SetData($"insert into personnel (emailpersonnel, nompersonnel, prenompersonnel) values ('{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}');");
         }
 
-        //Delete = méthode de suppression de personnels
+        /// <summary>
+        /// Suppression de personnels 
+        /// </summary>
+        /// <return> supprime un personnel</return>
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -54,7 +77,10 @@ namespace SAE_01.Model
         }
 
 
-        //FindAll = remonte les données
+        /// <summary>
+        /// Remonte lse données 
+        /// </summary>
+        /// <return> ObservableCollection (liste) des personnels</return>
         public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lesPersonnel = new ObservableCollection<Personnel>();
@@ -82,8 +108,10 @@ namespace SAE_01.Model
             throw new NotImplementedException();
         }
 
-
-        //UPDATE = met a jour les données
+        /// <summary>
+        /// Met a jours les données
+        /// </summary>
+        /// <return> Met a jours les données</return>
         public void Update()
         {
             new DataAccess().SetData($"Update personnel set nompersonnel = '{this.Nompersonnel}', prenompersonnel = '{this.Prenompersonnel}', emailpersonnel = '{this.Emailpersonnel}' where idpersonnel = {this.Idpersonnel}");

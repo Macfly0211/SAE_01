@@ -9,6 +9,12 @@ using System.Windows;
 
 namespace SAE_01.Model
 {
+    /// <summary>
+    /// stocke 4 informations :
+    /// 1 chaines : le commentaire
+    /// 2 entier : l'idmateriel, l'idpersonnel
+    /// 1 dateTime : dateAttribution
+    /// </summary>
     public class EstAttribue : Crud<EstAttribue>
     {
         //constructeur
@@ -41,11 +47,24 @@ namespace SAE_01.Model
         }
 
         //champs
+
         private Personnel unPersonnel;
         private Materiel unMateriel;
+        /// <summary>
+        /// Obtient l'id personnel
+        /// </summary>
         public int fk_idPerso { get; set; }
+        /// <summary>
+        /// Obtient l'id du materiel
+        /// </summary>
         public int fk_idMateriel { get; set; }
+        /// <summary>
+        /// Obtient la dateAttribution
+        /// </summary>
         public DateTime Dateattribution { get; set; }
+        /// <summary>
+        /// Obtient le commentaire
+        /// </summary>
         public string Commentaireattribution { get; set; }
 
         public Personnel UnPersonnel
@@ -75,7 +94,10 @@ namespace SAE_01.Model
 
         //public string Commentaireattribution { get; set; }
 
-        //FindAll = remonte les données
+        /// <summary>
+        ///Remonte les données
+        /// </summary>
+        /// <return>Remonte les données dans une ObservableCollection (liste) lesAttribution</return>
         public ObservableCollection<EstAttribue> FindAll()
         {
             ObservableCollection<EstAttribue> lesAttribution = new ObservableCollection<EstAttribue>();
@@ -93,7 +115,10 @@ namespace SAE_01.Model
             return lesAttribution;
         }
 
-        //Create = méthode de création de nouveau personnels
+        /// <summary>
+        /// Créer une attribution
+        /// </summary>
+        /// <return>Créer une attribution avec une requete sql</return>
         public void Create()
         {
 
@@ -106,12 +131,19 @@ namespace SAE_01.Model
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Modifie une attribution
+        /// </summary>
+        /// <return>Modifie une attribution grace a une requete</return>
         public void Update()
         {
             new DataAccess().SetData($"Update est_attribue set dateattribution = '{this.Dateattribution}', commentaireattribution = '{this.Commentaireattribution}' where idpersonnel = {this.UnPersonnel.Idpersonnel} and idmateriel = {this.UnMateriel.Idmateriel}");
         }
 
-        //Delete = méthode de suppression de personnels
+        /// <summary>
+        /// Supprime une attribution
+        /// </summary>
+        /// <return>Supprime une attribution matériel avec une requete sql</return>
         public void Delete()
         {
             DataAccess accesBD = new DataAccess();
