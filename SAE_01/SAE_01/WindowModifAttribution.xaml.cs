@@ -1,4 +1,5 @@
 ﻿using System;
+using SAE_01.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace SAE_01
     /// </summary>
     public partial class WindowModifAttribution : Window
     {
-        public WindowModifAttribution()
+        int idMateriel;
+        int idPersonnel;
+        public WindowModifAttribution(int idMateriel, int idPersonnel)
         {
             InitializeComponent();
+            this.idMateriel = idMateriel;
+            this.idPersonnel = idPersonnel;
+        }
+
+        private void btAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Dateattribution = DateTime.Parse(dpDate.SelectedDate.ToString());
+            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+
+            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Commentaireattribution = tbCommentaire.Text;
+            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+
+            this.Close();
         }
     }
 }

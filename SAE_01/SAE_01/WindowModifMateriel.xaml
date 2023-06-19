@@ -28,8 +28,8 @@
             x:Name="tbNom"
             Width="278"
             Height="28"
-            Margin="0,66,0,0"
-            HorizontalAlignment="Center"
+            Margin="32,66,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap"
             
@@ -47,28 +47,28 @@
             x:Name="tbConstructeur"
             Width="278"
             Height="28"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" Margin="0,143,0,0" />
+            TextWrapping="Wrap" Margin="32,143,0,0" />
         <Label
-            Width="112"
+            Width="128"
             Height="33"
             Margin="32,187,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Code Bar : " />
+            Content="Code Barre : " />
         <TextBox
             x:Name="tbBarre"
             Width="278"
             Height="28"
-            Margin="0,220,0,0"
-            HorizontalAlignment="Center"
+            Margin="32,220,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button x:Name="btAjouter" Content="Ajouter" Margin="32,279,182,22" Click="btAjouter_Click"/>
-        <Button Content="Annuler" Margin="189,279,32,22" Click="Button_Click"/>
+        <Button x:Name="btAjouter" Content="Confirmer" Margin="32,259,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="41" VerticalAlignment="Top"/>
+        <Button Content="Annuler" Margin="189,259,0,0" Click="Button_Click" HorizontalAlignment="Left" Width="121" Height="41" VerticalAlignment="Top"/>
 
 
     </Grid>

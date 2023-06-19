@@ -49,7 +49,7 @@
         <Label
             Width="100"
             Height="26"
-            Margin="872,29,0,0"
+            Margin="852,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom catégorie :"
@@ -57,7 +57,7 @@
 
         <ListView
             x:Name="lvCategorie"
-            Margin="862,60,0,0"
+            Margin="843,66,0,0"
             ItemsSource="{Binding LesCategorieMateriel}" HorizontalAlignment="Left" Width="119" Height="242" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
@@ -66,9 +66,9 @@
             </ListView.View>
         </ListView>
         <Label
-            Width="101"
+            Width="100"
             Height="26"
-            Margin="538,29,0,0"
+            Margin="508,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom personnel :"
@@ -76,7 +76,7 @@
         <Label
             Width="101"
             Height="26"
-            Margin="722,29,0,0"
+            Margin="698,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom matériel :"
@@ -140,7 +140,7 @@
             Margin="10,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Modifier" />
+            Content="Modifier" Click="btnModifier_Click" />
         <Image
             Width="294"
             Height="87"
@@ -187,7 +187,7 @@
         </Grid>
         <ListView
             x:Name="lvMateriel"
-            Margin="714,60,0,0"
+            Margin="690,65,0,0"
             ItemsSource="{Binding LesMateriel}" HorizontalAlignment="Left" Width="117" Height="242" VerticalAlignment="Top">
             <ListView.View>
                 <GridView>
@@ -197,7 +197,7 @@
         </ListView>
         <ListView
             x:Name="lvPersonnel"
-            Margin="508,60,0,0"
+            Margin="477,65,0,0"
             ItemsSource="{Binding Path=LesPersonnel}" HorizontalAlignment="Left" Width="162" Height="242" VerticalAlignment="Top" >
             <ListView.View>
                 <GridView>

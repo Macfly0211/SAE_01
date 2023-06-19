@@ -27,13 +27,13 @@
             x:Name="tbCategorie"
             Width="278"
             Height="28"
-            Margin="0,66,0,0"
-            HorizontalAlignment="Center"
+            Margin="32,66,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap"
             
             />
-        <Button x:Name="btAjouter" Content="Ajouter" Margin="32,279,182,22" Click="btAjouter_Click"/>
-        <Button Content="Annuler" Margin="189,279,32,22" />
+        <Button x:Name="btAjouter" Content="Confirmer" Margin="32,259,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="42" VerticalAlignment="Top"/>
+        <Button Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="42" VerticalAlignment="Top" />
     </Grid>
 </Window>

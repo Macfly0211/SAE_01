@@ -147,5 +147,15 @@ namespace SAE_01
                 this.ReloadData();
             }
         }
+
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+            WindowModifAttribution modif = new WindowModifAttribution(((EstAttribue)DG_Main.SelectedItem).fk_idMateriel,((EstAttribue)DG_Main.SelectedItem).fk_idPerso);
+            modif.ShowDialog();
+
+
+
+            this.ReloadData();
+        }
     }
 }
