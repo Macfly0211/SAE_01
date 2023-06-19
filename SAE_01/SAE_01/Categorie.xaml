@@ -39,20 +39,18 @@
             Content="Rechercher"
             RenderTransformOrigin="0.494,0.544" />
 
-        <DataGrid
+        <ListView
             x:Name="DG_categorie"
             Grid.Row="1"
             Margin="10,11,10,10"
-            AutoGenerateColumns="False"
             ItemsSource="{Binding LesCategorieMateriel}">
-            <DataGrid.Columns>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Header="Nom" DisplayMemberBinding="{Binding Nomcategorie}"/>
 
-                <DataGridTextColumn
-                    Width="400*"
-                    Binding="{Binding Nomcategorie}"
-                    Header="Nom" />
-            </DataGrid.Columns>
-        </DataGrid>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
         <Image
             Width="294"
