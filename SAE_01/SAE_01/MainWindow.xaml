@@ -85,10 +85,10 @@
         <Label
             Width="82"
             Height="27"
-            Margin="10,284,0,0"
+            Margin="10,294,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Attribution :" />
+            Content="Attribution :" Grid.RowSpan="2" />
         <Label
             Width="50"
             Height="26"
@@ -124,7 +124,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ajouter" Click="btnAjouter_Click" />
-        
+
         <Button
             x:Name="btnSupp"
             Width="92"

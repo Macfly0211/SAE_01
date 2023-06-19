@@ -32,7 +32,7 @@
 
         </Menu>
 
-        <StackPanel Margin="212,48,539,113">
+        <StackPanel Margin="212,48,512,113">
             <Label
             Width="234"
             Height="24"
@@ -115,7 +115,7 @@
             x:Name="btnAjouter"
             Width="116"
             Height="51"
-            Margin="58,106,0,0"
+            Margin="57,64,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnAjouter_Click"
@@ -124,7 +124,7 @@
             x:Name="btnModifier"
             Width="116"
             Height="51"
-            Margin="58,176,0,0"
+            Margin="57,134,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnModifier_Click"
@@ -133,7 +133,7 @@
             x:Name="btnSupprimer"
             Width="116"
             Height="51"
-            Margin="58,246,0,0"
+            Margin="57,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnSupprimer_Click"
