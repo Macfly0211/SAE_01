@@ -93,7 +93,7 @@
                         DisplayMemberBinding="{Binding Path=Nommateriel}"
                         Header="Nom matériel" />
                     <GridViewColumn
-                        Width="200"
+                        Width="250"
                         DisplayMemberBinding="{Binding Path=UneCategorie.Nomcategorie}"
                         Header="Nom catégorie" />
                     <GridViewColumn
@@ -101,7 +101,7 @@
                         DisplayMemberBinding="{Binding Path=Referenceconstructeurmateriel}"
                         Header="Référence constructeur" />
                     <GridViewColumn
-                        Width="200"
+                        Width="250"
                         DisplayMemberBinding="{Binding Path=Codebarreinventaire}"
                         Header="Code barre" />
                 </GridView>

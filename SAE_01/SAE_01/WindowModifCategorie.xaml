@@ -34,6 +34,6 @@
             
             />
         <Button x:Name="btAjouter" Content="Modifier" Margin="32,258,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="42" VerticalAlignment="Top"/>
-        <Button Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="41" VerticalAlignment="Top" />
+        <Button x:Name="BtAnnuler" Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="41" VerticalAlignment="Top" Click="BtAnnuler_Click" />
     </Grid>
 </Window>
