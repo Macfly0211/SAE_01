@@ -12,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
 
 namespace SAE_01
@@ -163,5 +164,17 @@ namespace SAE_01
             CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource).Refresh();
             DG_materiel.SelectedIndex = 0;
         }
+
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+            WindowModifMateriel modif = new WindowModifMateriel(((Materiel)DG_materiel.SelectedItem).Idmateriel);
+            modif.ShowDialog();
+
+
+
+            this.ReloadData();
+        }
+
+       
     }
 }

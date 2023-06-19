@@ -106,7 +106,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            
+            new DataAccess().SetData($"Update materiel set nommateriel = '{this.Nommateriel}', referenceconstructeurmateriel = '{this.Referenceconstructeurmateriel}', codebarreinventaire = '{this.Codebarreinventaire}' where idmateriel = {this.Idmateriel}");
         }
 
         public ObservableCollection<Materiel> FindBySelection(string criteres)

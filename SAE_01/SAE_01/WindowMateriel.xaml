@@ -67,36 +67,22 @@
             VerticalAlignment="Top"
             Content="Nom catégorie :" />
 
-        <DataGrid
+        <ListView
             x:Name="DG_materiel"
             Grid.Row="1"
             Margin="10,11,10,10"
-            AutoGenerateColumns="False"
+            
             ItemsSource="{Binding Path=LesMateriel}">
-            <DataGrid.Columns>
-                <DataGridTextColumn
-                    Width="50*"
-                    Binding="{Binding Nommateriel}"
-                    Header="Nom matériel" />
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nommateriel}" Header="Nom matériel" Width="200" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=UneCategorie.Nomcategorie}" Header="Nom catégorie" Width="200" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Referenceconstructeurmateriel}" Header="Référence constructeur" Width="300" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Codebarreinventaire}" Header="Code barre" Width="200"/>
+                </GridView>
+            </ListView.View>
 
-                <DataGridTextColumn
-                    Width="60*"
-                    Binding="{Binding UneCategorie.Nomcategorie}"
-                    Header="Nom catégorie" />
-
-                <DataGridTextColumn
-                    Width="100*"
-                    Binding="{Binding Referenceconstructeurmateriel}"
-                    Header="Référence constructeur" />
-
-                <DataGridTextColumn
-                    Width="100*"
-                    Binding="{Binding Codebarreinventaire}"
-                    Header="Code barre" />
-
-
-            </DataGrid.Columns>
-        </DataGrid>
+        </ListView>
 
         <Button
             x:Name="btnAjouter"
@@ -114,7 +100,7 @@
             Margin="58,176,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Modifier" />
+            Content="Modifier" Click="btnModifier_Click" />
         <Button
             x:Name="btnSupprimer"
             Width="116"
