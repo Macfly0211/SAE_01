@@ -33,8 +33,11 @@ namespace SAE_01
 
         }
 
-        //MENU
-        
+        //============MENU============
+        //Crée une nouvelle fenêtre et assigne la bonne fenêtre
+        //Ferme la fenêtre actuellement ouverte 
+        //Ouvre la nouvelle fenetre
+
         private void Menu_Click(object sender, RoutedEventArgs e)
         {
             MainWindow menu = new MainWindow();
