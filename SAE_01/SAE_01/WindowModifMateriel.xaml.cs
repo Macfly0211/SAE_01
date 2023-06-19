@@ -53,6 +53,10 @@ namespace SAE_01
             {
                 MessageBox.Show("Forme du code barre : 5 lettres 7 chiffres 3 lettres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            else if (FormeRefConstructeur(tbConstructeur.Text) == false)
+            {
+                MessageBox.Show("Forme de la référence constructeur : 1 lettres 1 tiret 3 chiffres 6 lettres ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             else
             {
 
@@ -74,6 +78,11 @@ namespace SAE_01
                 return Regex.IsMatch(codebarre, reg);
             }
 
+            static bool FormeRefConstructeur(string refconstructeur)
+            {
+                string reg2 = @"^[A-Za-z]-\d{3}[A-Za-z]{6}$";
+                return Regex.IsMatch(refconstructeur, reg2);
+            }
         }
     }
 }
