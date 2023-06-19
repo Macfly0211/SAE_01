@@ -57,8 +57,12 @@
 
         <ListView
             x:Name="lvCategorie"
+            Width="119"
+            Height="242"
             Margin="843,66,0,0"
-            ItemsSource="{Binding LesCategorieMateriel}" HorizontalAlignment="Left" Width="119" Height="242" VerticalAlignment="Top">
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
@@ -83,12 +87,13 @@
             RenderTransformOrigin="1.095,-6.075" />
 
         <Label
+            Grid.RowSpan="2"
             Width="82"
             Height="27"
             Margin="10,294,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Attribution :" Grid.RowSpan="2" />
+            Content="Attribution :" />
         <Label
             Width="50"
             Height="26"
@@ -97,7 +102,13 @@
             VerticalAlignment="Top"
             Content="Date  :"
             RenderTransformOrigin="1.095,-6.075" />
-        <DatePicker Margin="150,168,0,0" x:Name="dpDate" HorizontalAlignment="Left" Width="154" Height="26" VerticalAlignment="Top"/>
+        <DatePicker
+            x:Name="dpDate"
+            Width="154"
+            Height="26"
+            Margin="150,168,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
         <Label
             Width="102"
             Height="26"
@@ -123,7 +134,8 @@
             Margin="10,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ajouter" Click="btnAjouter_Click" />
+            Click="btnAjouter_Click"
+            Content="Ajouter" />
 
         <Button
             x:Name="btnSupp"
@@ -132,7 +144,8 @@
             Margin="10,250,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Supprimer" Click="btnSupp_Click" />
+            Click="btnSupp_Click"
+            Content="Supprimer" />
         <Button
             x:Name="btnModifier"
             Width="92"
@@ -140,7 +153,8 @@
             Margin="10,200,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Modifier" Click="btnModifier_Click" />
+            Click="btnModifier_Click"
+            Content="Modifier" />
         <Image
             Width="294"
             Height="87"
@@ -150,58 +164,66 @@
             Source="/index.png" />
 
         <Grid Grid.Row="1">
-            <DataGrid
+            <ListView
                 x:Name="DG_Main"
                 Grid.Row="1"
                 Margin="10,10,10,10"
-                AutoGenerateColumns="False"
                 ItemsSource="{Binding LesAttribution}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UnMateriel.UneCategorie.Nomcategorie}"
-                        Header="Nom catégorie" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UnMateriel.Nommateriel}"
-                        Header="Nom matériel" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UnPersonnel.Nompersonnel}"
-                        Header="Nom personnel" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding UnPersonnel.Prenompersonnel}"
-                        Header="Prénom personnel" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Dateattribution}"
-                        Header="Date" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Commentaireattribution}"
-                        Header="Commentaire" />
-
-                </DataGrid.Columns>
-            </DataGrid>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding UnMateriel.UneCategorie.Nomcategorie}"
+                            Header="Nom catégorie" />
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding UnMateriel.Nommateriel}"
+                            Header="Nom matériel" />
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding UnPersonnel.Nompersonnel}"
+                            Header="Nom personnel" />
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding UnPersonnel.Prenompersonnel}"
+                            Header="Prénom personnel" />
+                        <GridViewColumn
+                            Width="150"
+                            DisplayMemberBinding="{Binding Dateattribution}"
+                            Header="Date" />
+                        <GridViewColumn
+                            Width="200"
+                            DisplayMemberBinding="{Binding Commentaireattribution}"
+                            Header="Commentaire" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
         <ListView
             x:Name="lvMateriel"
+            Width="117"
+            Height="242"
             Margin="690,65,0,0"
-            ItemsSource="{Binding LesMateriel}" HorizontalAlignment="Left" Width="117" Height="242" VerticalAlignment="Top">
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding LesMateriel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Nommateriel}" Width="150"/>
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Nommateriel}" />
                 </GridView>
             </ListView.View>
         </ListView>
         <ListView
             x:Name="lvPersonnel"
+            Width="162"
+            Height="242"
             Margin="477,65,0,0"
-            ItemsSource="{Binding Path=LesPersonnel}" HorizontalAlignment="Left" Width="162" Height="242" VerticalAlignment="Top" >
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding Path=LesPersonnel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nompersonnel}" Header="Nom" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Prenompersonnel}" Header="Prenom" />
                 </GridView>
             </ListView.View>
