@@ -25,7 +25,10 @@ namespace SAE_01
             InitializeComponent();
         }
 
-        //MENU
+        //============MENU============
+        //Crée une nouvelle fenêtre et assigne la bonne fenêtre
+        //Ferme la fenêtre actuellement ouverte 
+        //Ouvre la nouvelle fenetre
 
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
         {

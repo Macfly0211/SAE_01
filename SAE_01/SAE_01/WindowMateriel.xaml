@@ -16,11 +16,15 @@
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="613*"/>
+            <ColumnDefinition Width="387*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <Menu Grid.RowSpan="2" Margin="0,0,0,419">
+        <Menu Grid.RowSpan="2" Margin="0,0,0,419" Grid.ColumnSpan="2">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -52,20 +56,20 @@
         <Image
             Width="294"
             Height="87"
-            Margin="696,10,0,0"
+            Margin="83,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="/index.png" />
+            Source="/index.png" Grid.Column="1" />
 
 
 
         <Label
             Width="96"
             Height="30"
-            Margin="634,111,0,0"
+            Margin="21,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom catégorie :" />
+            Content="Nom catégorie :" Grid.Column="1" />
 
         <ListView
             x:Name="DG_materiel"
@@ -88,7 +92,7 @@
             x:Name="btnAjouter"
             Width="116"
             Height="51"
-            Margin="58,106,0,0"
+            Margin="59,75,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnAjouter_Click"
@@ -97,7 +101,7 @@
             x:Name="btnModifier"
             Width="116"
             Height="51"
-            Margin="58,176,0,0"
+            Margin="59,145,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Modifier" Click="btnModifier_Click" />
@@ -105,7 +109,7 @@
             x:Name="btnSupprimer"
             Width="116"
             Height="51"
-            Margin="58,246,0,0"
+            Margin="59,215,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnSupprimer_Click"
@@ -161,8 +165,8 @@
             TextWrapping="Wrap" />
         <ListView
             x:Name="lvCategorie"
-            Margin="730,98,123,2"
-            ItemsSource="{Binding LesCategorieMateriel}">
+            Margin="117,98,0,0"
+            ItemsSource="{Binding LesCategorieMateriel}" Height="182" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Grid.Column="1">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />

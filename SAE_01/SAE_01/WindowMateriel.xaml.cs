@@ -76,21 +76,34 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            int i = 0;
+            bool estNum = int.TryParse(tbCodeBarre.Text, out i);
+
+            //condition pour les champs non remplis
             if (tbNomMateriel.Text == "" || tbNomMateriel.Text == " " || tbRefConstructeur.Text == "" || tbRefConstructeur.Text == " " || tbCodeBarre.Text == "" || tbCodeBarre.Text == " " || lvCategorie.SelectedItem=="")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                
+                //message d'erreur
+
+            }
+            else if(tbCodeBarre.Text.Length != 10 || estNum == false)
+            {
+                MessageBox.Show("Le code barre doit être de 10 numéros", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
+                //crée un nouveau personnel 
                 Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text);
                 materiel.Create();
+                //ajoute lee nouveau personnel a la liste
                 this.applicationData.LesMateriel.Add(materiel);
                 this.DG_materiel.Items.Refresh();
-               
+
+                //remet à zéro les champs à remplir
                 tbNomMateriel.Text = "";
                 tbCodeBarre.Text = "";
                 tbRefConstructeur.Text = "";
+                //message de confirmation de la création d'un personnel
                 MessageBox.Show("Nouveau matériel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
 
@@ -139,8 +152,8 @@ namespace SAE_01
             this.DG_materiel.ItemsSource = applicationData.LesMateriel;
         }
 
-        
 
+        //filtre des personnels 
         private bool MaterielFilter(object item)
         {
             if (String.IsNullOrEmpty(tbNomMateriel.Text))
@@ -155,9 +168,9 @@ namespace SAE_01
           
         }
 
-       
 
 
+        //bouton de recherche
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 

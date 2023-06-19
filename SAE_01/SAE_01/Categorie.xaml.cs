@@ -27,7 +27,7 @@ namespace SAE_01
         public Categorie()
         {
             InitializeComponent();
-
+            //Filtre qui sert a rechercher une categorie en fonction du nom
             DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
             CollectionView viewCategorie = (CollectionView)CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource);
             viewCategorie.Filter = CategorieFilter;
@@ -67,6 +67,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            //condition  vérification de la texte box 
             if (tbNom.Text == "" || tbNom.Text == " ")
             {
                 MessageBox.Show("Champs nom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -122,6 +123,7 @@ namespace SAE_01
         //focntion reload qui appelle ApplicationData
         public void ReloadData ()
         {
+            //Permet de recharger la page apres un clic au moment ou on l'appel  
             applicationData.reloadAppData();
             this.DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
         }
@@ -140,6 +142,7 @@ namespace SAE_01
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Le boutton rechercher qui actionne le filtre 
             CollectionViewSource.GetDefaultView(DG_categorie.ItemsSource).Refresh();
             DG_categorie.SelectedIndex = 0;
         }

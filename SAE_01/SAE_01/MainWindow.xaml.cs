@@ -50,6 +50,10 @@ namespace SAE_01
             
         }
 
+        //============MENU============
+        //Crée une nouvelle fenêtre et assigne la bonne fenêtre
+        //Ferme la fenêtre actuellement ouverte 
+        //Ouvre la nouvelle fenetre
         private void MenuCategorie_Click(object sender, RoutedEventArgs e)
         {
             Categorie categorie = new Categorie();
@@ -86,6 +90,7 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            //Verification des champs non vide
             if (dpDate.Text == null || lvPersonnel.SelectedItem == null || lvMateriel.SelectedItem == null || lvCategorie == null)
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -115,6 +120,7 @@ namespace SAE_01
 
         private void btnSupp_Click(object sender, RoutedEventArgs e)
         {
+            //Verification de la selection pour supprimer 
             if (DG_Main.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner une attribution.");
