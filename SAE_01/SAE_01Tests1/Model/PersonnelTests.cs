@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SAE_01.Model;
-using Npgsql;
-using NpgsqlTypes;
+using SAE_01;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,7 +78,7 @@ namespace SAE_01.Model.Tests
             {
                 if((int)row["idpersonnel"] == Test.Idpersonnel)
                 {
-                    verif = new Personnel(((int)row["idpersonnel"]), row["emailpersonnel"].ToString(), row["nompersonnel"].ToString(), row["prenompersonnel"].ToString());
+                    verif = new Personnel((int)row["idpersonnel"], row["emailpersonnel"].ToString(), row["nompersonnel"].ToString(), row["prenompersonnel"].ToString());
                 }
             }
             Assert.AreEqual(verif, Test, "Erreur pendant l'Update");
