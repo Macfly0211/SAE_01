@@ -96,7 +96,7 @@ namespace SAE_01.Model
         //Create = méthode de création de nouveau personnels
         public void Create()
         {
-            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ('{this.UneCategorie.Idcategorie}', '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
+            new DataAccess().SetData($"insert into materiel (idcategorie, nommateriel, referenceconstructeurmateriel, codebarreinventaire) values ({this.UneCategorie.Idcategorie}, '{this.Nommateriel}','{this.Referenceconstructeurmateriel}','{this.Codebarreinventaire}');");
         }
 
         public void Read()
