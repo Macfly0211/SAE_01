@@ -27,10 +27,6 @@ namespace SAE_01
             this.idCategorie = idCategorie;
         }
 
-        private void btAnnuler_Click()
-        {
-
-        }
 
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
@@ -38,6 +34,11 @@ namespace SAE_01
             ((CategorieMateriel)applicationData.LesCategorieMateriel.Single(x => x.Idcategorie == this.idCategorie)).Update();
 
             this.Close();
+        }
+
+        private void BtAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
