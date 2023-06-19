@@ -140,7 +140,9 @@ namespace SAE_01
 
         private void DG_materiel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            tbCodeBarre.Text = ((Materiel)DG_materiel.SelectedItem).Codebarreinventaire;
+            tbRefConstructeur.Text = ((Materiel)DG_materiel.SelectedItem).Referenceconstructeurmateriel;
+            tbNomMateriel.Text = ((Materiel)DG_materiel.SelectedItem).Nommateriel;
         }
 
         private bool MaterielFilter(object item)
