@@ -54,11 +54,13 @@
             Content="Rechercher" />
 
         <Image
+            Width="294"
             Height="87"
-            Margin="0,20,28,0"
+            Margin="678,20,0,0"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.5,0.5"
-            Source="/index.png" HorizontalAlignment="Right" Width="294">
+            Source="/index.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
