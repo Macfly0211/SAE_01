@@ -135,17 +135,9 @@ namespace SAE_01
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-
-            //WindowAjoutMateriel winAjoutMateriel = new WindowAjoutMateriel((Materiel)DG_personnel.SelectedItem, Mode.Update);
-            //winAjoutMateriel.Owner = this;
-
-            //bool reponse = (bool)winAjoutMateriel.ShowDialog();
-            //if (reponse == true)
-            //{
-            //    DG_personnel.Items.Refresh();
-            //    //appelle de la donction refresh
-
-            //}
+            WindowModifPersonnel modif = new WindowModifPersonnel(((Personnel)DG_personnel.SelectedItem).Idpersonnel);
+            modif.ShowDialog();
+            this.ReloadData();
         }
 
         //filtre des personnels 

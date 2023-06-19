@@ -1,4 +1,4 @@
-﻿<Window x:Class="SAE_01.WindowModifPersonnel"
+﻿<Window x:Class="SAE_01.WindowModifCategorie"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,9 +8,8 @@
         mc:Ignorable="d"
         Width="342"
         Height="358"
-        Title="Modification personnel"
-        ResizeMode="NoResize">
-    
+        Title="Modification Catégorie" >
+
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData"/>
     </Window.DataContext>
@@ -24,7 +23,7 @@
             VerticalAlignment="Top"
             Content="Nom Personnel :" />
         <TextBox
-            x:Name="tbNom"
+            x:Name="tbCategorie"
             Width="278"
             Height="28"
             Margin="0,66,0,0"
@@ -33,41 +32,7 @@
             TextWrapping="Wrap"
             
             />
-
-
-        <Label
-            Width="144"
-            Height="33"
-            Margin="32,111,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Prénom Personnel :" />
-        <TextBox
-            x:Name="tbPrenom"
-            Width="278"
-            Height="28"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" Margin="0,143,0,0" />
-        <Label
-            Width="112"
-            Height="33"
-            Margin="32,192,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Email : " />
-        <TextBox
-            x:Name="tbMail"
-            Width="278"
-            Height="28"
-            Margin="0,225,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap" />
         <Button x:Name="btAjouter" Content="Ajouter" Margin="32,279,182,22" Click="btAjouter_Click"/>
         <Button Content="Annuler" Margin="189,279,32,22" Click="BtAnnuler_Click"/>
-
     </Grid>
 </Window>

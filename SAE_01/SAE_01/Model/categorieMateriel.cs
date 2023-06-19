@@ -58,7 +58,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            throw new NotImplementedException();
+            new DataAccess().SetData($"Update categorie_materiel set nomcategorie = '{this.Nomcategorie}' where idpersonnel = {this.Idcategorie}");
         }
 
 

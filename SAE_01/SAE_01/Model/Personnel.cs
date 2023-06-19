@@ -86,7 +86,7 @@ namespace SAE_01.Model
         //UPDATE = met a jour les données
         public void Update()
         {
-            new DataAccess().SetData($"Update personnel '{this.Emailpersonnel}','{this.Nompersonnel}','{this.Prenompersonnel}';");
+            new DataAccess().SetData($"Update personnel set nompersonnel = '{this.Nompersonnel}', prenompersonnel = '{this.Prenompersonnel}', emailpersonnel = '{this.Emailpersonnel}' where idpersonnel = {this.Idpersonnel}");
         }
     }
 }

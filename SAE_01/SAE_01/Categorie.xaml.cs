@@ -86,6 +86,16 @@ namespace SAE_01
 
         }
 
+        private void btnModifier_Click(object sender, RoutedEventArgs e)
+        {
+            WindowModifCategorie modif = new WindowModifCategorie(((CategorieMateriel)DG_categorie.SelectedItem).Idcategorie);
+            modif.ShowDialog();
+
+
+
+            this.ReloadData();
+        }
+
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             //vérification sélection dans la datagrid

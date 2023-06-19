@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SAE_01.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,30 @@ namespace SAE_01
     /// </summary>
     public partial class WindowModifPersonnel : Window
     {
-        public WindowModifPersonnel()
+        int idPersonnel;
+        public WindowModifPersonnel(int idPersonnel)
         {
             InitializeComponent();
+            this.idPersonnel = idPersonnel;
+        }
+
+        private void btAjouter_Click(object sender, RoutedEventArgs e)
+        {
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Nompersonnel = tbNom.Text;
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Prenompersonnel = tbPrenom.Text;
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Emailpersonnel = tbMail.Text;
+            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+
+            this.Close();
+        }
+
+        private void BtAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

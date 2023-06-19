@@ -78,6 +78,7 @@
             Margin="60,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btnModifier_Click"
             Content="Modifier" />
         <Button
             x:Name="btnSupprimer"
