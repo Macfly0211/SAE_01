@@ -58,7 +58,7 @@ namespace SAE_01.Model
 
         public void Update()
         {
-            new DataAccess().SetData($"Update categorie_materiel set nomcategorie = '{this.Nomcategorie}' where idpersonnel = {this.Idcategorie}");
+            new DataAccess().SetData($"Update categorie_materiel set nomcategorie = '{this.Nomcategorie}' where idcategorie = {this.Idcategorie}");
         }
 
 
