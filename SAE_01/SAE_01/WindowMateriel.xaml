@@ -12,6 +12,7 @@
     MinWidth="1000"
     MinHeight="750"
     Icon="Logo.PNG"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
