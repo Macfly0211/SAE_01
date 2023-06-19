@@ -68,21 +68,26 @@ namespace SAE_01
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
-
+            //condition pour les champs non remplis
             if (tbNom.Text == "" || tbNom.Text == " " || tbPrenom.Text == "" || tbPrenom.Text == " " || tbEmail.Text == "" || tbEmail.Text == " ")
             {
                 MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                
+                //message d'erreur
+
             }
             else
             {
+                //crée un nouveau personnel 
                 Personnel personnel = new Personnel(0, tbEmail.Text, tbNom.Text, tbPrenom.Text);
                 personnel.Create();
+                //ajoute lee nouveau personnel a la liste
                 this.applicationData.LesPersonnel.Add(personnel);
                 this.DG_personnel.Items.Refresh();
+                //remet à zéro les champs à remplir
                 tbPrenom.Text = "";
                 tbNom.Text= "";
                 tbEmail.Text = "";
+                //message de confirmation de la création d'un personnel
                 MessageBox.Show("Nouveau personnel crée", "Validation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
 
             }
@@ -100,6 +105,7 @@ namespace SAE_01
             if (DG_personnel.SelectedItem == null)
             {
                 MessageBox.Show("Erreur ! Selectionner un personnel.");
+                //message d'erreur
             }
             else
             {
@@ -142,8 +148,7 @@ namespace SAE_01
             //}
         }
 
-        
-
+        //filtre des personnels 
         private bool PersonnelFilter(object item)
         {
             if (String.IsNullOrEmpty(tbRechercheEmail.Text))
@@ -156,7 +161,7 @@ namespace SAE_01
             }
         }
 
-
+        //bouton de recherche
         private void btRechercher_Click_1(object sender, RoutedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(DG_personnel.ItemsSource).Refresh();
