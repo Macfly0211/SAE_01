@@ -145,7 +145,7 @@
             Margin="215,162,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Code barre :" />
+            Content="Code barre : " />
         <TextBox
             x:Name="tbCodeBarre"
             Width="236"
@@ -201,5 +201,19 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label
+            Width="161"
+            Height="26"
+            Margin="290,166,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content=" 5 lettres 7 chiffres 3 lettres" FontSize="8" />
+        <Label
+            Width="161"
+            Height="26"
+            Margin="350,115,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="1 lettres 1 tiret 3 chiffres 6 lettres" FontSize="8" />
     </Grid>
 </Window>

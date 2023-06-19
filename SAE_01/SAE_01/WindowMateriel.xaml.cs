@@ -97,7 +97,7 @@ namespace SAE_01
             else
             {
                 //crée un nouveau personnel 
-                Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text, tbCodeBarre.Text);
+                Materiel materiel = new Materiel(0, (CategorieMateriel)lvCategorie.SelectedItem, tbNomMateriel.Text, tbRefConstructeur.Text.ToUpper(), tbCodeBarre.Text.ToUpper());
                 materiel.Create();
                 //ajoute lee nouveau personnel a la liste
                 this.applicationData.LesMateriel.Add(materiel);

@@ -1,4 +1,3 @@
-
 <Window
     x:Class="SAE_01.WindowModifMateriel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -35,8 +34,20 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
-
-
+        <Label
+            Width="161"
+            Height="26"
+            Margin="104,191,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content=" 5 lettres 7 chiffres 3 lettres" FontSize="8" />
+        <Label
+            Width="161"
+            Height="26"
+            Margin="171,115,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="1 lettres 1 tiret 3 chiffres 6 lettres" FontSize="8" />
         <Label
             Width="144"
             Height="33"
