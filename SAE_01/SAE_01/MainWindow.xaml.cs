@@ -88,6 +88,12 @@ namespace SAE_01
 
         }
 
+        /// <summary>
+        /// Bouton qui ajoute une attricution
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>ajoute une attribution </return>
+        /// <exception cref="ArgumentException"> Si la date ou le personnel ou le matériel ou la catégorie n'est pas sélectionné</exception>
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             //Verification des champs non vide
@@ -111,13 +117,22 @@ namespace SAE_01
             }
         }
 
-
+        /// <summary>
+        /// Reload les données
+        /// </summary>
+        /// <return>reload les données </return>
         public void ReloadData()
         {
             applicationData.reloadAppData();
             this.DG_Main.ItemsSource = applicationData.LesAttribution;
         }
 
+        /// <summary>
+        /// Bouton qui supprime une attribution
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>supprime une attribution </return>
+        /// <exception cref="ArgumentException"> Si aucune attribution n'est sélectionné</exception>
         private void btnSupp_Click(object sender, RoutedEventArgs e)
         {
             //Verification de la selection pour supprimer 
@@ -148,6 +163,12 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Bouton qui modifie une attribution
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie une attribution </return>
+        /// <exception cref="ArgumentException"> Si aucune attribution n'est sélectionné</exception>
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
 

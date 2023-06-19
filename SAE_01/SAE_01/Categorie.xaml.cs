@@ -33,7 +33,10 @@ namespace SAE_01
             viewCategorie.Filter = CategorieFilter;
         }
 
-        //MENU
+        //============MENU============
+        //Crée une nouvelle fenêtre et assigne la bonne fenêtre
+        //Ferme la fenêtre actuellement ouverte 
+        //Ouvre la nouvelle fenetre
 
         private void MenuMateriel_Click(object sender, RoutedEventArgs e)
         {
@@ -64,7 +67,12 @@ namespace SAE_01
         }
 
         //BOUTON
-
+        /// <summary>
+        /// Bouton qui ajoute una catégorie
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>ajoute une catégorie matériel </return>
+        /// <exception cref="ArgumentException"> Si le nom n'est pas renseigné</exception>
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
             //condition  vérification de la texte box 
@@ -86,6 +94,12 @@ namespace SAE_01
 
         }
 
+        /// <summary>
+        /// Bouton modifie una catégorie
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie une catégorie matériel </return>
+        /// <exception cref="ArgumentException"> Si aucune catégorie n'est sélectionné</exception>
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
             if (DG_categorie.SelectedItem == null)
@@ -105,6 +119,12 @@ namespace SAE_01
             }
         }
 
+        /// <summary>
+        /// Bouton qui supprime una catégorie
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>supprime une catégorie matériel </return>
+        /// <exception cref="ArgumentException"> Si aucune catégorie n'est sélectionné</exception>
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)
         {
             //vérification sélection dans la datagrid
@@ -139,7 +159,10 @@ namespace SAE_01
             
         }
 
-        //focntion reload qui appelle ApplicationData
+        /// <summary>
+        /// Reload appelle Application data pour reload les données
+        /// </summary>
+        /// <return>reload les données</return>
         public void ReloadData ()
         {
             //Permet de recharger la page apres un clic au moment ou on l'appel  
@@ -147,6 +170,10 @@ namespace SAE_01
             this.DG_categorie.ItemsSource = applicationData.LesCategorieMateriel;
         }
 
+        /// <summary>
+        /// filtre des données
+        /// </summary>
+        /// <return>flitre les données </return>
         private bool CategorieFilter(object item)
         {
             if (String.IsNullOrEmpty(tbNom.Text))
