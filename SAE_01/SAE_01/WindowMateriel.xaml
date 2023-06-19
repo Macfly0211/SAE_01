@@ -55,13 +55,11 @@
             Content="Rechercher" />
 
         <Image
-            Width="294"
             Height="87"
-            Margin="678,20,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,20,28,0"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.5,0.5"
-            Source="/index.png">
+            Source="/index.png" HorizontalAlignment="Right" Width="294">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
@@ -75,12 +73,10 @@
 
 
         <Label
-            Width="96"
             Height="30"
-            Margin="656,111,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,111,248,0"
             VerticalAlignment="Top"
-            Content="Nom catégorie :" />
+            Content="Nom catégorie :" HorizontalAlignment="Right" Width="96" />
 
         <ListView
             x:Name="DG_materiel"
@@ -190,8 +186,8 @@
             x:Name="lvCategorie"
             Width="148"
             Height="169"
-            Margin="752,111,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,111,100,0"
+            HorizontalAlignment="Right"
             VerticalAlignment="Top"
             ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
