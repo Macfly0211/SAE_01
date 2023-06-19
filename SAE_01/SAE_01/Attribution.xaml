@@ -10,11 +10,13 @@
     Height="750"
     MinWidth="1000"
     MinHeight="750"
+    Icon="Logo.PNG"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Menu>
             <MenuItem Click="Menu_Click" Header="_Menu" />
@@ -28,33 +30,106 @@
             <!--<MenuItem Header="_Attribution" />-->
 
         </Menu>
-        <Rectangle Stroke="Black" Margin="218,209,0,0" Fill="#FF9E9D9D" Height="93" VerticalAlignment="Top" HorizontalAlignment="Left" Width="423"/>
-        <Label Content="Date :" Margin="715,118,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="803,114,31,10">
+        <Rectangle
+            Width="423"
+            Height="93"
+            Margin="218,209,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Fill="#FF9E9D9D"
+            Stroke="Black" />
+        <Label
+            Width="83"
+            Height="30"
+            Margin="715,118,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Date :" />
+        <ListView Margin="803,114,31,10" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn />
                 </GridView>
             </ListView.View>
         </ListView>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,11,10,10" Grid.Row="1"
-                  AutoGenerateColumns="False">
+        <DataGrid
+            Grid.Row="1"
+            Margin="10,11,10,10"
+            d:ItemsSource="{d:SampleData ItemCount=5}"
+            AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Commentaire"  Width="*"/>
-                <DataGridTextColumn Header="Date"  Width="*"/>
+                <DataGridTextColumn Width="*" Header="Commentaire" />
+                <DataGridTextColumn Width="*" Header="Date" />
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="btnAjouter" Content="Ajouter" Margin="58,106,0,0" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
-        <Button x:Name="btnModifier" Content="Modifier" Margin="58,176,0,0" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
-        <Button x:Name="btnSupprimer" Content="Supprimer" Margin="58,246,0,0" Height="51" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"/>
-        <Label Content="Date :" HorizontalAlignment="Left" Margin="224,243,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbRechercheDate" HorizontalAlignment="Left" Margin="304,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227"/>
+        <Button
+            x:Name="btnAjouter"
+            Width="116"
+            Height="51"
+            Margin="58,106,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ajouter" />
+        <Button
+            x:Name="btnModifier"
+            Width="116"
+            Height="51"
+            Margin="58,176,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Modifier" />
+        <Button
+            x:Name="btnSupprimer"
+            Width="116"
+            Height="51"
+            Margin="58,246,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Supprimer" />
+        <Label
+            Margin="224,243,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Date :" />
+        <TextBox
+            x:Name="tbRechercheDate"
+            Width="227"
+            Margin="304,246,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
 
-        <Label Content="Commentaire :" Margin="215,66,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
-        <TextBox x:Name="tbCommentaire" TextWrapping="Wrap" Margin="215,92,0,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <Label
+            Width="94"
+            Height="26"
+            Margin="215,66,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Commentaire :" />
+        <TextBox
+            x:Name="tbCommentaire"
+            Width="236"
+            Height="20"
+            Margin="215,92,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
 
-        <Label Content="Date :" Margin="215,117,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
-        <TextBox x:Name="tbDate" TextWrapping="Wrap" Margin="215,141,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="236"/>
+        <Label
+            Width="94"
+            Height="24"
+            Margin="215,117,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Date :" />
+        <TextBox
+            x:Name="tbDate"
+            Width="236"
+            Height="22"
+            Margin="215,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

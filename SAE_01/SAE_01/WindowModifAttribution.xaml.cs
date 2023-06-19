@@ -31,12 +31,27 @@ namespace SAE_01
 
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Dateattribution = DateTime.Parse(dpDate.SelectedDate.ToString());
-            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+            if (dpDate.Text == "" )
+            {
+                MessageBox.Show("Date obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                //message d'erreur
 
-            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Commentaireattribution = tbCommentaire.Text;
-            ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+            }
+            else
+            {
 
+                ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Dateattribution = DateTime.Parse(dpDate.SelectedDate.ToString());
+                ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+
+                ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Commentaireattribution = tbCommentaire.Text;
+                ((EstAttribue)applicationData.LesAttribution.Single(x => x.UnMateriel.Idmateriel == this.idMateriel && x.UnPersonnel.Idpersonnel == this.idPersonnel)).Update();
+
+                this.Close();
+            }
+        }
+
+        private void BtAnnuler_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }
