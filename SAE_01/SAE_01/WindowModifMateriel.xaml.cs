@@ -39,6 +39,12 @@ namespace SAE_01
             DialogResult = false; // ferme automatiquement la fenêtre
         }
 
+        /// <summary>
+        /// Bouton qui modifie un matériel
+        /// message box qui explique si il y a un problème ou non
+        /// </summary>
+        /// <return>modifie un matériel </return>
+        /// <exception cref="ArgumentException"> Si nom, codebarre, refConstructeur vide ou si code barre ou ref constructeur pas au bon format</exception>
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
 
@@ -72,12 +78,20 @@ namespace SAE_01
                 this.Close();
             }
 
+            /// <summary>
+            /// Vérifie que le code barre respecte le regex
+            /// </summary>
+            /// <return>True si le code barre est correcte au regex </return>
             static bool FormeCodeBarre(string codebarre)
             {
                 string reg = @"^[A-Za-z]{5}\d{7}[A-Za-z]{3}$";
                 return Regex.IsMatch(codebarre, reg);
             }
 
+            /// <summary>
+            /// Vérifie que la ref constructeur respecte le regex
+            /// </summary>
+            /// <return>True si la ref constructeur est correcte au regex </return>
             static bool FormeRefConstructeur(string refconstructeur)
             {
                 string reg2 = @"^[A-Za-z]-\d{3}[A-Za-z]{6}$";
