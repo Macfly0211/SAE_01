@@ -9,7 +9,8 @@
         Width="342"
         Height="358"
         Title="Modification personnel"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Icon="Logo.PNG">
 
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData"/>

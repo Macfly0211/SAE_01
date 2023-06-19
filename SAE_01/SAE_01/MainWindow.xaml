@@ -10,7 +10,9 @@
     Width="1000"
     Height="750"
     MinWidth="1000"
-    MinHeight="750">
+    MinHeight="750"
+    Icon="Logo.PNG">
+    
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>

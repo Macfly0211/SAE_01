@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="index.png" />
+    <None Remove="Logo.PNG" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,9 @@
 
   <ItemGroup>
     <Resource Include="index.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Logo.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

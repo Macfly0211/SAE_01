@@ -9,7 +9,8 @@
         xmlns:model="clr-namespace:SAE_01.Model"
         Width="342"
         Height="358"
-        Title="Modification Catégorie" ResizeMode="NoResize" >
+        Title="Modification Catégorie" ResizeMode="NoResize" 
+        Icon="Logo.PNG">
 
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />

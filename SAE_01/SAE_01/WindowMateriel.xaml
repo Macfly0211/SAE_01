@@ -11,7 +11,8 @@
     Height="750"
     MinWidth="1000"
     MinHeight="750"
-    mc:Ignorable="d" ResizeMode="NoResize">
+    mc:Ignorable="d" ResizeMode="NoResize"
+    Icon="Logo.PNG">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
