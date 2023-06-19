@@ -163,5 +163,7 @@ namespace SAE_01
             CollectionViewSource.GetDefaultView(DG_materiel.ItemsSource).Refresh();
             DG_materiel.SelectedIndex = 0;
         }
+
+        
     }
 }
