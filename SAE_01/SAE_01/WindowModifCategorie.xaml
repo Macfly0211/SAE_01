@@ -9,7 +9,7 @@
         xmlns:model="clr-namespace:SAE_01.Model"
         Width="342"
         Height="358"
-        Title="Modification Catégorie" >
+        Title="Modification Catégorie" ResizeMode="NoResize" >
 
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
@@ -22,7 +22,7 @@
             Margin="32,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom Personnel :" />
+            Content="Nom catégorie :" />
         <TextBox
             x:Name="tbCategorie"
             Width="278"
@@ -33,7 +33,7 @@
             TextWrapping="Wrap"
             
             />
-        <Button x:Name="btAjouter" Content="Confirmer" Margin="32,259,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="42" VerticalAlignment="Top"/>
-        <Button Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="42" VerticalAlignment="Top" />
+        <Button x:Name="btAjouter" Content="Modifier" Margin="32,258,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="42" VerticalAlignment="Top"/>
+        <Button Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="41" VerticalAlignment="Top" />
     </Grid>
 </Window>

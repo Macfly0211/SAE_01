@@ -19,7 +19,7 @@
         <Label
             Width="112"
             Height="33"
-            Margin="32,33,0,0"
+            Margin="32,24,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom Personnel :" />
@@ -27,8 +27,8 @@
             x:Name="tbNom"
             Width="278"
             Height="28"
-            Margin="32,66,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,57,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             TextWrapping="Wrap"
             
@@ -38,7 +38,7 @@
         <Label
             Width="144"
             Height="33"
-            Margin="32,111,0,0"
+            Margin="32,102,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Prénom Personnel :" />
@@ -49,11 +49,11 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
-            TextWrapping="Wrap" Margin="32,143,0,0" />
+            TextWrapping="Wrap" Margin="0,134,0,0" />
         <Label
             Width="112"
             Height="33"
-            Margin="32,192,0,0"
+            Margin="32,183,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Email : " />
@@ -61,13 +61,13 @@
             x:Name="tbMail"
             Width="278"
             Height="28"
-            Margin="32,225,0,0"
-            HorizontalAlignment="Left"
+            Margin="0,216,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
-        <Button x:Name="btAjouter" Content="Confirmer" Margin="32,259,0,0" Click="btAjouter_Click" HorizontalAlignment="Left" Width="128" Height="41" VerticalAlignment="Top"/>
-        <Button Content="Annuler" Margin="189,259,0,0" Click="BtAnnuler_Click" HorizontalAlignment="Left" Width="121" Height="41" VerticalAlignment="Top"/>
+        <Button x:Name="btAjouter" Content="Modifier" Margin="32,270,0,0" Click="btAjouter_Click" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128"/>
+        <Button Content="Annuler" Margin="189,270,0,0" Click="BtAnnuler_Click" Height="41" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
 
     </Grid>
 </Window>

@@ -29,21 +29,31 @@ namespace SAE_01
 
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Nompersonnel = tbNom.Text;
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+            if (tbNom.Text == "" || tbPrenom.Text == "" || tbMail.Text == "")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                //message d'erreur
 
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Prenompersonnel = tbPrenom.Text;
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+            }
+            else
+            {
 
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Emailpersonnel = tbMail.Text;
-            ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Nompersonnel = tbNom.Text;
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
 
-            this.Close();
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Prenompersonnel = tbPrenom.Text;
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Emailpersonnel = tbMail.Text;
+                ((Personnel)applicationData.LesPersonnel.Single(x => x.Idpersonnel == this.idPersonnel)).Update();
+
+                this.Close();
+            }
         }
 
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

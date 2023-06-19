@@ -182,7 +182,7 @@ namespace SAE_01
         {
             if (DG_materiel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                MessageBox.Show("Erreur ! Selectionner un matériel.");
                 //message d'erreur
             }
             else
