@@ -53,7 +53,7 @@ namespace SAE_01
 
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
