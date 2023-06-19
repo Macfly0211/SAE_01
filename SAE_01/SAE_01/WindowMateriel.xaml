@@ -16,15 +16,15 @@
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="613*"/>
-            <ColumnDefinition Width="387*"/>
-        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
-        <Menu Grid.RowSpan="2" Margin="0,0,0,419" Grid.ColumnSpan="2">
+        <Menu
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            Margin="0,0,0,419">
             <MenuItem Click="Menu_Click" Header="_Menu" />
 
             <MenuItem Click="MenuCategorie_Click" Header="_Catégorie de matériel" />
@@ -47,7 +47,7 @@
         <Button
             Width="101"
             Height="31"
-            Margin="426,234,0,0"
+            Margin="350,235,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="Button_Click"
@@ -56,33 +56,54 @@
         <Image
             Width="294"
             Height="87"
-            Margin="83,10,0,0"
+            Margin="678,20,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Source="/index.png" Grid.Column="1" />
+            RenderTransformOrigin="0.5,0.5"
+            Source="/index.png">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform AngleY="-0.29" />
+                    <RotateTransform />
+                    <TranslateTransform Y="-0.745" />
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
 
 
         <Label
             Width="96"
             Height="30"
-            Margin="21,111,0,0"
+            Margin="656,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom catégorie :" Grid.Column="1" />
+            Content="Nom catégorie :" />
 
         <ListView
             x:Name="DG_materiel"
             Grid.Row="1"
             Margin="10,11,10,10"
-            
             ItemsSource="{Binding Path=LesMateriel}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Nommateriel}" Header="Nom matériel" Width="200" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=UneCategorie.Nomcategorie}" Header="Nom catégorie" Width="200" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Referenceconstructeurmateriel}" Header="Référence constructeur" Width="300" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Codebarreinventaire}" Header="Code barre" Width="200"/>
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Path=Nommateriel}"
+                        Header="Nom matériel" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Path=UneCategorie.Nomcategorie}"
+                        Header="Nom catégorie" />
+                    <GridViewColumn
+                        Width="300"
+                        DisplayMemberBinding="{Binding Path=Referenceconstructeurmateriel}"
+                        Header="Référence constructeur" />
+                    <GridViewColumn
+                        Width="200"
+                        DisplayMemberBinding="{Binding Path=Codebarreinventaire}"
+                        Header="Code barre" />
                 </GridView>
             </ListView.View>
 
@@ -104,7 +125,8 @@
             Margin="59,145,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Modifier" Click="btnModifier_Click" />
+            Click="btnModifier_Click"
+            Content="Modifier" />
         <Button
             x:Name="btnSupprimer"
             Width="116"
@@ -165,8 +187,12 @@
             TextWrapping="Wrap" />
         <ListView
             x:Name="lvCategorie"
-            Margin="117,98,0,0"
-            ItemsSource="{Binding LesCategorieMateriel}" Height="182" VerticalAlignment="Top" HorizontalAlignment="Left" Width="147" Grid.Column="1">
+            Width="148"
+            Height="169"
+            Margin="752,111,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding LesCategorieMateriel}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Nomcategorie}" />
