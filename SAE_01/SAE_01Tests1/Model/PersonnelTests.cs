@@ -74,7 +74,6 @@ namespace SAE_01.Model.Tests
             TestUpdate.Nompersonnel = "Nom";
             TestUpdate.Prenompersonnel = "Prenom";
             TestUpdate.Emailpersonnel = "Email";
-            MessageBox.Show($"personnel [ID:{TestUpdate.Idpersonnel}, Nom:{TestUpdate.Nompersonnel}, Prenom:{TestUpdate.Prenompersonnel}, Email:{TestUpdate.Emailpersonnel}]", "Personnel");
             int id = (int)data.GetData($"select idpersonnel from personnel").Rows[0]["idpersonnel"];
             TestUpdate.Idpersonnel = id;
             TestUpdate.Update();
