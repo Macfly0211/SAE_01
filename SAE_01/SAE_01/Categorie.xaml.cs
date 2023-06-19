@@ -88,12 +88,21 @@ namespace SAE_01
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-            WindowModifCategorie modif = new WindowModifCategorie(((CategorieMateriel)DG_categorie.SelectedItem).Idcategorie);
-            modif.ShowDialog();
+            if (DG_categorie.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner une catégorie.");
+                //message d'erreur
+            }
+            else
+            {
+
+                WindowModifCategorie modif = new WindowModifCategorie(((CategorieMateriel)DG_categorie.SelectedItem).Idcategorie);
+                modif.ShowDialog();
 
 
 
-            this.ReloadData();
+                this.ReloadData();
+            }
         }
 
         private void btnSupprimer_Click(object sender, RoutedEventArgs e)

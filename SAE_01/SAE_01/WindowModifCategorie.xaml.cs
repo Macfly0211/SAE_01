@@ -30,15 +30,25 @@ namespace SAE_01
 
         private void btAjouter_Click(object sender, RoutedEventArgs e)
         {
-            ((CategorieMateriel)applicationData.LesCategorieMateriel.Single(x => x.Idcategorie == this.idCategorie)).Nomcategorie = tbCategorie.Text;
-            ((CategorieMateriel)applicationData.LesCategorieMateriel.Single(x => x.Idcategorie == this.idCategorie)).Update();
+            if (tbCategorie.Text == "")
+            {
+                MessageBox.Show("Champs obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                //message d'erreur
 
-            this.Close();
+            }
+            else
+            {
+
+                ((CategorieMateriel)applicationData.LesCategorieMateriel.Single(x => x.Idcategorie == this.idCategorie)).Nomcategorie = tbCategorie.Text;
+                ((CategorieMateriel)applicationData.LesCategorieMateriel.Single(x => x.Idcategorie == this.idCategorie)).Update();
+
+                this.Close();
+            }
         }
 
         private void BtAnnuler_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

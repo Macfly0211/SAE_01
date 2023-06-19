@@ -135,9 +135,18 @@ namespace SAE_01
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
-            WindowModifPersonnel modif = new WindowModifPersonnel(((Personnel)DG_personnel.SelectedItem).Idpersonnel);
-            modif.ShowDialog();
-            this.ReloadData();
+            if (DG_personnel.SelectedItem == null)
+            {
+                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                //message d'erreur
+            }
+            else
+            {
+                WindowModifPersonnel modif = new WindowModifPersonnel(((Personnel)DG_personnel.SelectedItem).Idpersonnel);
+                modif.ShowDialog();
+                this.ReloadData();
+
+            }
         }
 
         //filtre des personnels 
