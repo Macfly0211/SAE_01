@@ -11,12 +11,12 @@ namespace SAE_01.Model
 {
     public class Materiel : Crud<Materiel>
     {
-        //constructeur
-
+        //constructeur vide
         public Materiel()
         {
         }
 
+        //constructeur 
         public Materiel(int idmateriel, int idcategorie, string nommateriel, string referenceconstructeurmateriel, string codebarreinventaire)
         {
             this.Idmateriel = idmateriel;
