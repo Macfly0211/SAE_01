@@ -35,8 +35,8 @@
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" Margin="32,143,0,0" />
-        <Button x:Name="btAjouter" Content="Confirmer" Margin="32,258,0,0" Click="btAjouter_Click" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128"/>
-        <Button Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="42" VerticalAlignment="Top" />
+        <Button x:Name="btAjouter" Content="Modifier" Margin="32,258,0,0" Click="btAjouter_Click" Height="42" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128"/>
+        <Button x:Name="BtAnnuler" Content="Annuler" Margin="189,259,0,0" HorizontalAlignment="Left" Width="121" Height="42" VerticalAlignment="Top" Click="BtAnnuler_Click" />
         <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top" Width="155"/>
 
     </Grid>
