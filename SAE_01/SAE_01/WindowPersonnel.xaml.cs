@@ -109,7 +109,7 @@ namespace SAE_01
             //vérification de la sélection dans la dataGrid
             if (DG_personnel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                MessageBox.Show("Erreur ! Selectionner un personnel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
@@ -142,7 +142,7 @@ namespace SAE_01
         {
             if (DG_personnel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un personnel.");
+                MessageBox.Show("Erreur ! Selectionner un personnel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else

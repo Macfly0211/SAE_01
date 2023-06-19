@@ -90,7 +90,7 @@ namespace SAE_01
         {
             if (DG_categorie.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner une catégorie.");
+                MessageBox.Show("Erreur ! Selectionner une catégorie.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
@@ -110,7 +110,7 @@ namespace SAE_01
             //vérification sélection dans la datagrid
             if (DG_categorie.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner une categorie.");
+                MessageBox.Show("Erreur ! Selectionner une categorie.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

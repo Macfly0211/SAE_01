@@ -123,7 +123,7 @@ namespace SAE_01
             //Verification de la selection pour supprimer 
             if (DG_Main.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner une attribution.");
+                MessageBox.Show("Erreur ! Selectionner une attribution.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {

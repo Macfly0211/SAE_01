@@ -116,7 +116,7 @@ namespace SAE_01
             //vérification de la sélection dans la dataGrid
             if (DG_materiel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un matériel.");
+                MessageBox.Show("Erreur ! Selectionner un matériel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
@@ -182,7 +182,7 @@ namespace SAE_01
         {
             if (DG_materiel.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner un matériel.");
+                MessageBox.Show("Erreur ! Selectionner un matériel.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
