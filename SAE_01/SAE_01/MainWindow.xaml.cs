@@ -154,7 +154,7 @@ namespace SAE_01
 
             if (DG_Main.SelectedItem == null)
             {
-                MessageBox.Show("Erreur ! Selectionner une catégorie.");
+                MessageBox.Show("Erreur ! Selectionner une attribution.", "Attention", MessageBoxButton.OK, MessageBoxImage.Warning);
                 //message d'erreur
             }
             else
